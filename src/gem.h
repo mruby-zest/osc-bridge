@@ -10,6 +10,7 @@ void db_insert_float(void);
 //Schema
 typedef struct {
     //all dynamic here
+    int   flag;
     const char *pattern;
     const char *name;
     const char *short_name;
@@ -60,10 +61,11 @@ typedef struct {
     rtosc_arg_t val;
 } param_cache_t;
 
-typedef void (*bridge_cb_t)(const char *,void*);
+typedef void (*bridge_cb_t)(const char *, void*);
 typedef struct {
     const char *path;
     bridge_cb_t cb;
+    void *data;
 } bridge_callback_t;
 
 //Bridge
@@ -81,7 +83,7 @@ bridge_t br_create(uri_t);
 schema_t br_get_schema(bridge_t, uri_t);
 void br_request_value(bridge_t *, uri_t, schema_handle_t);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
-void br_recv(bridge_t *);
+void br_recv(bridge_t *, const char *);
 
 //Views
 void vw_add_float(void);
@@ -92,4 +94,4 @@ void print_stats(bridge_t br, schema_t sch);
 
 //Testing Hooks
 extern int  (*osc_socket_hook)(void);
-extern int  (*osc_request_hook)(int, const char *);
+extern int  (*osc_request_hook)(bridge_t *, const char *);

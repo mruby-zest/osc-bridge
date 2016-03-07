@@ -10,7 +10,7 @@
 
 //Testing Hooks
 int  (*osc_socket_hook)(void) = NULL;
-int  (*osc_request_hook)(int, const char *) = NULL;
+int  (*osc_request_hook)(bridge_t *, const char *) = NULL;
 
 #define END     "\xc0"
 #define ESC     "\xdb"
@@ -74,6 +74,8 @@ static int match_path(const char *uri, const char *pattern)
 schema_handle_t sm_get(schema_t sch, uri_t u)
 {
     schema_handle_t invalid;
+    memset(&invalid, 0, sizeof(invalid));
+    invalid.flag = 0xdeadbeef;
     printf("Getting a handle...\n");
     for(int i=0; i<sch.elements; ++i)
         if(match_path(u, sch.handles[i].pattern))
@@ -103,7 +105,7 @@ str_t sm_get_units(schema_handle_t h)
 
 int sm_valid(schema_handle_t h)
 {
-    return 1;
+    return h.flag != 0xdeadbeef;
 }
 
 //Bridge
@@ -111,16 +113,16 @@ bridge_t br_create(uri_t uri)
 {
     bridge_t br;
     memset(&br, 0, sizeof(br));
-    int ret;
-    struct sockaddr_in addr;
-    br.sock = socket(PF_INET, SOCK_DGRAM, 0);
-    printf("[debug] socket = %d\n", br.sock);
+    //int ret;
+    //struct sockaddr_in addr;
+    //br.sock = socket(PF_INET, SOCK_DGRAM, 0);
+    //printf("[debug] socket = %d\n", br.sock);
 
-    addr.sin_family      = AF_INET;
-    addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    addr.sin_port        = htons(0);
-    ret = bind(br.sock, (struct sockaddr*)&addr, sizeof(addr));
-    printf("[debug] bind   = %d\n", ret);
+    //addr.sin_family      = AF_INET;
+    //addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    //addr.sin_port        = htons(0);
+    //ret = bind(br.sock, (struct sockaddr*)&addr, sizeof(addr));
+    //printf("[debug] bind   = %d\n", ret);
 
     return br;
 }
@@ -143,7 +145,7 @@ schema_t br_get_schema(bridge_t br, uri_t uri)
 
     printf("[debug] loading json file\n");
     //FILE *f = fopen("../test-schema.json", "r");
-    FILE *f = fopen("test.json", "r");
+    FILE *f = fopen("schema/test.json", "r");
     assert(f && "opening json file");
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
@@ -180,21 +182,23 @@ static void cache_push(bridge_t *br, uri_t uri)
     param_cache_t *ch = br->cache + (br->cache_len - 1);
     ch->path    = strdup(uri);
     ch->valid   = 0;
+    ch->type    = 0;
     ch->pending = 1;
 
     char buffer[128];
     rtosc_message(buffer, 128, uri, "");
     if(osc_request_hook)
-    	osc_request_hook(0, buffer);
+    	osc_request_hook(br, buffer);
 }
 
-static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb)
+static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
 {
     br->callback_len += 1;
     br->callback = realloc(br->callback, br->callback_len*sizeof(bridge_callback_t));
     bridge_callback_t *ch = br->callback + (br->callback_len - 1);
     ch->path    = strdup(uri);
     ch->cb      = cb;
+    ch->data    = data;
 }
 
 static param_cache_t *cache_get(bridge_t *br, uri_t uri)
@@ -234,18 +238,35 @@ void br_request_value(bridge_t *br, uri_t uri, schema_handle_t handle)
 
 void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
+    callback_push(br, uri, callback, data);
     if(!cache_has(br->cache, br->cache_len, uri))
         cache_push(br, uri);
-    callback_push(br, uri, callback);
+    else {
+        //instantly respond when possible
+        param_cache_t *ch = cache_get(br, uri);
+        if(!ch->valid)
+            return;
+        char buffer[4096];
+        char typestr[2] = {ch->type,0};
+        rtosc_amessage(buffer, sizeof(buffer), ch->path,
+                typestr, &ch->val);
+        callback(buffer, data);
+    }
 }
 
-void br_recv(bridge_t *br)
+void br_recv(bridge_t *br, const char *msg)
 {
-    char buffer[128];
-    rtosc_message(buffer, 128, "/part0/Pvolume", "i", 74);
+    //char buffer[128];
+    //rtosc_message(buffer, 128, "/part0/Pvolume", "i", 74);
+    if(!msg)
+        return;
 
-    cache_set(br, buffer, rtosc_type(buffer, 0), rtosc_argument(buffer, 0));
-
+    cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
+    for(int i=0; i<br->callback_len; ++i) {
+        bridge_callback_t cb = br->callback[i];
+        if(!strcmp(cb.path, msg))
+            cb.cb(msg, cb.data);
+    }
 }
 
 //Views
