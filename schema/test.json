@@ -4395,14 +4395,14 @@
     {
         "path"     : "/part[0,15]/Penabled",
         "shortname": "enable",
-        "name"     : "Penabled::T:F",
+        "name"     : "Penabled",
         "tooltip"  : "Part enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/Pvolume",
         "shortname": "Vol",
-        "name"     : "Pvolume::i",
+        "name"     : "Pvolume",
         "tooltip"  : "Part Volume",
         "type"     : "i",
         "range"    : [0,127]

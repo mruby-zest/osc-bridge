@@ -1,6 +1,5 @@
 #include <rtosc/rtosc.h>
 #include "gem.h"
-#include <sys/socket.h>
 #include <netdb.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,7 +46,6 @@ static int match_path(const char *uri, const char *pattern)
             int low = atoi(pattern);
             while(*pattern && isdigit(*pattern))
                 pattern++;
-            //printf("pattern = %s\n", pattern);
             assert(*pattern == ',');
             pattern++;
             int high = atoi(pattern);
@@ -76,7 +74,7 @@ schema_handle_t sm_get(schema_t sch, uri_t u)
     schema_handle_t invalid;
     memset(&invalid, 0, sizeof(invalid));
     invalid.flag = 0xdeadbeef;
-    printf("Getting a handle...\n");
+    //printf("Getting a handle...\n");
     for(int i=0; i<sch.elements; ++i)
         if(match_path(u, sch.handles[i].pattern))
             return sch.handles[i];
@@ -108,27 +106,129 @@ int sm_valid(schema_handle_t h)
     return h.flag != 0xdeadbeef;
 }
 
-//Bridge
-bridge_t br_create(uri_t uri)
-{
-    bridge_t br;
-    memset(&br, 0, sizeof(br));
-    //int ret;
-    //struct sockaddr_in addr;
-    //br.sock = socket(PF_INET, SOCK_DGRAM, 0);
-    //printf("[debug] socket = %d\n", br.sock);
+static void alloc_buffer(uv_handle_t *handle, size_t suggested_size,
+        uv_buf_t *buf) {
+    *buf = uv_buf_init((char*) malloc(suggested_size), suggested_size);
+}
 
-    //addr.sin_family      = AF_INET;
-    //addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    //addr.sin_port        = htons(0);
-    //ret = bind(br.sock, (struct sockaddr*)&addr, sizeof(addr));
-    //printf("[debug] bind   = %d\n", ret);
+static void hexdump(const char *data, const char *mask, size_t len)
+{
+    const char *bold_gray = "\x1b[30;1m";
+    const char *reset      = "\x1b[0m";
+    int offset = 0;
+    while(1)
+    {
+        //print line
+        printf("#%07x: ", offset);
+
+        int char_covered = 0;
+
+        //print hex groups (8)
+        for(int i=0; i<8; ++i) {
+
+            //print doublet
+            for(int j=0; j<2; ++j) {
+                int loffset = offset + 2*i + j;
+                if(loffset >= (int)len)
+                    goto escape;
+
+                //print hex
+                {
+                    //start highlight
+                    if(mask && mask[loffset]){printf("%s", bold_gray);}
+
+                    //print chars
+                    printf("%02x", 0xff&data[loffset]);
+
+                    //end highlight
+                    if(mask && mask[loffset]){printf("%s", reset);}
+                    char_covered += 2;
+                }
+            }
+            printf(" ");
+            char_covered += 1;
+        }
+escape:
+
+        //print filler if needed
+        for(int i=char_covered; i<41; ++i)
+            printf(" ");
+
+        //print ascii (16)
+        for(int i=0; i<16; ++i) {
+            if(isprint(data[offset+i]))
+                printf("%c", data[offset+i]);
+            else
+                printf(".");
+        }
+        printf("\n");
+        offset += 16;
+        if(offset >= (int)len)
+            return;
+    }
+}
+
+void on_read(uv_udp_t *req, ssize_t nread, const uv_buf_t *buf,
+             const struct sockaddr *addr, unsigned flags) {
+    if (nread < 0) {
+        fprintf(stderr, "Read error %s\n", uv_err_name(nread));
+        uv_close((uv_handle_t*) req, NULL);
+        free(buf->base);
+        return;
+    } else if(nread == 0 && addr == 0)
+        return;
+
+    const struct sockaddr_in *addr_in = (const struct sockaddr_in *)addr;
+    if(addr) {
+        char sender[17] = { 0 };
+        uv_ip4_name(addr_in, sender, 16);
+        //printf("Recv from %s\n", sender);
+        //printf("port = %d\n", addr_in->sin_port);
+    }
+    //printf("buffer[%d] = %s\n", nread, buf->base);
+    //hexdump(buf->base, 0, nread);
+    bridge_t *br = (bridge_t*)req->data;
+    br_recv(br, buf->base);
+    free(buf->base);
+}
+
+static void send_cb(uv_udp_send_t* req, int status)
+{
+}
+
+void osc_request(bridge_t *br, const char *path)
+{
+    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
+    char *buffer = malloc(4096);
+    size_t len   = rtosc_message(buffer, 4096, path, "");
+    uv_buf_t buf = uv_buf_init(buffer, len);
+    struct sockaddr_in send_addr;
+    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    //printf("osc request done<%s>?\n", path);
+}
+
+//Bridge
+bridge_t *br_create(uri_t uri)
+{
+    bridge_t *br = calloc(1,sizeof(bridge_t));
+
+    br->loop = uv_default_loop();
+
+    uv_udp_init(br->loop, &br->socket);
+    struct sockaddr_in recv_addr;
+    uv_ip4_addr("127.0.0.1", 1338, &recv_addr);
+    uv_udp_bind(&br->socket, (const struct sockaddr *)&recv_addr,
+                 UV_UDP_REUSEADDR);
+    br->socket.data = br;
+
+    uv_udp_recv_start(&br->socket, alloc_buffer, on_read);
 
     return br;
 }
 
 void parse_schema(const char *json, schema_t *sch);
-schema_t br_get_schema(bridge_t br, uri_t uri)
+schema_t br_get_schema(bridge_t *br, uri_t uri)
 {
     schema_t sch;
     int ret;
@@ -170,7 +270,7 @@ schema_t br_get_schema(bridge_t br, uri_t uri)
 static int cache_has(param_cache_t *c, size_t len, uri_t uri)
 {
     for(int i=0; i<len; ++i)
-        if(!strcmp(c->path, uri))
+        if(!strcmp(c[i].path, uri))
             return 1;
     return 0;
 }
@@ -189,6 +289,8 @@ static void cache_push(bridge_t *br, uri_t uri)
     rtosc_message(buffer, 128, uri, "");
     if(osc_request_hook)
     	osc_request_hook(br, buffer);
+    else
+        osc_request(br, uri);
 }
 
 static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
@@ -221,10 +323,14 @@ static void cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
         line->type  = type;
         line->val   = val;
 
+        char buffer[1024];
+        char args[2] = {type, 0};
+        rtosc_amessage(buffer, 1024, uri, args, &val);
+
         //run callbacks
         for(int i=0; i<br->callback_len; ++i)
             if(!strcmp(br->callback[i].path, uri))
-                br->callback[i].cb(uri, 0);
+                br->callback[i].cb(uri, br->callback[i].data);
     }
 }
 
@@ -254,6 +360,8 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     }
 }
 
+
+
 void br_recv(bridge_t *br, const char *msg)
 {
     //char buffer[128];
@@ -261,12 +369,22 @@ void br_recv(bridge_t *br, const char *msg)
     if(!msg)
         return;
 
+    //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
     cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
-    for(int i=0; i<br->callback_len; ++i) {
-        bridge_callback_t cb = br->callback[i];
-        if(!strcmp(cb.path, msg))
-            cb.cb(msg, cb.data);
-    }
+    //for(int i=0; i<br->callback_len; ++i) {
+    //    printf("cb name = %s\n", br->callback[i].path);
+    //    bridge_callback_t cb = br->callback[i];
+    //    if(!strcmp(cb.path, msg))
+    //        cb.cb(msg, cb.data);
+    //}
+}
+
+int br_pending(bridge_t *br)
+{
+    int pending = 0;
+    for(int i=0; i<br->cache_len; ++i)
+        pending += !!(br->cache[i].pending);
+    return pending;
 }
 
 //Views
@@ -275,11 +393,11 @@ void vw_add_enum(void);
 
 
 //Statistics
-void print_stats(bridge_t br, schema_t sch)
+void print_stats(bridge_t *br, schema_t sch)
 {
     printf("Bridge Statistics:\n");
-    printf("    Total cache lines:          %d\n", br.cache_len);
-    printf("    Total callbacks:            %d\n", br.callback_len);
+    printf("    Total cache lines:          %d\n", br->cache_len);
+    printf("    Total callbacks:            %d\n", br->callback_len);
     printf("Schema Statistics:\n");
     printf("    Known Parameters Patterns:  %d\n", sch.elements);
 }

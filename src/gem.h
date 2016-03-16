@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <uv.h>
 //A means of staying synchonized with respect to a collection of parameters
 //presented over OSC in a REST like fashion
 
@@ -70,7 +71,8 @@ typedef struct {
 
 //Bridge
 typedef struct {
-    int sock;
+    uv_loop_t *loop;
+    uv_udp_t socket;
     void *pending_requests;
 
     param_cache_t     *cache;
@@ -79,17 +81,18 @@ typedef struct {
     int callback_len;
 } bridge_t;
 
-bridge_t br_create(uri_t);
-schema_t br_get_schema(bridge_t, uri_t);
+bridge_t *br_create(uri_t);
+schema_t br_get_schema(bridge_t*, uri_t);
 void br_request_value(bridge_t *, uri_t, schema_handle_t);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_recv(bridge_t *, const char *);
+int br_pending(bridge_t *);
 
 //Views
 void vw_add_float(void);
 void vw_add_enum(void);
 
-void print_stats(bridge_t br, schema_t sch);
+void print_stats(bridge_t *br, schema_t sch);
 
 
 //Testing Hooks
