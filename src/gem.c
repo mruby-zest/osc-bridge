@@ -74,10 +74,11 @@ schema_handle_t sm_get(schema_t sch, uri_t u)
     schema_handle_t invalid;
     memset(&invalid, 0, sizeof(invalid));
     invalid.flag = 0xdeadbeef;
-    //printf("Getting a handle...\n");
+    //printf("Getting a handle(%s)...\n", u);
     for(int i=0; i<sch.elements; ++i)
         if(match_path(u, sch.handles[i].pattern))
             return sch.handles[i];
+    printf("invalid handle(%s)...\n", u);
     return invalid;
 }
 opt_t sm_get_opts(schema_handle_t);
@@ -246,6 +247,8 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     printf("[debug] loading json file\n");
     //FILE *f = fopen("../test-schema.json", "r");
     FILE *f = fopen("schema/test.json", "r");
+    if(!f)
+        f = fopen("deps/osc-bridge/schema/test.json", "r");
     assert(f && "opening json file");
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
