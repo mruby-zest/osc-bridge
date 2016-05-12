@@ -209,6 +209,17 @@ void osc_request(bridge_t *br, const char *path)
     //printf("osc request done<%s>?\n", path);
 }
 
+void osc_send(bridge_t *br, const char *message)
+{
+    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
+    size_t len   = rtosc_message_length(message, -1);
+    uv_buf_t buf = uv_buf_init((char*)message, len);
+    struct sockaddr_in send_addr;
+    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    //printf("osc sent...<%s>?\n", message);
+}
+
 //Bridge
 bridge_t *br_create(uri_t uri)
 {
@@ -287,6 +298,7 @@ static void cache_push(bridge_t *br, uri_t uri)
     ch->valid   = 0;
     ch->type    = 0;
     ch->pending = 1;
+    memset(&ch->val, 0, sizeof(ch->val));
 
     char buffer[128];
     rtosc_message(buffer, 128, uri, "");
@@ -345,8 +357,20 @@ void br_request_value(bridge_t *br, uri_t uri, schema_handle_t handle)
     	osc_request_hook(0, buffer);
 }
 
+void br_set_value_int(bridge_t *br, uri_t uri, int value)
+{
+    rtosc_arg_t arg = {.i = value};
+    if(cache_set(br, uri, 'i', arg)) {
+        char buffer[1024];
+        rtosc_message(buffer, 1024, uri, "i", value);
+        osc_send(br, buffer);
+        debounce_update(br, cache_get(br, uri));
+    }
+}
+
 void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
+    assert(br);
     callback_push(br, uri, callback, data);
     if(!cache_has(br->cache, br->cache_len, uri))
         cache_push(br, uri);
@@ -388,6 +412,12 @@ int br_pending(bridge_t *br)
     for(int i=0; i<br->cache_len; ++i)
         pending += !!(br->cache[i].pending);
     return pending;
+}
+
+void br_tick(bridge_t *br)
+{
+    //Run all network events
+    while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
 }
 
 //Views
