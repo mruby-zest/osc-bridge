@@ -62,6 +62,11 @@ typedef struct {
     rtosc_arg_t val;
 } param_cache_t;
 
+typedef struct {
+    param_cache_t *cline;
+    double last_set;
+} debounce_t;
+
 typedef void (*bridge_cb_t)(const char *, void*);
 typedef struct {
     const char *path;
@@ -76,8 +81,10 @@ typedef struct {
     void *pending_requests;
 
     param_cache_t     *cache;
+    debounce_t        *bounce;
     bridge_callback_t *callback;
     int cache_len;
+    int debounce_len;
     int callback_len;
 } bridge_t;
 

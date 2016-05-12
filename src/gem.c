@@ -308,6 +308,38 @@ static void cache_push(bridge_t *br, uri_t uri)
         osc_request(br, uri);
 }
 
+static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
+{
+    br->debounce_len += 1;
+    br->bounce        = realloc(br->bounce, br->debounce_len*sizeof(debounce_t));
+    debounce_t *bo = br->bounce + (br->debounce_len - 1);
+    bo->cline = line;
+    bo->last_set = obs;
+}
+
+static void debounce_update(bridge_t *br, param_cache_t *line)
+{
+    struct timespec time;
+    clock_gettime(CLOCK_REALTIME, &time);
+    double obs = time.tv_sec + 1e-9*time.tv_nsec;
+    for(int i=0; i<br->debounce_len; ++i) {
+        if(line == br->bounce[i].cline) {
+            br->bounce[i].last_set = obs;
+            return;
+        }
+    }
+    debounce_push(br, line, obs);
+}
+
+static void debounce_pop(bridge_t *br, int idx)
+{
+    assert(idx < br->debounce_len);
+    for(int i=idx; i<br->debounce_len-1; ++i)
+        br->bounce[i] = br->bounce[i+1];
+    br->debounce_len -= 1;
+}
+
+
 static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
 {
     br->callback_len += 1;
@@ -327,7 +359,20 @@ static param_cache_t *cache_get(bridge_t *br, uri_t uri)
     return cache_get(br, uri);
 }
 
-static void cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
+static void run_callbacks(bridge_t *br, param_cache_t *line)
+{
+    char buffer[1024];
+    char args[2] = {line->type, 0};
+    rtosc_amessage(buffer, 1024, line->path, args, &line->val);
+
+    //run callbacks
+    for(int i=0; i<br->callback_len; ++i)
+        if(!strcmp(br->callback[i].path, line->path))
+            br->callback[i].cb(buffer, br->callback[i].data);
+}
+
+//returns true when the cache has changed values
+static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
 {
     param_cache_t *line = cache_get(br, uri);
     assert(line);
@@ -338,15 +383,18 @@ static void cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
         line->type  = type;
         line->val   = val;
 
-        char buffer[1024];
-        char args[2] = {type, 0};
-        rtosc_amessage(buffer, 1024, uri, args, &val);
+        //check if cache line is currently debounced...
+        int debounced = false;
+        for(int i=0; i<br->debounce_len; ++i) 
+            if(br->bounce[i].cline == line)
+                debounced = true;
 
-        //run callbacks
-        for(int i=0; i<br->callback_len; ++i)
-            if(!strcmp(br->callback[i].path, uri))
-                br->callback[i].cb(uri, br->callback[i].data);
+        if(!debounced)
+            run_callbacks(br, line);
+
+        return true;
     }
+    return false;
 }
 
 void br_request_value(bridge_t *br, uri_t uri, schema_handle_t handle)
@@ -418,6 +466,20 @@ void br_tick(bridge_t *br)
 {
     //Run all network events
     while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
+
+    //Attempt to disable debouncing
+    if(br->debounce_len == 0)
+        return;
+    struct timespec time;
+    clock_gettime(CLOCK_REALTIME, &time);
+    double delta  = 100e-3;
+    double thresh = time.tv_sec + 1e-9*time.tv_nsec - delta;
+    for(int i=br->debounce_len-1; i >= 0; --i) {
+        if(br->bounce[i].last_set < thresh) {
+            run_callbacks(br, br->bounce[i].cline);
+            debounce_pop(br, i);
+        }
+    }
 }
 
 //Views
