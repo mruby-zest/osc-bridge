@@ -121,6 +121,18 @@ void test_enable(schema_t schema, bridge_t *bridge)
     br_add_callback(bridge, uri, print_response, (void*)&v3);
 }
 
+void test_options(schema_t schema, bridge_t *bridge)
+{
+    printf("#Grabbing filter type...\n"); 
+    uri_t uri = "/part3/kit8/adpars/VoicePar3/FMSmp/Pfiltertype";
+    schema_handle_t handle = sm_get(schema, uri);
+
+    assert_true(sm_valid(handle), "A valid handle is obtained", __LINE__);
+    assert_int_eq(14, handle.opts->num_opts, "All Options are recorded", __LINE__);
+    assert_int_eq(7, handle.opts->ids[7], "The Option Id is recorded", __LINE__);
+    assert_str_eq("hp2", handle.opts->labels[7], "The Option label is recorded", __LINE__);
+}
+
 void test_part_level(schema_t schema, bridge_t *bridge)
 {
     test_pvolume(schema, bridge);
@@ -152,6 +164,7 @@ int main()
     assert_false(v3, "Verify pre-callback #3 data", __LINE__);
 
     test_part_level(schema, bridge);
+    test_options(schema, bridge);
     assert_int_eq(32, v1, "Callback #1 was applied", __LINE__);
     assert_int_eq(32, v2, "Callback #2 was applied", __LINE__);
     assert_true(v3, "Callback #3 was applied", __LINE__);

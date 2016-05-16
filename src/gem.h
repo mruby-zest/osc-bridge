@@ -10,8 +10,14 @@ void db_insert_float(void);
 
 //Schema
 typedef struct {
+    int         *ids;
+    const char **labels;
+    unsigned     num_opts;
+} opt_t;
+typedef struct {
     //all dynamic here
     int   flag;
+    opt_t *opts;
     const char *pattern;
     const char *name;
     const char *short_name;
@@ -23,7 +29,6 @@ typedef struct {
     int              elements;
 } schema_t;
 typedef const char *uri_t;
-typedef struct opt_t_ opt_t;
 typedef const char *str_t;
 
 schema_handle_t sm_get(schema_t, uri_t u);

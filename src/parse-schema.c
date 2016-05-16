@@ -15,6 +15,55 @@ void print_string(const char *str, unsigned len)
         putchar(str[i]);
 }
 
+opt_t *parse_options(const char *str, int len)
+{
+    //printf("parse options...\n");
+    opt_t *o = calloc(1, sizeof(opt_t));
+    struct mm_json_iter array = mm_json_begin(str, len);
+    struct mm_json_token tok;
+    array = mm_json_read(&tok, &array);
+    while(array.src) {
+        //printf("option?\n");
+
+        int   id   = 0xcafebeef;
+        char *text = 0;
+
+        struct mm_json_iter array2 = mm_json_begin(tok.str, tok.len);
+        struct mm_json_pair pair;
+        array2 = mm_json_parse(&pair, &array2);
+        while (!array2.err) {
+            assert(pair.name.type == MM_JSON_STRING);
+
+            if(pair.value.type == MM_JSON_STRING) {
+                struct mm_json_token v = pair.value;
+                if(mm_json_cmp(&pair.name, "value") == 0)
+                    text = strndup(v.str, v.len);
+            } else if(pair.value.type == MM_JSON_NUMBER) {
+                struct mm_json_token v = pair.value;
+                if(mm_json_cmp(&pair.name, "id") == 0)
+                    id = atoi(v.str);
+            } else
+                printf(" = ????\n");
+
+            array2 = mm_json_parse(&pair, &array2);
+        }
+
+        assert(id != 0xcafebeef);
+
+        //Add to the list of options
+        o->num_opts++;
+        o->ids = realloc(o->ids, sizeof(o->ids[0])*o->num_opts);
+        o->labels = realloc(o->labels, sizeof(o->labels[0])*o->num_opts);
+        o->ids[o->num_opts-1]    = id;
+        o->labels[o->num_opts-1] = text;
+        //printf(" %d -> <%s>\n", id, text);
+
+
+        array = mm_json_read(&tok, &array);
+    }
+    return o;
+}
+
 void parse_schema(const char *json, schema_t *sch)
 {
     sch->elements = 0;
@@ -71,6 +120,9 @@ void parse_schema(const char *json, schema_t *sch)
                     handle->short_name = strndup(v.str, v.len);
                 else if(mm_json_cmp(&pair2.name, "tooltip") == 0)
                     handle->documentation = strndup(v.str, v.len);
+            } else if(pair2.value.type == MM_JSON_ARRAY &&
+                    mm_json_cmp(&pair2.name, "options") == 0) {
+                handle->opts = parse_options(pair2.value.str, pair2.value.len);
             } else
                 printf(" = ????\n");
             array2 = mm_json_parse(&pair2, &array2);
