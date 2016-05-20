@@ -41,6 +41,8 @@ int osc_request_hook_fn(bridge_t *br, const char *msg)
         buffer = malloc(buf_size);
         rtosc_message(buffer, buf_size, "/part0/Penabled", "T");
         br_recv(br, buffer);
+    } else if(!strcmp(msg, "/vector/test")) {
+        //do nothing
     } else {
         printf("[ERROR] unexpected message...\n");
         assert(false);
@@ -69,6 +71,9 @@ void print_response(const char *osc, void *v)
         *(bool*)v = true;
     else if(type == 'F')
         *(bool*)v = false;
+    else if(type == 'f')
+        for(rtosc_arg_itr_t itr = rtosc_itr_begin(osc); !rtosc_itr_end(itr);)
+            printf("# vec arg %f\n", rtosc_itr_next(&itr).val.f);
 
     //if(type == 'i')
     //    printf("[callback] value = %d\n", arg.i);
@@ -139,6 +144,14 @@ void test_part_level(schema_t schema, bridge_t *bridge)
     test_enable(schema, bridge);
 }
 
+void test_vector_functionality(bridge_t *br)
+{
+    char buffer[1024];
+    rtosc_message(buffer, sizeof(buffer), "/vector/test", "ffff", 1.1, 2.2, 3.3, 4.4);
+    br_recv(br, buffer);
+    br_add_callback(br, "/vector/test", print_response, (void*)&v1);
+}
+
 int main()
 {
     bool verbose = false;
@@ -188,6 +201,8 @@ int main()
     int old_pending = br_pending(bridge);
     assert_int_eq(0, br_pending(bridge),
             "No Cache Line is Pending", __LINE__);
+
+    test_vector_functionality(bridge);
 
     return test_summary();
 }

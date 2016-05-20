@@ -64,7 +64,13 @@ typedef struct {
     char  valid;
     char  pending;
     char  type;
-    rtosc_arg_t val;
+    union {
+        rtosc_arg_t val;
+        struct {
+            const char  *vec_type;
+            rtosc_arg_t *vec_value;
+        };
+    };
 } param_cache_t;
 
 typedef struct {

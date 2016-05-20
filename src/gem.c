@@ -362,8 +362,13 @@ static param_cache_t *cache_get(bridge_t *br, uri_t uri)
 static void run_callbacks(bridge_t *br, param_cache_t *line)
 {
     char buffer[1024];
-    char args[2] = {line->type, 0};
-    rtosc_amessage(buffer, 1024, line->path, args, &line->val);
+    if(line->type != 'v') {
+        char args[2] = {line->type, 0};
+        rtosc_amessage(buffer, sizeof(buffer), line->path, args, &line->val);
+    } else {
+        rtosc_amessage(buffer, sizeof(buffer), line->path, line->vec_type,
+                line->vec_value);
+    }
 
     //run callbacks
     for(int i=0; i<br->callback_len; ++i)
@@ -385,7 +390,42 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
 
         //check if cache line is currently debounced...
         int debounced = false;
-        for(int i=0; i<br->debounce_len; ++i) 
+        for(int i=0; i<br->debounce_len; ++i)
+            if(br->bounce[i].cline == line)
+                debounced = true;
+
+        if(!debounced)
+            run_callbacks(br, line);
+
+        return true;
+    }
+    return false;
+}
+
+static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *args)
+{
+    param_cache_t *line = cache_get(br, uri);
+    assert(line);
+    line->pending = false;
+
+    int ins_size  = strlen(types);
+    int line_size = line->type == 'v' ? strlen(line->vec_type) : 0;
+
+    //If the line is invalid OR
+    //the cache isn't a vector field OR
+    //the vector fields differ in type OR
+    //the vector fields differ in value
+    if(!line->valid || line->type != 'v' || strcmp(line->vec_type, types) ||
+            memcmp(&line->vec_value, &args, sizeof(args[0])*line_size))
+    {
+        line->valid     = true;
+        line->type      = 'v';
+        line->vec_type  = types;
+        line->vec_value = args;
+
+        //check if cache line is currently debounced...
+        int debounced = false;
+        for(int i=0; i<br->debounce_len; ++i)
             if(br->bounce[i].cline == line)
                 debounced = true;
 
@@ -420,17 +460,23 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
     assert(br);
     callback_push(br, uri, callback, data);
-    if(!cache_has(br->cache, br->cache_len, uri))
+    if(!cache_has(br->cache, br->cache_len, uri)) {
         cache_push(br, uri);
-    else {
+    } else {
         //instantly respond when possible
         param_cache_t *ch = cache_get(br, uri);
         if(!ch->valid)
             return;
         char buffer[4096];
-        char typestr[2] = {ch->type,0};
-        rtosc_amessage(buffer, sizeof(buffer), ch->path,
-                typestr, &ch->val);
+
+        if(ch->type != 'v') {
+            char typestr[2] = {ch->type,0};
+            rtosc_amessage(buffer, sizeof(buffer), ch->path,
+                    typestr, &ch->val);
+        } else {
+            rtosc_amessage(buffer, sizeof(buffer), ch->path, ch->vec_type,
+                    ch->vec_value);
+        }
         callback(buffer, data);
     }
 }
@@ -444,8 +490,24 @@ void br_recv(bridge_t *br, const char *msg)
     if(!msg)
         return;
 
-    //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
-    cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
+    printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
+    const int nargs = rtosc_narguments(msg);
+    if(nargs == 1)
+        cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
+    else {
+        //Try to handle the vector message cases
+        printf("BRIDGE RECEIVE A VECTOR MESSAGE\n");
+        //TODO verify that we've got some sort of uniformity?
+        rtosc_arg_itr_t  itr   = rtosc_itr_begin(msg);
+        rtosc_arg_t     *args  = calloc(nargs, sizeof(rtosc_arg_t));
+        char            *types = strdup(rtosc_argument_string(msg));
+
+        int offset = 0;
+        while(!rtosc_itr_end(itr))
+            args[offset++] = rtosc_itr_next(&itr).val;
+
+        cache_set_vector(br, msg, types, args);
+    }
     //for(int i=0; i<br->callback_len; ++i) {
     //    printf("cb name = %s\n", br->callback[i].path);
     //    bridge_callback_t cb = br->callback[i];
