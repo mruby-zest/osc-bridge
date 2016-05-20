@@ -482,6 +482,17 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 }
 
 
+void br_watch(bridge_t *br, const char *uri)
+{
+    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
+    char *buffer = malloc(4096);
+    size_t len   = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
+    uv_buf_t buf = uv_buf_init(buffer, len);
+    struct sockaddr_in send_addr;
+    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+
+}
 
 void br_recv(bridge_t *br, const char *msg)
 {
@@ -490,13 +501,13 @@ void br_recv(bridge_t *br, const char *msg)
     if(!msg)
         return;
 
-    printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
+    //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
     const int nargs = rtosc_narguments(msg);
     if(nargs == 1)
         cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
     else {
         //Try to handle the vector message cases
-        printf("BRIDGE RECEIVE A VECTOR MESSAGE\n");
+        //printf("BRIDGE RECEIVE A VECTOR MESSAGE\n");
         //TODO verify that we've got some sort of uniformity?
         rtosc_arg_itr_t  itr   = rtosc_itr_begin(msg);
         rtosc_arg_t     *args  = calloc(nargs, sizeof(rtosc_arg_t));

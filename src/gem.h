@@ -104,6 +104,7 @@ schema_t br_get_schema(bridge_t*, uri_t);
 void br_request_value(bridge_t *, uri_t, schema_handle_t);
 void br_set_value_int(bridge_t *, uri_t, int);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
+void br_watch(bridge_t *, uri_t);
 void br_recv(bridge_t *, const char *);
 int br_pending(bridge_t *);
 void br_tick(bridge_t *);
