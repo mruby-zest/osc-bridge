@@ -107,6 +107,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -205,6 +219,20 @@
         "tooltip"  : "Note frequency stretch",
         "type"     : "i",
         "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pfreq",
@@ -307,6 +335,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Pfreemode",
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
@@ -326,6 +368,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -333,18 +376,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -352,6 +398,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -359,6 +406,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -366,6 +414,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -373,6 +422,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -380,6 +430,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -387,6 +438,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -412,6 +464,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -419,18 +472,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -438,6 +494,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -445,6 +502,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -452,6 +510,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -459,6 +518,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -466,6 +526,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -473,6 +534,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -498,6 +560,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -505,18 +568,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -524,6 +590,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -531,6 +598,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -538,6 +606,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -545,6 +614,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -552,6 +622,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -559,6 +630,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -3036,6 +3108,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -3134,6 +3220,20 @@
         "tooltip"  : "Note frequency stretch",
         "type"     : "i",
         "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pfreq",
@@ -3236,6 +3336,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Pfreemode",
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
@@ -3255,6 +3369,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -3262,18 +3377,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -3281,6 +3399,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -3288,6 +3407,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -3295,6 +3415,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -3302,6 +3423,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -3309,6 +3431,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -3316,6 +3439,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -3341,6 +3465,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -3348,18 +3473,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -3367,6 +3495,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -3374,6 +3503,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -3381,6 +3511,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -3388,6 +3519,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -3395,6 +3527,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -3402,6 +3535,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -3427,6 +3561,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -3434,18 +3569,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -3453,6 +3591,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -3460,6 +3599,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -3467,6 +3607,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -3474,6 +3615,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -3481,6 +3623,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -3488,6 +3631,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -3513,6 +3657,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -3520,18 +3665,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -3539,6 +3687,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -3546,6 +3695,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -3553,6 +3703,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -3560,6 +3711,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -3567,6 +3719,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -3574,6 +3727,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -3599,6 +3753,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -3606,18 +3761,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -3625,6 +3783,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -3632,6 +3791,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -3639,6 +3799,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -3646,6 +3807,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -3653,6 +3815,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -3660,6 +3823,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -4334,6 +4498,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -4432,6 +4610,20 @@
         "tooltip"  : "Note frequency stretch",
         "type"     : "i",
         "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pfreq",
@@ -4534,6 +4726,20 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/delay",
+        "name"     : "delay",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0,4000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/period",
+        "name"     : "period",
+        "tooltip"  : "",
+        "type"     : "f",
+        "range"    : [0.10,1500.0]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Pfreemode",
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
@@ -4553,6 +4759,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -4560,18 +4767,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -4579,6 +4789,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -4586,6 +4797,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -4593,6 +4805,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -4600,6 +4813,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -4607,6 +4821,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -4614,6 +4829,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -4639,6 +4855,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -4646,18 +4863,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -4665,6 +4885,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -4672,6 +4893,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -4679,6 +4901,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -4686,6 +4909,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -4693,6 +4917,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -4700,6 +4925,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -4725,6 +4951,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -4732,18 +4959,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -4751,6 +4981,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -4758,6 +4989,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -4765,6 +4997,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -4772,6 +5005,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -4779,6 +5013,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -4786,6 +5021,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -4930,24 +5166,28 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PStereo",
+        "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Mono/Stereo Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PDetune",
+        "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PCoarseDetune",
+        "shortname": "coarse",
         "name"     : "PCoarseDetune",
         "tooltip"  : "Coarse Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PDetuneType",
+        "shortname": "type",
         "name"     : "PDetuneType",
         "tooltip"  : "Detune Scaling Type",
         "type"     : "i",
@@ -4955,6 +5195,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PBandwidth",
+        "shortname": "bw.",
         "name"     : "PBandwidth",
         "tooltip"  : "Relative Fine Detune Gain",
         "type"     : "i",
@@ -4962,6 +5203,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PPanning",
+        "shortname": "pan",
         "name"     : "PPanning",
         "tooltip"  : "Panning of ADsynth (0 random, 1 left, 127 right)",
         "type"     : "i",
@@ -4969,6 +5211,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PVolume",
+        "shortname": "vol",
         "name"     : "PVolume",
         "tooltip"  : "volume control",
         "type"     : "i",
@@ -4976,6 +5219,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PAmpVelocityScaleFunction",
+        "shortname": "scale",
         "name"     : "PAmpVelocityScaleFunction",
         "tooltip"  : "Volume Velocity Control",
         "type"     : "i",
@@ -4990,6 +5234,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PPunchStrength",
+        "shortname": "strength",
         "name"     : "PPunchStrength",
         "tooltip"  : "Punch Strength",
         "type"     : "i",
@@ -4997,13 +5242,15 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PPunchTime",
+        "shortname": "time",
         "name"     : "PPunchTime",
-        "tooltip"  : "UNKNOWN",
+        "tooltip"  : "Length of Punch",
         "type"     : "i",
         "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PPunchStretch",
+        "shortname": "stretch",
         "name"     : "PPunchStretch",
         "tooltip"  : "How Punch changes with note frequency",
         "type"     : "i",
@@ -5011,6 +5258,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PPunchVelocitySensing",
+        "shortname": "v.sns",
         "name"     : "PPunchVelocitySensing",
         "tooltip"  : "Punch Velocity control",
         "type"     : "i",
@@ -5018,6 +5266,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PFilterVelocityScale",
+        "shortname": "scale",
         "name"     : "PFilterVelocityScale",
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
@@ -5025,6 +5274,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PFilterVelocityScaleFunction",
+        "shortname": "sense",
         "name"     : "PFilterVelocityScaleFunction",
         "tooltip"  : "Filter Velocity Function Shape",
         "type"     : "i",
@@ -5312,6 +5562,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -5319,18 +5570,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -5338,6 +5592,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -5345,6 +5600,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -5352,6 +5608,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -5359,6 +5616,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -5366,6 +5624,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -5373,6 +5632,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -5398,6 +5658,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -5405,18 +5666,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -5424,6 +5688,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -5431,6 +5696,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -5438,6 +5704,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -5445,6 +5712,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -5452,6 +5720,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -5459,6 +5728,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -5484,6 +5754,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -5491,18 +5762,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -5510,6 +5784,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -5517,6 +5792,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -5524,6 +5800,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -5531,6 +5808,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -5538,6 +5816,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -5545,6 +5824,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
@@ -5570,6 +5850,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvstretch",
+        "shortname": "stretch",
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
@@ -5577,18 +5858,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Pforcedrelease",
+        "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Plinearenvelope",
+        "shortname": "lin/log",
         "name"     : "Plinearenvelope",
         "tooltip"  : "Linear or Logarithmic Envelopes",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PA_dt",
+        "shortname": "a.dt",
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
@@ -5596,6 +5880,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PA_val",
+        "shortname": "a.val",
         "name"     : "PA_val",
         "tooltip"  : "Attack Value",
         "type"     : "i",
@@ -5603,6 +5888,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PD_dt",
+        "shortname": "d.dt",
         "name"     : "PD_dt",
         "tooltip"  : "Decay Time",
         "type"     : "i",
@@ -5610,6 +5896,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PD_val",
+        "shortname": "d.val",
         "name"     : "PD_val",
         "tooltip"  : "Decay Value",
         "type"     : "i",
@@ -5617,6 +5904,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PS_val",
+        "shortname": "s.val",
         "name"     : "PS_val",
         "tooltip"  : "Sustain Value",
         "type"     : "i",
@@ -5624,6 +5912,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PR_dt",
+        "shortname": "r.dt",
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
@@ -5631,6 +5920,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PR_val",
+        "shortname": "r.val",
         "name"     : "PR_val",
         "tooltip"  : "Release Value",
         "type"     : "i",
