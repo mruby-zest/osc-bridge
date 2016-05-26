@@ -51,19 +51,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -165,19 +165,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -279,19 +279,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -3052,19 +3052,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -3166,19 +3166,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -3280,19 +3280,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -4442,19 +4442,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -4556,19 +4556,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
@@ -4670,19 +4670,19 @@
         },
         {
             "id"     : 3,
-            "value"  : "ramp-up"
+            "value"  : "up"
         },
         {
             "id"     : 4,
-            "value"  : "ramp-down"
+            "value"  : "down"
         },
         {
             "id"     : 5,
-            "value"  : "exponential-down1"
+            "value"  : "exp1"
         },
         {
             "id"     : 6,
-            "value"  : "exponential-down2"
+            "value"  : "exp2"
         }
         ]
     },
