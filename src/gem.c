@@ -11,13 +11,30 @@
 int  (*osc_socket_hook)(void) = NULL;
 int  (*osc_request_hook)(bridge_t *, const char *) = NULL;
 
-#define END     "\xc0"
-#define ESC     "\xdb"
-#define ESC_END "\xdc"
-#define ESC_ESC "\xdd"
-void send_slip(const char *data, unsigned size)
+#define END     '\xc0'
+#define ESC     '\xdb'
+#define ESC_END '\xdc'
+#define ESC_ESC '\xdd'
+char *send_slip(const char *data, unsigned size, unsigned *nsize)
 {
     char *tmp_buf = malloc(size*2);
+    unsigned i;
+    unsigned j;
+    //Escape sequence
+    for(i=0,j=0; i<size; ++i) {
+        if(data[i] == ESC) {
+            tmp_buf[j++] = ESC;
+            tmp_buf[j++] = ESC_ESC;
+        } else if(data[i] == END) {
+            tmp_buf[j++] = ESC;
+            tmp_buf[j++] = ESC_ESC;
+        } else
+            tmp_buf[j++] = data[i];
+    }
+    tmp_buf[j++] = END;
+    tmp_buf[j]   = 0;
+    *nsize       = j;
+    return tmp_buf;
 }
 
 //Database
@@ -201,8 +218,10 @@ void osc_request(bridge_t *br, const char *path)
 {
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     char *buffer = malloc(4096);
-    size_t len   = rtosc_message(buffer, 4096, path, "");
-    uv_buf_t buf = uv_buf_init(buffer, len);
+    size_t len_org   = rtosc_message(buffer, 4096, path, "");
+    unsigned len_slip = 0;
+    char *slip = send_slip(buffer, len_org, &len_slip);
+    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
@@ -212,8 +231,10 @@ void osc_request(bridge_t *br, const char *path)
 void osc_send(bridge_t *br, const char *message)
 {
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
-    size_t len   = rtosc_message_length(message, -1);
-    uv_buf_t buf = uv_buf_init((char*)message, len);
+    size_t   len_org  = rtosc_message_length(message, -1);
+    unsigned len_slip = 0;
+    char *slip = send_slip(message, len_org, &len_slip);
+    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
@@ -486,8 +507,10 @@ void br_watch(bridge_t *br, const char *uri)
 {
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     char *buffer = malloc(4096);
-    size_t len   = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
-    uv_buf_t buf = uv_buf_init(buffer, len);
+    size_t len_org = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
+    unsigned len_slip = 0;
+    char *slip = send_slip(buffer, len_org, &len_slip);
+    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
