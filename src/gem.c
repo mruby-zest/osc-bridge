@@ -33,7 +33,7 @@ char *send_slip(const char *data, unsigned size, unsigned *nsize)
     }
     tmp_buf[j++] = END;
     tmp_buf[j]   = 0;
-    *nsize       = j;
+    *nsize       = j-1;
     return tmp_buf;
 }
 
@@ -221,7 +221,7 @@ void osc_request(bridge_t *br, const char *path)
     size_t len_org   = rtosc_message(buffer, 4096, path, "");
     unsigned len_slip = 0;
     char *slip = send_slip(buffer, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
