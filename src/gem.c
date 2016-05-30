@@ -513,6 +513,10 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     }
 }
 
+void br_refresh(bridge_t *br, uri_t uri)
+{
+    osc_request(br, uri);
+}
 
 void br_watch(bridge_t *br, const char *uri)
 {
