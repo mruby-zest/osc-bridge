@@ -477,6 +477,17 @@ void br_set_value_int(bridge_t *br, uri_t uri, int value)
     }
 }
 
+void br_set_value_float(bridge_t *br, uri_t uri, float value)
+{
+    rtosc_arg_t arg = {.f = value};
+    if(cache_set(br, uri, 'f', arg)) {
+        char buffer[1024];
+        rtosc_message(buffer, 1024, uri, "f", value);
+        osc_send(br, buffer);
+        debounce_update(br, cache_get(br, uri));
+    }
+}
+
 void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
     assert(br);
