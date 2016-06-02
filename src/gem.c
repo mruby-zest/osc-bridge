@@ -371,6 +371,35 @@ static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
     ch->data    = data;
 }
 
+static void callback_pop(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
+{
+    int len = br->callback_len;
+
+    int idx = 0;
+    while(idx < len) {
+        bridge_callback_t item = br->callback[idx];
+        if(!strcmp(item.path, uri) && item.cb == cb && item.data == data) {
+            //We should remove this element
+            //printf("Deleting callback...\n");
+
+            //Deallocate resources
+            free((void*)item.path);
+
+            //Move all other items
+            for(int i=idx; i<len-1; ++i)
+                br->callback[i] = br->callback[i+1];
+
+            //Shrink list
+            len--;
+        } else {
+            //move on to the next element of the list
+            idx++;
+        }
+    }
+
+    br->callback_len = len;
+}
+
 static param_cache_t *cache_get(bridge_t *br, uri_t uri)
 {
     for(int i=0; i<br->cache_len; ++i)
@@ -511,6 +540,11 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
         }
         callback(buffer, data);
     }
+}
+
+void br_del_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
+{
+    callback_pop(br, uri, callback, data);
 }
 
 void br_refresh(bridge_t *br, uri_t uri)
