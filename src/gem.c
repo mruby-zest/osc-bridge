@@ -495,6 +495,12 @@ void br_request_value(bridge_t *br, uri_t uri, schema_handle_t handle)
     	osc_request_hook(0, buffer);
 }
 
+void br_randomize(bridge_t *br, uri_t uri)
+{
+    schema_handle_t handle;
+    //TODO
+}
+
 void br_set_value_int(bridge_t *br, uri_t uri, int value)
 {
     rtosc_arg_t arg = {.i = value};
