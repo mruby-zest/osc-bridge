@@ -334,7 +334,7 @@ static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
     br->debounce_len += 1;
     br->bounce        = realloc(br->bounce, br->debounce_len*sizeof(debounce_t));
     debounce_t *bo = br->bounce + (br->debounce_len - 1);
-    bo->cline = line;
+    bo->path = line->path;
     bo->last_set = obs;
 }
 
@@ -344,7 +344,7 @@ static void debounce_update(bridge_t *br, param_cache_t *line)
     clock_gettime(CLOCK_REALTIME, &time);
     double obs = time.tv_sec + 1e-9*time.tv_nsec;
     for(int i=0; i<br->debounce_len; ++i) {
-        if(line == br->bounce[i].cline) {
+        if(!strcmp(line->path, br->bounce[i].path)) {
             br->bounce[i].last_set = obs;
             return;
         }
@@ -409,11 +409,38 @@ static param_cache_t *cache_get(bridge_t *br, uri_t uri)
     return cache_get(br, uri);
 }
 
+static int valid_type(char ch)
+{
+    switch(ch)
+    {
+        case 'i'://official types
+        case 's':
+        case 'b':
+        case 'f':
+
+        case 'h'://unofficial
+        case 't':
+        case 'd':
+        case 'S':
+        case 'r':
+        case 'm':
+        case 'c':
+        case 'T':
+        case 'F':
+        case 'N':
+        case 'I':
+            return 1;
+        default:
+            return 0;
+    }
+}
+
 static void run_callbacks(bridge_t *br, param_cache_t *line)
 {
     char buffer[1024];
     if(line->type != 'v') {
         char args[2] = {line->type, 0};
+        assert(valid_type(line->type));
         rtosc_amessage(buffer, sizeof(buffer), line->path, args, &line->val);
     } else {
         rtosc_amessage(buffer, sizeof(buffer), line->path, line->vec_type,
@@ -441,7 +468,7 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
         //check if cache line is currently debounced...
         int debounced = false;
         for(int i=0; i<br->debounce_len; ++i)
-            if(br->bounce[i].cline == line)
+            if(!strcmp(br->bounce[i].path, line->path))
                 debounced = true;
 
         if(!debounced)
@@ -476,7 +503,7 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
         //check if cache line is currently debounced...
         int debounced = false;
         for(int i=0; i<br->debounce_len; ++i)
-            if(br->bounce[i].cline == line)
+            if(!strcmp(br->bounce[i].path, line->path))
                 debounced = true;
 
         if(!debounced)
@@ -627,7 +654,7 @@ void br_tick(bridge_t *br)
     double thresh = time.tv_sec + 1e-9*time.tv_nsec - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
         if(br->bounce[i].last_set < thresh) {
-            run_callbacks(br, br->bounce[i].cline);
+            run_callbacks(br, cache_get(br, br->bounce[i].path));
             debounce_pop(br, i);
         }
     }

@@ -76,7 +76,7 @@ typedef struct {
 } param_cache_t;
 
 typedef struct {
-    param_cache_t *cline;
+    const char *path;
     double last_set;
 } debounce_t;
 
