@@ -66,6 +66,7 @@ typedef struct {
     char  valid;
     char  pending;
     char  type;
+    double request_time;
     union {
         rtosc_arg_t val;
         struct {

@@ -249,10 +249,12 @@ bridge_t *br_create(uri_t uri)
     br->loop = uv_default_loop();
 
     uv_udp_init(br->loop, &br->socket);
-    struct sockaddr_in recv_addr;
-    uv_ip4_addr("127.0.0.1", 1338, &recv_addr);
-    uv_udp_bind(&br->socket, (const struct sockaddr *)&recv_addr,
-                 UV_UDP_REUSEADDR);
+    for(int offset=0; offset < 1000; ++offset) {
+        struct sockaddr_in recv_addr;
+        uv_ip4_addr("127.0.0.1", 1338+offset, &recv_addr);
+        if(!uv_udp_bind(&br->socket, (const struct sockaddr *)&recv_addr, 0))
+            break;
+    }
     br->socket.data = br;
 
     uv_udp_recv_start(&br->socket, alloc_buffer, on_read);
@@ -319,6 +321,7 @@ static void cache_push(bridge_t *br, uri_t uri)
     ch->valid   = 0;
     ch->type    = 0;
     ch->pending = 1;
+    ch->request_time = 0;
     memset(&ch->val, 0, sizeof(ch->val));
 
     char buffer[128];
@@ -437,7 +440,7 @@ static int valid_type(char ch)
 
 static void run_callbacks(bridge_t *br, param_cache_t *line)
 {
-    char buffer[1024];
+    char buffer[1024*8];
     if(line->type != 'v') {
         char args[2] = {line->type, 0};
         assert(valid_type(line->type));
@@ -453,8 +456,19 @@ static void run_callbacks(bridge_t *br, param_cache_t *line)
             br->callback[i].cb(buffer, br->callback[i].data);
 }
 
+static rtosc_arg_t
+clone_value(char type, rtosc_arg_t val)
+{
+    if(type == 'b') {
+        char *data = (char*)val.b.data;
+        val.b.data = malloc(val.b.len);
+        memcpy(val.b.data, data, val.b.len);
+    }
+    return val;
+}
+
 //returns true when the cache has changed values
-static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
+static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val, int skip_debounce)
 {
     param_cache_t *line = cache_get(br, uri);
     assert(line);
@@ -463,7 +477,7 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
     {
         line->valid = true;
         line->type  = type;
-        line->val   = val;
+        line->val   = clone_value(type, val);
 
         //check if cache line is currently debounced...
         int debounced = false;
@@ -471,7 +485,7 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val)
             if(!strcmp(br->bounce[i].path, line->path))
                 debounced = true;
 
-        if(!debounced)
+        if(!debounced || skip_debounce)
             run_callbacks(br, line);
 
         return true;
@@ -531,7 +545,7 @@ void br_randomize(bridge_t *br, uri_t uri)
 void br_set_value_int(bridge_t *br, uri_t uri, int value)
 {
     rtosc_arg_t arg = {.i = value};
-    if(cache_set(br, uri, 'i', arg)) {
+    if(cache_set(br, uri, 'i', arg, 1)) {
         char buffer[1024];
         rtosc_message(buffer, 1024, uri, "i", value);
         osc_send(br, buffer);
@@ -542,7 +556,7 @@ void br_set_value_int(bridge_t *br, uri_t uri, int value)
 void br_set_value_float(bridge_t *br, uri_t uri, float value)
 {
     rtosc_arg_t arg = {.f = value};
-    if(cache_set(br, uri, 'f', arg)) {
+    if(cache_set(br, uri, 'f', arg, 1)) {
         char buffer[1024];
         rtosc_message(buffer, 1024, uri, "f", value);
         osc_send(br, buffer);
@@ -561,7 +575,7 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
         param_cache_t *ch = cache_get(br, uri);
         if(!ch->valid)
             return;
-        char buffer[4096];
+        char buffer[1024*8];
 
         if(ch->type != 'v') {
             char typestr[2] = {ch->type,0};
@@ -582,7 +596,16 @@ void br_del_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 
 void br_refresh(bridge_t *br, uri_t uri)
 {
-    osc_request(br, uri);
+    param_cache_t *cline = cache_get(br, uri);
+    
+    struct timespec time;
+    clock_gettime(CLOCK_REALTIME, &time);
+    double now = time.tv_sec + 1e-9*time.tv_nsec;
+
+    if(cline->request_time < now - 30e-3) {
+        cline->request_time = now;
+        osc_request(br, uri);
+    }
 }
 
 void br_watch(bridge_t *br, const char *uri)
@@ -607,9 +630,10 @@ void br_recv(bridge_t *br, const char *msg)
         return;
 
     //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
+    //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
     const int nargs = rtosc_narguments(msg);
     if(nargs == 1)
-        cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0));
+        cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0), 0);
     else {
         //Try to handle the vector message cases
         //printf("BRIDGE RECEIVE A VECTOR MESSAGE\n");
@@ -650,7 +674,7 @@ void br_tick(bridge_t *br)
         return;
     struct timespec time;
     clock_gettime(CLOCK_REALTIME, &time);
-    double delta  = 100e-3;
+    double delta  = 300e-3;
     double thresh = time.tv_sec + 1e-9*time.tv_nsec - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
         if(br->bounce[i].last_set < thresh) {
