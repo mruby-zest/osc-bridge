@@ -642,7 +642,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Ptype",
@@ -650,7 +663,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreq",
@@ -672,9 +722,30 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreqtrack",
@@ -3835,7 +3906,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Ptype",
@@ -3843,7 +3927,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreq",
@@ -3865,9 +3986,30 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreqtrack",
@@ -5033,7 +5175,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Ptype",
@@ -5041,7 +5196,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreq",
@@ -5063,9 +5255,30 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreqtrack",
@@ -5932,7 +6145,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Ptype",
@@ -5940,7 +6166,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreq",
@@ -5962,9 +6225,30 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreqtrack",
@@ -6159,7 +6443,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Ptype",
@@ -6167,7 +6464,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreq",
@@ -6189,9 +6523,30 @@
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreqtrack",
@@ -6658,7 +7013,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Ptype",
@@ -6666,7 +7034,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pfreq",
@@ -6688,9 +7093,30 @@
         "path"     : "/sysefx[0,3]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pfreqtrack",
@@ -6814,7 +7240,20 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "analog"
+        },
+        {
+            "id"     : 1,
+            "value"  : "formant"
+        },
+        {
+            "id"     : 2,
+            "value"  : "st.var."
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Ptype",
@@ -6822,7 +7261,44 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "LP1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "HP1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "LP2"
+        },
+        {
+            "id"     : 3,
+            "value"  : "HP2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "BP"
+        },
+        {
+            "id"     : 5,
+            "value"  : "notch"
+        },
+        {
+            "id"     : 6,
+            "value"  : "peak"
+        },
+        {
+            "id"     : 7,
+            "value"  : "l.shelf"
+        },
+        {
+            "id"     : 8,
+            "value"  : "h.shelf"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pfreq",
@@ -6844,9 +7320,30 @@
         "path"     : "/insefx[0,7]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "Filter Stages + 1",
+        "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pfreqtrack",
