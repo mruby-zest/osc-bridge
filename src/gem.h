@@ -112,6 +112,7 @@ void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_del_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_refresh(bridge_t *, uri_t);
 void br_watch(bridge_t *, uri_t);
+void br_action(bridge_t *, uri_t, const char *argt, const rtosc_arg_t *args);
 void br_recv(bridge_t *, const char *);
 int br_pending(bridge_t *);
 void br_tick(bridge_t *);

@@ -622,6 +622,21 @@ void br_watch(bridge_t *br, const char *uri)
 
 }
 
+void br_action(bridge_t *br, const char *uri, const char *argt,
+        const rtosc_arg_t *args)
+{
+    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
+    char *buffer = malloc(4096);
+    size_t len_org = rtosc_amessage(buffer, 4096, uri, argt, args);
+    unsigned len_slip = 0;
+    char *slip = send_slip(buffer, len_org, &len_slip);
+    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    struct sockaddr_in send_addr;
+    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+
+}
+
 void br_recv(bridge_t *br, const char *msg)
 {
     //char buffer[128];
