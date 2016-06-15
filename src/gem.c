@@ -282,7 +282,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     //FILE *f = fopen("../test-schema.json", "r");
     FILE *f = fopen("schema/test.json", "r");
     if(!f)
-        f = fopen("deps/osc-bridge/schema/test.json", "r");
+        f = fopen("src/osc-bridge/schema/test.json", "r");
     assert(f && "opening json file");
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
