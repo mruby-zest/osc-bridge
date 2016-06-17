@@ -646,6 +646,19 @@ void br_recv(bridge_t *br, const char *msg)
 
     //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
     //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
+    
+    if(!strcmp("/damage", msg) && !strcmp("s", rtosc_argument_string(msg))) {
+        const char *dmg = rtosc_argument(msg, 0).s;
+        printf("Damage of parameters...\n");
+        printf("path is %s\n", dmg);
+        for(int i=0; i<br->cache_len; ++i) {
+            if(strstr(br->cache[i].path, dmg)) {
+                osc_request(br, br->cache[i].path);
+            }
+        }
+        return;
+    }
+
     const int nargs = rtosc_narguments(msg);
     if(nargs == 1)
         cache_set(br, msg, rtosc_type(msg, 0), rtosc_argument(msg, 0), 0);
