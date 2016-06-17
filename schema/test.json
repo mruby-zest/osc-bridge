@@ -358,13 +358,13 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvstretch",
@@ -454,13 +454,13 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvstretch",
@@ -550,13 +550,13 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvstretch",
@@ -1541,7 +1541,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Prespoints[0,255]",
         "name"     : "Prespoints#256",
         "tooltip"  : "Resonance data points",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/PmaxdB",
@@ -3430,13 +3430,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvstretch",
@@ -3526,13 +3526,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvstretch",
@@ -3622,13 +3622,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvstretch",
@@ -3718,13 +3718,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvstretch",
@@ -3814,13 +3814,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvstretch",
@@ -4110,12 +4110,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Enabled",
+        "shortname": "enable",
         "name"     : "Enabled",
         "tooltip"  : "Voice Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_size",
+        "shortname": "size",
         "name"     : "Unison_size",
         "tooltip"  : "Number of subvoices",
         "type"     : "i",
@@ -4123,6 +4125,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_phase_randomness",
+        "shortname": "ph.rnd.",
         "name"     : "Unison_phase_randomness",
         "tooltip"  : "Phase Randomness",
         "type"     : "i",
@@ -4130,6 +4133,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_frequency_spread",
+        "shortname": "detune",
         "name"     : "Unison_frequency_spread",
         "tooltip"  : "Subvoice detune",
         "type"     : "i",
@@ -4137,6 +4141,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_stereo_spread",
+        "shortname": "spread",
         "name"     : "Unison_stereo_spread",
         "tooltip"  : "Subvoice L/R Separation",
         "type"     : "i",
@@ -4144,6 +4149,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_vibratto",
+        "shortname": "vib.",
         "name"     : "Unison_vibratto",
         "tooltip"  : "Subvoice vibratto",
         "type"     : "i",
@@ -4151,6 +4157,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_vibratto_speed",
+        "shortname": "speed",
         "name"     : "Unison_vibratto_speed",
         "tooltip"  : "Subvoice vibratto speed",
         "type"     : "i",
@@ -4158,6 +4165,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_invert_phase",
+        "shortname": "inv.",
         "name"     : "Unison_invert_phase",
         "tooltip"  : "Subvoice Phases",
         "type"     : "i",
@@ -4186,6 +4194,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Type",
+        "shortname": "type",
         "name"     : "Type",
         "tooltip"  : "Type of Sound",
         "type"     : "i",
@@ -4206,6 +4215,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PDelay",
+        "shortname": "delay",
         "name"     : "PDelay",
         "tooltip"  : "Voice Startup Delay",
         "type"     : "i",
@@ -4213,12 +4223,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Presonance",
+        "shortname": "enable",
         "name"     : "Presonance",
         "tooltip"  : "Resonance Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pextoscil",
+        "shortname": "ext.",
         "name"     : "Pextoscil",
         "tooltip"  : "External Oscilator Selection",
         "type"     : "i",
@@ -4226,6 +4238,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PextFMoscil",
+        "shortname": "ext.",
         "name"     : "PextFMoscil",
         "tooltip"  : "External FM Oscilator Selection",
         "type"     : "i",
@@ -4233,6 +4246,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Poscilphase",
+        "shortname": "phase",
         "name"     : "Poscilphase",
         "tooltip"  : "Oscillator Phase",
         "type"     : "i",
@@ -4240,6 +4254,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMoscilphase",
+        "shortname": "phase",
         "name"     : "PFMoscilphase",
         "tooltip"  : "FM Oscillator Phase",
         "type"     : "i",
@@ -4247,18 +4262,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pfilterbypass",
+        "shortname": "bypass",
         "name"     : "Pfilterbypass",
         "tooltip"  : "Filter Bypass",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pfixedfreq",
+        "shortname": "fixed",
         "name"     : "Pfixedfreq",
         "tooltip"  : "If frequency is fixed",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PfixedfreqET",
+        "shortname": "e.t.",
         "name"     : "PfixedfreqET",
         "tooltip"  : "Equal Tempermant Parameter",
         "type"     : "i",
@@ -4266,6 +4284,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PBendAdjust",
+        "shortname": "bend",
         "name"     : "PBendAdjust",
         "tooltip"  : "Pitch bend adjustment",
         "type"     : "i",
@@ -4273,6 +4292,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/POffsetHz",
+        "shortname": "offset",
         "name"     : "POffsetHz",
         "tooltip"  : "Voice constant offset",
         "type"     : "i",
@@ -4280,18 +4300,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PDetune",
+        "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PCoarseDetune",
+        "shortname": "coarse",
         "name"     : "PCoarseDetune",
         "tooltip"  : "Coarse Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PDetuneType",
+        "shortname": "type",
         "name"     : "PDetuneType",
         "tooltip"  : "Magnitude of Detune",
         "type"     : "i",
@@ -4299,18 +4322,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFreqEnvelopeEnabled",
+        "shortname": "enable",
         "name"     : "PFreqEnvelopeEnabled",
         "tooltip"  : "Frequency Envelope Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFreqLfoEnabled",
+        "shortname": "enable",
         "name"     : "PFreqLfoEnabled",
         "tooltip"  : "Frequency LFO Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PPanning",
+        "shortname": "pan.",
         "name"     : "PPanning",
         "tooltip"  : "Panning",
         "type"     : "i",
@@ -4318,6 +4344,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PVolume",
+        "shortname": "vol.",
         "name"     : "PVolume",
         "tooltip"  : "Volume",
         "type"     : "i",
@@ -4325,12 +4352,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PVolumeminus",
+        "shortname": "inv.",
         "name"     : "PVolumeminus",
         "tooltip"  : "Signal Inverter",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PAmpVelocityScaleFunction",
+        "shortname": "sense",
         "name"     : "PAmpVelocityScaleFunction",
         "tooltip"  : "Velocity Sensing",
         "type"     : "i",
@@ -4338,36 +4367,42 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PAmpEnvelopeEnabled",
+        "shortname": "enable",
         "name"     : "PAmpEnvelopeEnabled",
         "tooltip"  : "Amplitude Envelope Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PAmpLfoEnabled",
+        "shortname": "enable",
         "name"     : "PAmpLfoEnabled",
         "tooltip"  : "Amplitude LFO Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFilterEnabled",
+        "shortname": "enable",
         "name"     : "PFilterEnabled",
         "tooltip"  : "Filter Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFilterEnvelopeEnabled",
+        "shortname": "enable",
         "name"     : "PFilterEnvelopeEnabled",
         "tooltip"  : "Filter Envelope Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFilterLfoEnabled",
+        "shortname": "enable",
         "name"     : "PFilterLfoEnabled",
         "tooltip"  : "Filter LFO Enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFilterVelocityScale",
+        "shortname": "v.scale",
         "name"     : "PFilterVelocityScale",
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
@@ -4375,6 +4410,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFilterVelocityScaleFunction",
+        "shortname": "v.sense",
         "name"     : "PFilterVelocityScaleFunction",
         "tooltip"  : "Filter Velocity Function Shape",
         "type"     : "i",
@@ -4382,6 +4418,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMEnabled",
+        "shortname": "mode",
         "name"     : "PFMEnabled",
         "tooltip"  : "Modulator mode",
         "type"     : "i",
@@ -4396,30 +4433,32 @@
         },
         {
             "id"     : 2,
-            "value"  : "ring modulation"
+            "value"  : "ring"
         },
         {
             "id"     : 3,
-            "value"  : "phase modulation"
+            "value"  : "phase"
         },
         {
             "id"     : 4,
-            "value"  : "frequency modulation"
+            "value"  : "frequency"
         },
         {
             "id"     : 5,
-            "value"  : "pitch modulation"
+            "value"  : "pitch"
         }
         ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMVoice",
+        "shortname": "voice",
         "name"     : "PFMVoice",
         "tooltip"  : "Modulator Oscillator Selection",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMVolume",
+        "shortname": "vol.",
         "name"     : "PFMVolume",
         "tooltip"  : "Modulator Magnitude",
         "type"     : "i",
@@ -4427,6 +4466,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMVolumeDamp",
+        "shortname": "damp.",
         "name"     : "PFMVolumeDamp",
         "tooltip"  : "Modulator HF dampening",
         "type"     : "i",
@@ -4434,6 +4474,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMVelocityScaleFunction",
+        "shortname": "sense",
         "name"     : "PFMVelocityScaleFunction",
         "tooltip"  : "Modulator Velocity Function",
         "type"     : "i",
@@ -4441,18 +4482,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMDetune",
+        "shortname": "fine",
         "name"     : "PFMDetune",
         "tooltip"  : "Modulator Fine Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMCoarseDetune",
+        "shortname": "coarse",
         "name"     : "PFMCoarseDetune",
         "tooltip"  : "Modulator Coarse Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMDetuneType",
+        "shortname": "type",
         "name"     : "PFMDetuneType",
         "tooltip"  : "Modulator Detune Magnitude",
         "type"     : "i",
@@ -4460,18 +4504,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMFixedFreq",
+        "shortname": "fixed",
         "name"     : "PFMFixedFreq",
         "tooltip"  : "Modulator Frequency Fixed",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMFreqEnvelopeEnabled",
+        "shortname": "enable",
         "name"     : "PFMFreqEnvelopeEnabled",
         "tooltip"  : "Modulator Frequency Envelope",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMAmpEnvelopeEnabled",
+        "shortname": "enable",
         "name"     : "PFMAmpEnvelopeEnabled",
         "tooltip"  : "Modulator Amplitude Envelope",
         "type"     : "t"
@@ -4516,7 +4563,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Prespoints[0,255]",
         "name"     : "Prespoints#256",
         "tooltip"  : "Resonance data points",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/PmaxdB",
@@ -4891,13 +4938,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvstretch",
@@ -4987,13 +5034,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvstretch",
@@ -5083,13 +5130,13 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvstretch",
@@ -5739,13 +5786,13 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phmag[0,63]",
         "name"     : "Phmag#64",
         "tooltip"  : "Harmonic magnitudes",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phrelbw[0,63]",
         "name"     : "Phrelbw#64",
         "tooltip"  : "Relative bandwidth",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pbwscale",
@@ -5765,13 +5812,13 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvstretch",
@@ -5861,13 +5908,13 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvstretch",
@@ -5957,13 +6004,13 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvstretch",
@@ -6053,13 +6100,13 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvval[0,39]",
         "name"     : "Penvval#40",
         "tooltip"  : "Envelope Values",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvstretch",
@@ -7538,7 +7585,7 @@
         "path"     : "/microtonal/Pmapping[0,127]",
         "name"     : "Pmapping#128",
         "tooltip"  : "Mapping of keys",
-        "type"     : "c"
+        "type"     : "i"
     },
     {
         "path"     : "/microtonal/Pglobalfinedetune",
