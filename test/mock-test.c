@@ -58,12 +58,14 @@ int osc_request_hook_fn(bridge_t *br, const char *msg)
 
 
 
-void print_response(const char *osc, void *v)
+void print_response(const char *osc, void *vv)
 {
     char type = rtosc_type(osc, 0);
     //printf("[callback] got a message '%s':%c data=%p...\n", osc, type, v);
 
     rtosc_arg_t arg = rtosc_argument(osc, 0);
+
+    void *v = *(void**)vv;
 
     if(type == 'i')
         *(int*)v = arg.i;
@@ -104,8 +106,13 @@ void test_pvolume(schema_t schema, bridge_t *bridge)
     assert_str_eq("", sm_get_units(handle),
             "Optional units have some return value", __LINE__);
 
-    br_add_callback(bridge, uri, print_response, (void*)&v1);
-    br_add_callback(bridge, uri, print_response, (void*)&v2);
+    void **v1_ = malloc(sizeof(void*));
+    void **v2_ = malloc(sizeof(void*));
+    *v1_ = &v1;
+    *v2_ = &v2;
+
+    br_add_callback(bridge, uri, print_response, v1_);
+    br_add_callback(bridge, uri, print_response, v2_);
 }
 
 void test_enable(schema_t schema, bridge_t *bridge)
@@ -123,7 +130,11 @@ void test_enable(schema_t schema, bridge_t *bridge)
             "The tooltip is available", __LINE__);
     assert_str_eq("", sm_get_units(handle),
             "Optional units have some return value", __LINE__);
-    br_add_callback(bridge, uri, print_response, (void*)&v3);
+
+    void **v3_ = malloc(sizeof(void*));
+    *v3_ = &v3;
+
+    br_add_callback(bridge, uri, print_response, v3_);
 }
 
 void test_options(schema_t schema, bridge_t *bridge)
@@ -149,7 +160,10 @@ void test_vector_functionality(bridge_t *br)
     char buffer[1024];
     rtosc_message(buffer, sizeof(buffer), "/vector/test", "ffff", 1.1, 2.2, 3.3, 4.4);
     br_recv(br, buffer);
-    br_add_callback(br, "/vector/test", print_response, (void*)&v1);
+    void **v1_ = malloc(sizeof(void*));
+    *v1_ = &v1;
+
+    br_add_callback(br, "/vector/test", print_response, v1_);
 }
 
 int main()
@@ -203,6 +217,11 @@ int main()
             "No Cache Line is Pending", __LINE__);
 
     test_vector_functionality(bridge);
+
+    //cleanup
+    br_destroy(bridge);
+    br_destroy_schema(schema);
+
 
     return test_summary();
 }

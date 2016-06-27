@@ -85,6 +85,25 @@ static int match_path(const char *uri, const char *pattern)
     return 1;
 }
 
+void br_destroy_schema(schema_t sch)
+{
+    free(sch.json);
+    for(int i=0; i<sch.elements; ++i) {
+        if(sch.handles[i].opts) {
+            free(sch.handles[i].opts->ids);
+            for(int j=0; j<sch.handles[i].opts->num_opts; ++j)
+                free((void*)sch.handles[i].opts->labels[j]);
+            free(sch.handles[i].opts->labels);
+        }
+        free((void*)sch.handles[i].documentation);
+        free((void*)sch.handles[i].name);
+        free((void*)sch.handles[i].short_name);
+        free((void*)sch.handles[i].pattern);
+        free(sch.handles[i].opts);
+    }
+    free(sch.handles);
+}
+
 //Schema
 schema_handle_t sm_get(schema_t sch, uri_t u)
 {
@@ -188,39 +207,36 @@ escape:
 
 void on_read(uv_udp_t *req, ssize_t nread, const uv_buf_t *buf,
              const struct sockaddr *addr, unsigned flags) {
-    if (nread < 0) {
-        fprintf(stderr, "Read error %s\n", uv_err_name(nread));
-        uv_close((uv_handle_t*) req, NULL);
-        free(buf->base);
-        return;
-    } else if(nread == 0 && addr == 0)
-        return;
+    if(nread > 0) {
 
-    const struct sockaddr_in *addr_in = (const struct sockaddr_in *)addr;
-    if(addr) {
-        char sender[17] = { 0 };
-        uv_ip4_name(addr_in, sender, 16);
-        //printf("Recv from %s\n", sender);
-        //printf("port = %d\n", addr_in->sin_port);
+        const struct sockaddr_in *addr_in = (const struct sockaddr_in *)addr;
+        if(addr) {
+            char sender[17] = { 0 };
+            uv_ip4_name(addr_in, sender, 16);
+            //printf("Recv from %s\n", sender);
+            //printf("port = %d\n", addr_in->sin_port);
+        }
+        //printf("buffer[%d] = %s\n", nread, buf->base);
+        //hexdump(buf->base, 0, nread);
+        bridge_t *br = (bridge_t*)req->data;
+        br_recv(br, buf->base);
     }
-    //printf("buffer[%d] = %s\n", nread, buf->base);
-    //hexdump(buf->base, 0, nread);
-    bridge_t *br = (bridge_t*)req->data;
-    br_recv(br, buf->base);
     free(buf->base);
+    //free(req);
 }
 
 static void send_cb(uv_udp_send_t* req, int status)
 {
+    free(req);
 }
 
 void osc_request(bridge_t *br, const char *path)
 {
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
-    char *buffer = malloc(4096);
-    size_t len_org   = rtosc_message(buffer, 4096, path, "");
-    unsigned len_slip = 0;
-    char *slip = send_slip(buffer, len_org, &len_slip);
+    char *buffer      = malloc(4096);
+    size_t len_org    = rtosc_message(buffer, 4096, path, "");
+    //unsigned len_slip = 0;
+    //char *slip = send_slip(buffer, len_org, &len_slip);
     uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
@@ -262,6 +278,25 @@ bridge_t *br_create(uri_t uri)
     return br;
 }
 
+void br_destroy(bridge_t *br)
+{
+    for(int i=0; i<br->cache_len; ++i) {
+        free((void*)br->cache[i].path);
+        if(br->cache[i].type == 'v') {
+            free((void*)br->cache[i].vec_type);
+            free((void*)br->cache[i].vec_value);
+        }
+    }
+    free(br->cache);
+    free(br->bounce);
+    for(int i=0; i<br->callback_len; ++i) {
+        free((void*)br->callback[i].data);
+        free((void*)br->callback[i].path);
+    }
+    free(br->callback);
+    free(br);
+}
+
 void parse_schema(const char *json, schema_t *sch);
 schema_t br_get_schema(bridge_t *br, uri_t uri)
 {
@@ -293,6 +328,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
 
     printf("[debug] parsing json file\n");
     parse_schema(json, &sch);
+    sch.json = json;
 
 
 	return sch;

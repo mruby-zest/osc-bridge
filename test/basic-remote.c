@@ -12,15 +12,17 @@ float Pfreq     = 12345.0;
 int Pfreqrand   = 255;
 bool Pcontinous = true;
 
-void print_response(const char *osc, void *v)
+void print_response(const char *osc, void *vv)
 {
     char type = rtosc_type(osc, 0);
     //printf("[callback] got a message '%s':%c data=%p...\n", osc, type, v);
 
     rtosc_arg_t arg = rtosc_argument(osc, 0);
 
-    if(!v)
+    if(!vv)
         return;
+    void *v = *(void**)vv;
+
 
     if(type == 'i')
         *(int*)v = arg.i;
@@ -69,12 +71,18 @@ void test_lfo(schema_t schema, bridge_t *bridge)
         //sm_get_name(handle),    sm_get_short(handle),
         //sm_get_tooltip(handle), sm_get_units(handle));
         br_add_callback(bridge, uri, print_response, NULL);
-        if(strstr(uri, "Pfreqrand"))
-            br_add_callback(bridge, uri, print_response, (void*)&Pfreqrand);
-        else if(strstr(uri, "Pfreq"))
-            br_add_callback(bridge, uri, print_response, (void*)&Pfreq);
-        else if(strstr(uri, "Pcontinous"))
-            br_add_callback(bridge, uri, print_response, (void*)&Pcontinous);
+        void **data = malloc(sizeof(void*));
+        if(strstr(uri, "Pfreqrand")) {
+            *data = &Pfreqrand;
+            br_add_callback(bridge, uri, print_response, (void*)data);
+        } else if(strstr(uri, "Pfreq")) {
+            *data = &Pfreq;
+            br_add_callback(bridge, uri, print_response, (void*)data);
+        } else if(strstr(uri, "Pcontinous")) {
+            *data = &Pcontinous;
+            br_add_callback(bridge, uri, print_response, (void*)data);
+        } else
+            free(data);
     }
 }
 
@@ -136,6 +144,9 @@ int main()
     assert_flt_eq(0x1.93264cp-2, Pfreq, "Default frequency is set", __LINE__);
     assert_int_eq(0, Pfreqrand, "Default randomness is zero", __LINE__);
     assert_false(Pcontinous, "Default LFO is not continious", __LINE__);
+
+    br_destroy(bridge);
+    br_destroy_schema(schema);
 
     return test_summary();
 }

@@ -27,6 +27,7 @@ typedef struct {
     const char *value_max;
 } schema_handle_t;
 typedef struct {
+    char            *json;
     schema_handle_t *handles;
     int              elements;
 } schema_t;
@@ -103,7 +104,9 @@ typedef struct {
 } bridge_t;
 
 bridge_t *br_create(uri_t);
+void      br_destroy(bridge_t *br);
 schema_t br_get_schema(bridge_t*, uri_t);
+void br_destroy_schema(schema_t);
 void br_request_value(bridge_t *, uri_t, schema_handle_t);
 void br_randomize(bridge_t *, uri_t);
 void br_set_value_int(bridge_t *, uri_t, int);
