@@ -499,8 +499,21 @@ clone_value(char type, rtosc_arg_t val)
         char *data = (char*)val.b.data;
         val.b.data = malloc(val.b.len);
         memcpy(val.b.data, data, val.b.len);
+    } else if(type == 's') {
+        val.s = strdup(val.s);
     }
     return val;
+}
+
+static rtosc_arg_t *
+clone_vec_value(char *type, rtosc_arg_t *val)
+{
+    int n = strlen(type);
+    rtosc_arg_t *nargs = calloc(sizeof(rtosc_arg_t), n);
+    for(int i=0; i<n; ++i) {
+        nargs[i] = clone_value(type[i], val[i]);
+    }
+    return nargs;
 }
 
 //returns true when the cache has changed values
@@ -547,8 +560,9 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
     {
         line->valid     = true;
         line->type      = 'v';
-        line->vec_type  = types;
-        line->vec_value = args;
+        //TODO fix memory leak
+        line->vec_type  = strdup(types);
+        line->vec_value = clone_vec_value(types, args);
 
         //check if cache line is currently debounced...
         int debounced = false;
