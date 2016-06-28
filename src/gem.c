@@ -81,6 +81,9 @@ static int match_path(const char *uri, const char *pattern)
 
     }
 
+    //partial match, but not a complete one
+    if(!*pattern && *uri)
+        return 0;
 
     return 1;
 }
