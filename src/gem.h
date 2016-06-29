@@ -109,6 +109,7 @@ schema_t br_get_schema(bridge_t*, uri_t);
 void br_destroy_schema(schema_t);
 void br_request_value(bridge_t *, uri_t, schema_handle_t);
 void br_randomize(bridge_t *, uri_t);
+void br_set_value_bool(bridge_t *, uri_t, int);
 void br_set_value_int(bridge_t *, uri_t, int);
 void br_set_value_float(bridge_t *, uri_t, float);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);

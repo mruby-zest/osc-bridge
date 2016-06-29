@@ -595,6 +595,19 @@ void br_randomize(bridge_t *br, uri_t uri)
     //TODO
 }
 
+void br_set_value_bool(bridge_t *br, uri_t uri, int value)
+{
+    rtosc_arg_t arg = {.i = value};
+    char type = value ? 'T' : 'F';
+    if(cache_set(br, uri, type, arg, 1)) {
+        char buffer[1024];
+        char typestr[2] = {type, '\0'};
+        rtosc_message(buffer, 1024, uri, typestr, value);
+        osc_send(br, buffer);
+        debounce_update(br, cache_get(br, uri));
+    }
+}
+
 void br_set_value_int(bridge_t *br, uri_t uri, int value)
 {
     rtosc_arg_t arg = {.i = value};
