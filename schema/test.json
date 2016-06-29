@@ -5451,7 +5451,25 @@
         "name"     : "PDetuneType",
         "tooltip"  : "Detune Scaling Type",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "L35cents"
+        },
+        {
+            "id"     : 1,
+            "value"  : "L10cents"
+        },
+        {
+            "id"     : 2,
+            "value"  : "E100cents"
+        },
+        {
+            "id"     : 3,
+            "value"  : "E1200cents"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PBandwidth",
