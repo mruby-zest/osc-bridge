@@ -1527,12 +1527,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Penabled",
+        "shortname": "enable",
         "name"     : "Penabled",
         "tooltip"  : "resonance enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Pprotectthefundamental",
+        "shortname": "p.fund.",
         "name"     : "Pprotectthefundamental",
         "tooltip"  : "Disable resonance filter on first harmonic",
         "type"     : "t"
@@ -1545,6 +1547,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/PmaxdB",
+        "shortname": "max",
         "name"     : "PmaxdB",
         "tooltip"  : "how many dB the signal may be amplified",
         "type"     : "i",
@@ -1552,6 +1555,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Pcenterfreq",
+        "shortname": "c.freq",
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center frequency",
         "type"     : "i",
@@ -4549,12 +4553,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Penabled",
+        "shortname": "enable",
         "name"     : "Penabled",
         "tooltip"  : "resonance enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Pprotectthefundamental",
+        "shortname": "p.fund.",
         "name"     : "Pprotectthefundamental",
         "tooltip"  : "Disable resonance filter on first harmonic",
         "type"     : "t"
@@ -4567,6 +4573,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/PmaxdB",
+        "shortname": "max",
         "name"     : "PmaxdB",
         "tooltip"  : "how many dB the signal may be amplified",
         "type"     : "i",
@@ -4574,6 +4581,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Pcenterfreq",
+        "shortname": "c.freq",
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center frequency",
         "type"     : "i",
