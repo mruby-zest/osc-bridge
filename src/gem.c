@@ -253,7 +253,8 @@ void osc_send(bridge_t *br, const char *message)
     size_t   len_org  = rtosc_message_length(message, -1);
     unsigned len_slip = 0;
     char *slip = send_slip(message, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    uv_buf_t buf = uv_buf_init((char*)message, len_org);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
@@ -593,6 +594,19 @@ void br_randomize(bridge_t *br, uri_t uri)
 {
     schema_handle_t handle;
     //TODO
+}
+
+void br_set_array(bridge_t *br, uri_t uri, char *type, rtosc_arg_t*args)
+{
+    printf("br_set_array...\n");
+    if(cache_set_vector(br, uri, type, args)) {
+        char buffer[1024*8];
+        int len = rtosc_amessage(buffer, sizeof(buffer), uri, type, args);
+        printf("buffer = <%s>\n", buffer);
+        //hexdump(buffer, 0, len);
+        osc_send(br, buffer);
+        debounce_update(br, cache_get(br, uri));
+    }
 }
 
 void br_set_value_bool(bridge_t *br, uri_t uri, int value)
