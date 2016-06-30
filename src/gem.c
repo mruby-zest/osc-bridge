@@ -253,8 +253,8 @@ void osc_send(bridge_t *br, const char *message)
     size_t   len_org  = rtosc_message_length(message, -1);
     unsigned len_slip = 0;
     char *slip = send_slip(message, len_org, &len_slip);
-    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
-    uv_buf_t buf = uv_buf_init((char*)message, len_org);
+    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    //uv_buf_t buf = uv_buf_init((char*)message, len_org);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
@@ -598,11 +598,9 @@ void br_randomize(bridge_t *br, uri_t uri)
 
 void br_set_array(bridge_t *br, uri_t uri, char *type, rtosc_arg_t*args)
 {
-    printf("br_set_array...\n");
     if(cache_set_vector(br, uri, type, args)) {
         char buffer[1024*8];
         int len = rtosc_amessage(buffer, sizeof(buffer), uri, type, args);
-        printf("buffer = <%s>\n", buffer);
         //hexdump(buffer, 0, len);
         osc_send(br, buffer);
         debounce_update(br, cache_get(br, uri));
@@ -674,10 +672,23 @@ void br_del_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     callback_pop(br, uri, callback, data);
 }
 
+void br_damage(bridge_t *br, uri_t dmg)
+{
+    //printf("Damage of parameters...\n");
+    //printf("path is %s\n", dmg);
+    for(int i=0; i<br->cache_len; ++i) {
+        if(strstr(br->cache[i].path, dmg)) {
+            //TODO be more intellegent and drop cache lines which do not have
+            //any callbacks
+            osc_request(br, br->cache[i].path);
+        }
+    }
+}
+
 void br_refresh(bridge_t *br, uri_t uri)
 {
     param_cache_t *cline = cache_get(br, uri);
-    
+
     struct timespec time;
     clock_gettime(CLOCK_REALTIME, &time);
     double now = time.tv_sec + 1e-9*time.tv_nsec;
@@ -726,16 +737,10 @@ void br_recv(bridge_t *br, const char *msg)
 
     //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
     //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
-    
+
     if(!strcmp("/damage", msg) && !strcmp("s", rtosc_argument_string(msg))) {
         const char *dmg = rtosc_argument(msg, 0).s;
-        printf("Damage of parameters...\n");
-        printf("path is %s\n", dmg);
-        for(int i=0; i<br->cache_len; ++i) {
-            if(strstr(br->cache[i].path, dmg)) {
-                osc_request(br, br->cache[i].path);
-            }
-        }
+        br_damage(br, dmg);
         return;
     }
 
