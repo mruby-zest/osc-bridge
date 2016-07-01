@@ -1563,6 +1563,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Poctavesfreq",
+        "shortname": "oct",
         "name"     : "Poctavesfreq",
         "tooltip"  : "The number of octaves...",
         "type"     : "i",
@@ -4589,6 +4590,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Poctavesfreq",
+        "shortname": "oct",
         "name"     : "Poctavesfreq",
         "tooltip"  : "The number of octaves...",
         "type"     : "i",
@@ -6502,7 +6504,25 @@
         "name"     : "Psendtoparteffect",
         "tooltip"  : "Effect Levels",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "FX1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "FX2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "FX3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Off"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/Pname",
@@ -6963,7 +6983,73 @@
         "name"     : "Prcvchn",
         "tooltip"  : "Active MIDI channel",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "ch1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "ch2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "ch3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "ch4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "ch5"
+        },
+        {
+            "id"     : 5,
+            "value"  : "ch6"
+        },
+        {
+            "id"     : 6,
+            "value"  : "ch7"
+        },
+        {
+            "id"     : 7,
+            "value"  : "ch8"
+        },
+        {
+            "id"     : 8,
+            "value"  : "ch9"
+        },
+        {
+            "id"     : 9,
+            "value"  : "ch10"
+        },
+        {
+            "id"     : 10,
+            "value"  : "ch11"
+        },
+        {
+            "id"     : 11,
+            "value"  : "ch12"
+        },
+        {
+            "id"     : 12,
+            "value"  : "ch13"
+        },
+        {
+            "id"     : 13,
+            "value"  : "ch14"
+        },
+        {
+            "id"     : 14,
+            "value"  : "ch15"
+        },
+        {
+            "id"     : 15,
+            "value"  : "ch16"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/Pvelsns",
