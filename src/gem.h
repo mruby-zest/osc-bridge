@@ -113,6 +113,7 @@ void br_set_array(bridge_t *, uri_t, char*, rtosc_arg_t*);
 void br_set_value_bool(bridge_t *, uri_t, int);
 void br_set_value_int(bridge_t *, uri_t, int);
 void br_set_value_float(bridge_t *, uri_t, float);
+int  br_has_callback(bridge_t *, uri_t);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_del_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_damage(bridge_t *, uri_t);

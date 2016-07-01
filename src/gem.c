@@ -352,12 +352,9 @@ static int cache_has(param_cache_t *c, size_t len, uri_t uri)
     return 0;
 }
 
-static void cache_push(bridge_t *br, uri_t uri)
+static void cache_update(bridge_t *br, param_cache_t *ch)
 {
-    br->cache_len += 1;
-    br->cache = realloc(br->cache, br->cache_len*sizeof(param_cache_t));
-    param_cache_t *ch = br->cache + (br->cache_len - 1);
-    ch->path    = strdup(uri);
+    uri_t uri   = ch->path;
     ch->valid   = 0;
     ch->type    = 0;
     ch->pending = 1;
@@ -370,6 +367,15 @@ static void cache_push(bridge_t *br, uri_t uri)
     	osc_request_hook(br, buffer);
     else
         osc_request(br, uri);
+}
+
+static void cache_push(bridge_t *br, uri_t uri)
+{
+    br->cache_len += 1;
+    br->cache = realloc(br->cache, br->cache_len*sizeof(param_cache_t));
+    param_cache_t *ch = br->cache + (br->cache_len - 1);
+    ch->path    = strdup(uri);
+    cache_update(br, ch);
 }
 
 static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
@@ -642,6 +648,14 @@ void br_set_value_float(bridge_t *br, uri_t uri, float value)
     }
 }
 
+int br_has_callback(bridge_t *br, uri_t uri)
+{
+    for(int i=0; i < br->callback_len; ++i)
+        if(!strcmp(br->callback[i].path, uri))
+            return true;
+    return false;
+}
+
 void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
     assert(br);
@@ -651,8 +665,10 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     } else {
         //instantly respond when possible
         param_cache_t *ch = cache_get(br, uri);
-        if(!ch->valid)
+        if(!ch->valid) {
+            cache_update(br, ch);
             return;
+        }
         char buffer[1024*8];
 
         if(ch->type != 'v') {
@@ -678,9 +694,11 @@ void br_damage(bridge_t *br, uri_t dmg)
     //printf("path is %s\n", dmg);
     for(int i=0; i<br->cache_len; ++i) {
         if(strstr(br->cache[i].path, dmg)) {
-            //TODO be more intellegent and drop cache lines which do not have
-            //any callbacks
-            osc_request(br, br->cache[i].path);
+            int current = br_has_callback(br, br->cache[i].path);
+            if(current)
+                osc_request(br, br->cache[i].path);
+            else
+                br->cache[i].valid = false;
         }
     }
 }
@@ -760,6 +778,8 @@ void br_recv(bridge_t *br, const char *msg)
             args[offset++] = rtosc_itr_next(&itr).val;
 
         cache_set_vector(br, msg, types, args);
+        free(args);
+        free(types);
     }
     //for(int i=0; i<br->callback_len; ++i) {
     //    printf("cb name = %s\n", br->callback[i].path);
