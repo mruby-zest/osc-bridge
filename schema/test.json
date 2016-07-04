@@ -7894,6 +7894,7 @@
     },
     {
         "path"     : "/Pkeyshift",
+        "shortname": "key shift",
         "name"     : "Pkeyshift",
         "tooltip"  : "Global Key Shift",
         "type"     : "i",
@@ -7901,6 +7902,7 @@
     },
     {
         "path"     : "/Pvolume",
+        "shortname": "volume",
         "name"     : "Pvolume",
         "tooltip"  : "Master Volume",
         "type"     : "i",
@@ -7908,6 +7910,7 @@
     },
     {
         "path"     : "/volume",
+        "shortname": "volume",
         "name"     : "volume",
         "tooltip"  : "Master Volume",
         "type"     : "i",
