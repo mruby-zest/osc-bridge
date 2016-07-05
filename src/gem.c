@@ -648,6 +648,17 @@ void br_set_value_float(bridge_t *br, uri_t uri, float value)
     }
 }
 
+void br_set_value_string(bridge_t *br, uri_t uri, const char *str)
+{
+    rtosc_arg_t arg = {.s = str};
+    if(cache_set(br, uri, 's', arg, 1)) {
+        char buffer[1024];
+        rtosc_message(buffer, 1024, uri, "s", str);
+        osc_send(br, buffer);
+        debounce_update(br, cache_get(br, uri));
+    }
+}
+
 int br_has_callback(bridge_t *br, uri_t uri)
 {
     for(int i=0; i < br->callback_len; ++i)
