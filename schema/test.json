@@ -6797,6 +6797,85 @@
         ]
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Echo 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Echo 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Simple Echo"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Canyon"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Panning Echo 1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Panning Echo 2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Panning Echo 3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Feedback Echo"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Length of Echo",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/Plrdelay",
+        "shortname": "lr delay",
+        "name"     : "Plrdelay",
+        "tooltip"  : "Difference In Left/Right Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/Plrcross",
+        "shortname": "cross",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/Pfb",
+        "shortname": "feedback",
+        "name"     : "Pfb",
+        "tooltip"  : "Echo feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/echo/Phidamp",
+        "shortname": "damp",
+        "name"     : "Phidamp",
+        "tooltip"  : "Dampen High Frequency",
+        "type"     : "i"
+    },
+    {
         "path"     : "/part[0,15]/ctl/panning.depth",
         "name"     : "panning.depth",
         "tooltip"  : "Depth of Panning MIDI Control",
@@ -7471,6 +7550,85 @@
         ]
     },
     {
+        "path"     : "/sysefx[0,3]/echo/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Echo 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Echo 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Simple Echo"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Canyon"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Panning Echo 1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Panning Echo 2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Panning Echo 3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Feedback Echo"
+        }
+        ]
+    },
+    {
+        "path"     : "/sysefx[0,3]/echo/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Length of Echo",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/echo/Plrdelay",
+        "shortname": "lr delay",
+        "name"     : "Plrdelay",
+        "tooltip"  : "Difference In Left/Right Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/echo/Plrcross",
+        "shortname": "cross",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/echo/Pfb",
+        "shortname": "feedback",
+        "name"     : "Pfb",
+        "tooltip"  : "Echo feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/echo/Phidamp",
+        "shortname": "damp",
+        "name"     : "Phidamp",
+        "tooltip"  : "Dampen High Frequency",
+        "type"     : "i"
+    },
+    {
         "path"     : "/insefx[0,7]/filterpars/Pcategory",
         "shortname": "class",
         "name"     : "Pcategory",
@@ -7734,6 +7892,85 @@
             "value"  : "DynamicFilter"
         }
         ]
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Echo 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Echo 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Simple Echo"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Canyon"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Panning Echo 1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Panning Echo 2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Panning Echo 3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Feedback Echo"
+        }
+        ]
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Length of Echo",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/Plrdelay",
+        "shortname": "lr delay",
+        "name"     : "Plrdelay",
+        "tooltip"  : "Difference In Left/Right Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/Plrcross",
+        "shortname": "cross",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/Pfb",
+        "shortname": "feedback",
+        "name"     : "Pfb",
+        "tooltip"  : "Echo feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/echo/Phidamp",
+        "shortname": "damp",
+        "name"     : "Phidamp",
+        "tooltip"  : "Dampen High Frequency",
+        "type"     : "i"
     },
     {
         "path"     : "/microtonal/Pinvertupdown",
