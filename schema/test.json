@@ -1845,7 +1845,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/Phrpos.par3",
-        "shortname": "p3",
+        "shortname": "force h.",
         "name"     : "Phrpos.par3",
         "tooltip"  : "Harmonic position parameter",
         "type"     : "i",
@@ -1984,6 +1984,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/Pbandwidth",
+        "shortname": "bandwidth",
         "name"     : "Pbandwidth",
         "tooltip"  : "Bandwith Of Harmonics",
         "type"     : "i",
@@ -6755,7 +6756,45 @@
         "path"     : "/part[0,15]/partefx[0,2]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Disabled"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Reverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Chorus"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Alienwah"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Distorsion"
+        },
+        {
+            "id"     : 7,
+            "value"  : "EQ"
+        },
+        {
+            "id"     : 8,
+            "value"  : "DynamicFilter"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/ctl/panning.depth",
@@ -7391,7 +7430,45 @@
         "path"     : "/sysefx[0,3]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Disabled"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Reverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Chorus"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Alienwah"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Distorsion"
+        },
+        {
+            "id"     : 7,
+            "value"  : "EQ"
+        },
+        {
+            "id"     : 8,
+            "value"  : "DynamicFilter"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pcategory",
@@ -7618,7 +7695,45 @@
         "path"     : "/insefx[0,7]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Disabled"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Reverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Echo"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Chorus"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Alienwah"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Distorsion"
+        },
+        {
+            "id"     : 7,
+            "value"  : "EQ"
+        },
+        {
+            "id"     : 8,
+            "value"  : "DynamicFilter"
+        }
+        ]
     },
     {
         "path"     : "/microtonal/Pinvertupdown",
@@ -7890,7 +8005,77 @@
         "path"     : "/Pinsparts[0,7]",
         "name"     : "Pinsparts#8",
         "tooltip"  : "Part to insert part onto",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : -1,
+            "value"  : "Master"
+        },
+        {
+            "id"     : 0,
+            "value"  : "Part1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Part2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Part3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Part4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Part5"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Part6"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Part7"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Part8"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Part9"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Part10"
+        },
+        {
+            "id"     : 10,
+            "value"  : "Part11"
+        },
+        {
+            "id"     : 11,
+            "value"  : "Part12"
+        },
+        {
+            "id"     : 12,
+            "value"  : "Part13"
+        },
+        {
+            "id"     : 13,
+            "value"  : "Part14"
+        },
+        {
+            "id"     : 14,
+            "value"  : "Part15"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Part16"
+        }
+        ]
     },
     {
         "path"     : "/Pkeyshift",
