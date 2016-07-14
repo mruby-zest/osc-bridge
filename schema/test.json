@@ -6797,7 +6797,7 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/preset",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
         "type"     : "i",
@@ -6841,42 +6841,168 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/Pdelay",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
         "type"     : "i"
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/Plrdelay",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/Plrdelay",
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
         "type"     : "i"
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/Plrcross",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/Pfb",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/Pfb",
         "shortname": "feedback",
         "name"     : "Pfb",
-        "tooltip"  : "Echo feedback",
+        "tooltip"  : "Echo Feedback",
         "type"     : "i"
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/echo/Phidamp",
+        "path"     : "/part[0,15]/partefx[0,2]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
-        "tooltip"  : "Dampen High Frequency",
+        "tooltip"  : "Dampen High Frequencies",
         "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfeedback",
+        "shortname": "fb",
+        "name"     : "Pfeedback",
+        "tooltip"  : "Feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Plrcross",
+        "shortname": "l/r",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pphase",
+        "shortname": "phase",
+        "name"     : "Pphase",
+        "tooltip"  : "Phase",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plrcross",
+        "name"     : "Plrcross",
+        "tooltip"  : ":shortname",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pdrive",
+        "shortname": "drive",
+        "name"     : "Pdrive",
+        "tooltip"  : "Input amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plevel",
+        "shortname": "output",
+        "name"     : "Plevel",
+        "tooltip"  : "Output amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Ptype",
+        "shortname": "type",
+        "name"     : "Ptype",
+        "tooltip"  : "Distortion Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pnegate",
+        "shortname": "neg",
+        "name"     : "Pnegate",
+        "tooltip"  : "Negate Signal",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plpf",
+        "shortname": "lpf",
+        "name"     : "Plpf",
+        "tooltip"  : "Low Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Phpf",
+        "shortname": "hpf",
+        "name"     : "Phpf",
+        "tooltip"  : "High Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pstereo",
+        "shortname": "stereo",
+        "name"     : "Pstereo",
+        "tooltip"  : "Stereo",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pprefiltering",
+        "shortname": "p.filt",
+        "name"     : "Pprefiltering",
+        "tooltip"  : "Filtering before/after non-linearity",
+        "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/panning.depth",
+        "shortname": "pan.d",
         "name"     : "panning.depth",
         "tooltip"  : "Depth of Panning MIDI Control",
         "type"     : "i",
@@ -6884,6 +7010,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/filtercutoff.depth",
+        "shortname": "fc.d",
         "name"     : "filtercutoff.depth",
         "tooltip"  : "Depth of Filter Cutoff MIDI Control",
         "type"     : "i",
@@ -6891,6 +7018,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/filterq.depth",
+        "shortname": "fq.d",
         "name"     : "filterq.depth",
         "tooltip"  : "Depth of Filter Q MIDI Control",
         "type"     : "i",
@@ -6898,6 +7026,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/bandwidth.depth",
+        "shortname": "bw.d",
         "name"     : "bandwidth.depth",
         "tooltip"  : "Depth of Bandwidth MIDI Control",
         "type"     : "i",
@@ -6905,12 +7034,14 @@
     },
     {
         "path"     : "/part[0,15]/ctl/bandwidth.exponential",
+        "shortname": "bw.exp",
         "name"     : "bandwidth.exponential",
         "tooltip"  : "Bandwidth Exponential Mode",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/modwheel.depth",
+        "shortname": "mdw.d",
         "name"     : "modwheel.depth",
         "tooltip"  : "Depth of Modwheel MIDI Control",
         "type"     : "i",
@@ -6918,6 +7049,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/modwheel.exponential",
+        "shortname": "mdw.exp",
         "name"     : "modwheel.exponential",
         "tooltip"  : "Modwheel Exponential Mode",
         "type"     : "t"
@@ -6942,30 +7074,35 @@
     },
     {
         "path"     : "/part[0,15]/ctl/expression.receive",
+        "shortname": "exp.rcv",
         "name"     : "expression.receive",
         "tooltip"  : "Expression MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/fmamp.receive",
+        "shortname": "fma.rcv",
         "name"     : "fmamp.receive",
         "tooltip"  : "FM amplitude MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/volume.receive",
+        "shortname": "vol.rcv",
         "name"     : "volume.receive",
         "tooltip"  : "Volume MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/sustain.receive",
+        "shortname": "sus.rcv",
         "name"     : "sustain.receive",
         "tooltip"  : "Sustain MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.receive",
+        "shortname": "prt.rcv",
         "name"     : "portamento.receive",
         "tooltip"  : "Portamento MIDI Receive",
         "type"     : "t"
@@ -6978,6 +7115,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.time",
+        "shortname": "time",
         "name"     : "portamento.time",
         "tooltip"  : "Portamento Length",
         "type"     : "i",
@@ -6985,12 +7123,14 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.proportional",
+        "shortname": "propt.",
         "name"     : "portamento.proportional",
         "tooltip"  : "If all portamentos are proportional to the distance they span",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.propRate",
+        "shortname": "rate",
         "name"     : "portamento.propRate",
         "tooltip"  : "Portamento proportional rate",
         "type"     : "i",
@@ -6998,6 +7138,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.propDepth",
+        "shortname": "depth",
         "name"     : "portamento.propDepth",
         "tooltip"  : "Portamento proportional depth",
         "type"     : "i",
@@ -7005,6 +7146,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.pitchthresh",
+        "shortname": "thresh",
         "name"     : "portamento.pitchthresh",
         "tooltip"  : "Threshold for portamento",
         "type"     : "i",
@@ -7012,6 +7154,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.pitchthreshtype",
+        "shortname": "tr.type",
         "name"     : "portamento.pitchthreshtype",
         "tooltip"  : "Type of threshold",
         "type"     : "t"
@@ -7025,6 +7168,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/resonancecenter.depth",
+        "shortname": "rfc.d",
         "name"     : "resonancecenter.depth",
         "tooltip"  : "Resonance Center MIDI Depth",
         "type"     : "i",
@@ -7032,6 +7176,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/resonancebandwidth.depth",
+        "shortname": "rbw.d",
         "name"     : "resonancebandwidth.depth",
         "tooltip"  : "Resonance Bandwidth MIDI Depth",
         "type"     : "i",
@@ -7550,7 +7695,7 @@
         ]
     },
     {
-        "path"     : "/sysefx[0,3]/echo/preset",
+        "path"     : "/sysefx[0,3]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
         "type"     : "i",
@@ -7594,39 +7739,164 @@
         ]
     },
     {
-        "path"     : "/sysefx[0,3]/echo/Pdelay",
+        "path"     : "/sysefx[0,3]/Echo/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
         "type"     : "i"
     },
     {
-        "path"     : "/sysefx[0,3]/echo/Plrdelay",
+        "path"     : "/sysefx[0,3]/Echo/Plrdelay",
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
         "type"     : "i"
     },
     {
-        "path"     : "/sysefx[0,3]/echo/Plrcross",
+        "path"     : "/sysefx[0,3]/Echo/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
-        "path"     : "/sysefx[0,3]/echo/Pfb",
+        "path"     : "/sysefx[0,3]/Echo/Pfb",
         "shortname": "feedback",
         "name"     : "Pfb",
-        "tooltip"  : "Echo feedback",
+        "tooltip"  : "Echo Feedback",
         "type"     : "i"
     },
     {
-        "path"     : "/sysefx[0,3]/echo/Phidamp",
+        "path"     : "/sysefx[0,3]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
-        "tooltip"  : "Dampen High Frequency",
+        "tooltip"  : "Dampen High Frequencies",
         "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pfeedback",
+        "shortname": "fb",
+        "name"     : "Pfeedback",
+        "tooltip"  : "Feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Plrcross",
+        "shortname": "l/r",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Alienwah/Pphase",
+        "shortname": "phase",
+        "name"     : "Pphase",
+        "tooltip"  : "Phase",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Plrcross",
+        "name"     : "Plrcross",
+        "tooltip"  : ":shortname",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Pdrive",
+        "shortname": "drive",
+        "name"     : "Pdrive",
+        "tooltip"  : "Input amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Plevel",
+        "shortname": "output",
+        "name"     : "Plevel",
+        "tooltip"  : "Output amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Ptype",
+        "shortname": "type",
+        "name"     : "Ptype",
+        "tooltip"  : "Distortion Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Pnegate",
+        "shortname": "neg",
+        "name"     : "Pnegate",
+        "tooltip"  : "Negate Signal",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Plpf",
+        "shortname": "lpf",
+        "name"     : "Plpf",
+        "tooltip"  : "Low Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Phpf",
+        "shortname": "hpf",
+        "name"     : "Phpf",
+        "tooltip"  : "High Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Pstereo",
+        "shortname": "stereo",
+        "name"     : "Pstereo",
+        "tooltip"  : "Stereo",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Pprefiltering",
+        "shortname": "p.filt",
+        "name"     : "Pprefiltering",
+        "tooltip"  : "Filtering before/after non-linearity",
+        "type"     : "t"
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pcategory",
@@ -7894,7 +8164,7 @@
         ]
     },
     {
-        "path"     : "/insefx[0,7]/echo/preset",
+        "path"     : "/insefx[0,7]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
         "type"     : "i",
@@ -7938,39 +8208,164 @@
         ]
     },
     {
-        "path"     : "/insefx[0,7]/echo/Pdelay",
+        "path"     : "/insefx[0,7]/Echo/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
         "type"     : "i"
     },
     {
-        "path"     : "/insefx[0,7]/echo/Plrdelay",
+        "path"     : "/insefx[0,7]/Echo/Plrdelay",
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
         "type"     : "i"
     },
     {
-        "path"     : "/insefx[0,7]/echo/Plrcross",
+        "path"     : "/insefx[0,7]/Echo/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
-        "path"     : "/insefx[0,7]/echo/Pfb",
+        "path"     : "/insefx[0,7]/Echo/Pfb",
         "shortname": "feedback",
         "name"     : "Pfb",
-        "tooltip"  : "Echo feedback",
+        "tooltip"  : "Echo Feedback",
         "type"     : "i"
     },
     {
-        "path"     : "/insefx[0,7]/echo/Phidamp",
+        "path"     : "/insefx[0,7]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
-        "tooltip"  : "Dampen High Frequency",
+        "tooltip"  : "Dampen High Frequencies",
         "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pfeedback",
+        "shortname": "fb",
+        "name"     : "Pfeedback",
+        "tooltip"  : "Feedback",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pdelay",
+        "shortname": "delay",
+        "name"     : "Pdelay",
+        "tooltip"  : "Delay",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Plrcross",
+        "shortname": "l/r",
+        "name"     : "Plrcross",
+        "tooltip"  : "Left/Right Crossover",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Alienwah/Pphase",
+        "shortname": "phase",
+        "name"     : "Pphase",
+        "tooltip"  : "Phase",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Plrcross",
+        "name"     : "Plrcross",
+        "tooltip"  : ":shortname",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Pdrive",
+        "shortname": "drive",
+        "name"     : "Pdrive",
+        "tooltip"  : "Input amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Plevel",
+        "shortname": "output",
+        "name"     : "Plevel",
+        "tooltip"  : "Output amplification",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Ptype",
+        "shortname": "type",
+        "name"     : "Ptype",
+        "tooltip"  : "Distortion Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Pnegate",
+        "shortname": "neg",
+        "name"     : "Pnegate",
+        "tooltip"  : "Negate Signal",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Plpf",
+        "shortname": "lpf",
+        "name"     : "Plpf",
+        "tooltip"  : "Low Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Phpf",
+        "shortname": "hpf",
+        "name"     : "Phpf",
+        "tooltip"  : "High Pass Cutoff",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Pstereo",
+        "shortname": "stereo",
+        "name"     : "Pstereo",
+        "tooltip"  : "Stereo",
+        "type"     : "t"
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Pprefiltering",
+        "shortname": "p.filt",
+        "name"     : "Pprefiltering",
+        "tooltip"  : "Filtering before/after non-linearity",
+        "type"     : "t"
     },
     {
         "path"     : "/microtonal/Pinvertupdown",
@@ -8072,6 +8467,7 @@
     },
     {
         "path"     : "/ctl/panning.depth",
+        "shortname": "pan.d",
         "name"     : "panning.depth",
         "tooltip"  : "Depth of Panning MIDI Control",
         "type"     : "i",
@@ -8079,6 +8475,7 @@
     },
     {
         "path"     : "/ctl/filtercutoff.depth",
+        "shortname": "fc.d",
         "name"     : "filtercutoff.depth",
         "tooltip"  : "Depth of Filter Cutoff MIDI Control",
         "type"     : "i",
@@ -8086,6 +8483,7 @@
     },
     {
         "path"     : "/ctl/filterq.depth",
+        "shortname": "fq.d",
         "name"     : "filterq.depth",
         "tooltip"  : "Depth of Filter Q MIDI Control",
         "type"     : "i",
@@ -8093,6 +8491,7 @@
     },
     {
         "path"     : "/ctl/bandwidth.depth",
+        "shortname": "bw.d",
         "name"     : "bandwidth.depth",
         "tooltip"  : "Depth of Bandwidth MIDI Control",
         "type"     : "i",
@@ -8100,12 +8499,14 @@
     },
     {
         "path"     : "/ctl/bandwidth.exponential",
+        "shortname": "bw.exp",
         "name"     : "bandwidth.exponential",
         "tooltip"  : "Bandwidth Exponential Mode",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/modwheel.depth",
+        "shortname": "mdw.d",
         "name"     : "modwheel.depth",
         "tooltip"  : "Depth of Modwheel MIDI Control",
         "type"     : "i",
@@ -8113,6 +8514,7 @@
     },
     {
         "path"     : "/ctl/modwheel.exponential",
+        "shortname": "mdw.exp",
         "name"     : "modwheel.exponential",
         "tooltip"  : "Modwheel Exponential Mode",
         "type"     : "t"
@@ -8137,30 +8539,35 @@
     },
     {
         "path"     : "/ctl/expression.receive",
+        "shortname": "exp.rcv",
         "name"     : "expression.receive",
         "tooltip"  : "Expression MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/fmamp.receive",
+        "shortname": "fma.rcv",
         "name"     : "fmamp.receive",
         "tooltip"  : "FM amplitude MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/volume.receive",
+        "shortname": "vol.rcv",
         "name"     : "volume.receive",
         "tooltip"  : "Volume MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/sustain.receive",
+        "shortname": "sus.rcv",
         "name"     : "sustain.receive",
         "tooltip"  : "Sustain MIDI Receive",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/portamento.receive",
+        "shortname": "prt.rcv",
         "name"     : "portamento.receive",
         "tooltip"  : "Portamento MIDI Receive",
         "type"     : "t"
@@ -8173,6 +8580,7 @@
     },
     {
         "path"     : "/ctl/portamento.time",
+        "shortname": "time",
         "name"     : "portamento.time",
         "tooltip"  : "Portamento Length",
         "type"     : "i",
@@ -8180,12 +8588,14 @@
     },
     {
         "path"     : "/ctl/portamento.proportional",
+        "shortname": "propt.",
         "name"     : "portamento.proportional",
         "tooltip"  : "If all portamentos are proportional to the distance they span",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/portamento.propRate",
+        "shortname": "rate",
         "name"     : "portamento.propRate",
         "tooltip"  : "Portamento proportional rate",
         "type"     : "i",
@@ -8193,6 +8603,7 @@
     },
     {
         "path"     : "/ctl/portamento.propDepth",
+        "shortname": "depth",
         "name"     : "portamento.propDepth",
         "tooltip"  : "Portamento proportional depth",
         "type"     : "i",
@@ -8200,6 +8611,7 @@
     },
     {
         "path"     : "/ctl/portamento.pitchthresh",
+        "shortname": "thresh",
         "name"     : "portamento.pitchthresh",
         "tooltip"  : "Threshold for portamento",
         "type"     : "i",
@@ -8207,6 +8619,7 @@
     },
     {
         "path"     : "/ctl/portamento.pitchthreshtype",
+        "shortname": "tr.type",
         "name"     : "portamento.pitchthreshtype",
         "tooltip"  : "Type of threshold",
         "type"     : "t"
@@ -8220,6 +8633,7 @@
     },
     {
         "path"     : "/ctl/resonancecenter.depth",
+        "shortname": "rfc.d",
         "name"     : "resonancecenter.depth",
         "tooltip"  : "Resonance Center MIDI Depth",
         "type"     : "i",
@@ -8227,6 +8641,7 @@
     },
     {
         "path"     : "/ctl/resonancebandwidth.depth",
+        "shortname": "rbw.d",
         "name"     : "resonancebandwidth.depth",
         "tooltip"  : "Resonance Bandwidth MIDI Depth",
         "type"     : "i",
