@@ -1,6 +1,5 @@
 #include <rtosc/rtosc.h>
 #include "gem.h"
-#include <netdb.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -306,16 +305,6 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
 {
     schema_t sch;
     int ret;
-    //struct addrinfo *ai;
-
-    //ret = getaddrinfo("localhost", "1337", NULL, &ai);
-    //printf("[debug] getaddrinfo = %d\n", ret);
-
-    //ret = connect(br.sock, ai->ai_addr, ai->ai_addrlen);
-    //printf("[debug] connect = %d\n", ret);
-
-    //ret = send(br.sock, "/sch" "ema\0" ",\0\0\0", 12, 0);
-    //printf("[debug] send = %d\n", ret);
 
     printf("[debug] loading json file\n");
     //FILE *f = fopen("../test-schema.json", "r");
@@ -389,9 +378,8 @@ static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
 
 static void debounce_update(bridge_t *br, param_cache_t *line)
 {
-    struct timespec time;
-    clock_gettime(CLOCK_REALTIME, &time);
-    double obs = time.tv_sec + 1e-9*time.tv_nsec;
+    uint64_t now = uv_now(uv_default_loop());
+    double obs   = 1e-3*now;
     for(int i=0; i<br->debounce_len; ++i) {
         if(!strcmp(line->path, br->bounce[i].path)) {
             br->bounce[i].last_set = obs;
@@ -718,9 +706,7 @@ void br_refresh(bridge_t *br, uri_t uri)
 {
     param_cache_t *cline = cache_get(br, uri);
 
-    struct timespec time;
-    clock_gettime(CLOCK_REALTIME, &time);
-    double now = time.tv_sec + 1e-9*time.tv_nsec;
+    double now = 1e-3*uv_now(uv_default_loop());
 
     if(cline->request_time < now - 30e-3) {
         cline->request_time = now;
@@ -816,10 +802,9 @@ void br_tick(bridge_t *br)
     //Attempt to disable debouncing
     if(br->debounce_len == 0)
         return;
-    struct timespec time;
-    clock_gettime(CLOCK_REALTIME, &time);
+    uint64_t now  = 1e-3*uv_now(uv_default_loop());
     double delta  = 300e-3;
-    double thresh = time.tv_sec + 1e-9*time.tv_nsec - delta;
+    double thresh = now - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
         if(br->bounce[i].last_set < thresh) {
             run_callbacks(br, cache_get(br, br->bounce[i].path));

@@ -9,6 +9,17 @@
 #define printf(...)
 #define putchar(x)
 
+#define strndup(dat, len) strndup_custom(dat,len)
+
+static char *strndup_custom(const char *data, int len)
+{
+    char *dest = calloc(len+1,1);
+    for(int i=0; i<len; ++i)
+        dest[i] = data[i];
+    return dest;
+}
+
+
 void print_string(const char *str, unsigned len)
 {
     for(int i=0; i<len; ++i)
