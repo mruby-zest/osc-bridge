@@ -260,10 +260,10 @@ void osc_send(bridge_t *br, const char *message)
 {
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     size_t   len_org  = rtosc_message_length(message, -1);
-    unsigned len_slip = 0;
-    char *slip = send_slip(message, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
-    //uv_buf_t buf = uv_buf_init((char*)message, len_org);
+    //unsigned len_slip = 0;
+    //char *slip = send_slip(message, len_org, &len_slip);
+    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    uv_buf_t buf = uv_buf_init((char*)message, len_org);
     struct sockaddr_in send_addr;
     uv_ip4_addr("127.0.0.1", 1337, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
