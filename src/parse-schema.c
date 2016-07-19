@@ -75,6 +75,33 @@ opt_t *parse_options(const char *str, int len)
     return o;
 }
 
+void parse_range(schema_handle_t *handle, const char *str, int len)
+{
+    struct mm_json_iter array = mm_json_begin(str, len);
+    struct mm_json_token tok;
+    array = mm_json_read(&tok, &array);
+    if(!array.src) {
+        fprintf(stdout, "[WARNING] Unexpected range termination in parse_range()\n");
+        return;
+    }
+
+    if(tok.type == MM_JSON_NUMBER)
+        handle->value_min = atof(tok.str);
+    else
+        fprintf(stdout, "[WARNING] Unexpected Range Type %d For Min\n", tok.type);
+
+    array = mm_json_read(&tok, &array);
+    if(!array.src) {
+        fprintf(stdout, "[WARNING] Unexpected range termination in parse_range() P2\n");
+        return;
+    }
+
+    if(tok.type == MM_JSON_NUMBER)
+        handle->value_max = atof(tok.str);
+    else
+        fprintf(stdout, "[WARNING] Unexpected Range Type %d For Max\n", tok.type);
+}
+
 void parse_schema(const char *json, schema_t *sch)
 {
     sch->elements = 0;
@@ -134,6 +161,9 @@ void parse_schema(const char *json, schema_t *sch)
             } else if(pair2.value.type == MM_JSON_ARRAY &&
                     mm_json_cmp(&pair2.name, "options") == 0) {
                 handle->opts = parse_options(pair2.value.str, pair2.value.len);
+            } else if(pair2.value.type == MM_JSON_ARRAY &&
+                    mm_json_cmp(&pair2.name, "range") == 0) {
+                parse_range(handle, pair2.value.str, pair2.value.len);
             } else
                 printf(" = ????\n");
             array2 = mm_json_parse(&pair2, &array2);

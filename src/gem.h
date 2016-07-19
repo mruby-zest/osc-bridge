@@ -23,8 +23,8 @@ typedef struct {
     const char *short_name;
     const char *units;
     const char *documentation;
-    const char *value_min;
-    const char *value_max;
+    float value_min;
+    float value_max;
 } schema_handle_t;
 typedef struct {
     char            *json;
@@ -40,6 +40,8 @@ str_t sm_get_name(schema_handle_t);
 str_t sm_get_short(schema_handle_t);
 str_t sm_get_tooltip(schema_handle_t);
 str_t sm_get_units(schema_handle_t);
+float sm_get_min_flt(schema_handle_t);
+float sm_get_max_flt(schema_handle_t);
 
 int sm_valid(schema_handle_t);
 

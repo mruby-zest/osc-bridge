@@ -5882,9 +5882,31 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phmagtype",
         "shortname": "mag. type",
         "name"     : "Phmagtype",
-        "tooltip"  : "How the magnitudes are computed (0=linear,1=-60dB,2=-60dB)",
+        "tooltip"  : "Magnitude scale",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "linear"
+        },
+        {
+            "id"     : 1,
+            "value"  : "-40dB"
+        },
+        {
+            "id"     : 2,
+            "value"  : "-60dB"
+        },
+        {
+            "id"     : 3,
+            "value"  : "-80dB"
+        },
+        {
+            "id"     : 4,
+            "value"  : "-100dB"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phmag[0,63]",

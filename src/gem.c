@@ -140,6 +140,16 @@ str_t sm_get_units(schema_handle_t h)
     return "";
 }
 
+float sm_get_min_flt(schema_handle_t h)
+{
+    return h.value_min;
+}
+
+float sm_get_max_flt(schema_handle_t h)
+{
+    return h.value_max;
+}
+
 int sm_valid(schema_handle_t h)
 {
     return h.flag != 0xdeadbeef;
