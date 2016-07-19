@@ -4359,7 +4359,8 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,16383]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PCoarseDetune",
@@ -5522,7 +5523,8 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,16383]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PCoarseDetune",
@@ -7139,6 +7141,62 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pampsns",
+        "shortname": "sense",
+        "name"     : "Pampsns",
+        "tooltip"  : "how the filter varies according to the input amplitude",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pampsnsinv",
+        "shortname": "sns.inv",
+        "name"     : "Pampsnsinv",
+        "tooltip"  : "Sense Inversion",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pampsmooth",
+        "shortname": "smooth",
+        "name"     : "Pampsmooth",
+        "tooltip"  : "how smooth the input amplitude changes the filter",
+        "type"     : "i"
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
@@ -8444,6 +8502,62 @@
         "type"     : "t"
     },
     {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pampsns",
+        "shortname": "sense",
+        "name"     : "Pampsns",
+        "tooltip"  : "how the filter varies according to the input amplitude",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pampsnsinv",
+        "shortname": "sns.inv",
+        "name"     : "Pampsnsinv",
+        "tooltip"  : "Sense Inversion",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/DynamicFilter/Pampsmooth",
+        "shortname": "smooth",
+        "name"     : "Pampsmooth",
+        "tooltip"  : "how smooth the input amplitude changes the filter",
+        "type"     : "i"
+    },
+    {
         "path"     : "/sysefx[0,3]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
@@ -9320,6 +9434,62 @@
         "type"     : "t"
     },
     {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pfreq",
+        "shortname": "freq",
+        "name"     : "Pfreq",
+        "tooltip"  : "Effect Frequency",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pfreqrnd",
+        "shortname": "rand",
+        "name"     : "Pfreqrnd",
+        "tooltip"  : "Frequency Randomness",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/PLFOtype",
+        "shortname": "shape",
+        "name"     : "PLFOtype",
+        "tooltip"  : "LFO Shape",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/PStereo",
+        "shortname": "stereo",
+        "name"     : "PStereo",
+        "tooltip"  : "Stereo/Mono Mode",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pdepth",
+        "shortname": "depth",
+        "name"     : "Pdepth",
+        "tooltip"  : "LFO Depth",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pampsns",
+        "shortname": "sense",
+        "name"     : "Pampsns",
+        "tooltip"  : "how the filter varies according to the input amplitude",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pampsnsinv",
+        "shortname": "sns.inv",
+        "name"     : "Pampsnsinv",
+        "tooltip"  : "Sense Inversion",
+        "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/DynamicFilter/Pampsmooth",
+        "shortname": "smooth",
+        "name"     : "Pampsmooth",
+        "tooltip"  : "how smooth the input amplitude changes the filter",
+        "type"     : "i"
+    },
+    {
         "path"     : "/insefx[0,7]/Echo/preset",
         "name"     : "preset",
         "tooltip"  : "Instrument Presets",
@@ -9712,12 +9882,14 @@
     },
     {
         "path"     : "/microtonal/Pinvertupdown",
+        "shortname": "inv.",
         "name"     : "Pinvertupdown",
         "tooltip"  : "key mapping inverse",
         "type"     : "t"
     },
     {
         "path"     : "/microtonal/Pinvertupdowncenter",
+        "shortname": "center",
         "name"     : "Pinvertupdowncenter",
         "tooltip"  : "center of the inversion",
         "type"     : "i",
@@ -9725,12 +9897,14 @@
     },
     {
         "path"     : "/microtonal/Penabled",
+        "shortname": "enable",
         "name"     : "Penabled",
         "tooltip"  : "Enable for microtonal mode",
         "type"     : "t"
     },
     {
         "path"     : "/microtonal/PAnote",
+        "shortname": "A note",
         "name"     : "PAnote",
         "tooltip"  : "The note for 'A'",
         "type"     : "i",
@@ -9738,12 +9912,14 @@
     },
     {
         "path"     : "/microtonal/PAfreq",
+        "shortname": "A freq",
         "name"     : "PAfreq",
         "tooltip"  : "Frequency of the 'A' note",
         "type"     : "f"
     },
     {
         "path"     : "/microtonal/Pscaleshift",
+        "shortname": "shift",
         "name"     : "Pscaleshift",
         "tooltip"  : "UNDOCUMENTED",
         "type"     : "i",
@@ -9751,6 +9927,7 @@
     },
     {
         "path"     : "/microtonal/Pfirstkey",
+        "shortname": "first key",
         "name"     : "Pfirstkey",
         "tooltip"  : "First key to retune",
         "type"     : "i",
@@ -9758,6 +9935,7 @@
     },
     {
         "path"     : "/microtonal/Plastkey",
+        "shortname": "last key",
         "name"     : "Plastkey",
         "tooltip"  : "Last key to retune",
         "type"     : "i",
@@ -9765,6 +9943,7 @@
     },
     {
         "path"     : "/microtonal/Pmiddlenote",
+        "shortname": "middle",
         "name"     : "Pmiddlenote",
         "tooltip"  : "Scale degree 0 note",
         "type"     : "i",
@@ -9791,6 +9970,7 @@
     },
     {
         "path"     : "/microtonal/Pglobalfinedetune",
+        "shortname": "fine",
         "name"     : "Pglobalfinedetune",
         "tooltip"  : "Fine detune for all notes",
         "type"     : "i",
@@ -9798,6 +9978,7 @@
     },
     {
         "path"     : "/microtonal/Pname",
+        "shortname": "name",
         "name"     : "Pname",
         "tooltip"  : "Microtonal Name",
         "type"     : "s"
@@ -9805,7 +9986,7 @@
     {
         "path"     : "/microtonal/Pcomment",
         "name"     : "Pcomment",
-        "tooltip"  : "Microtonal Name",
+        "tooltip"  : ":shortname",
         "type"     : "s"
     },
     {
