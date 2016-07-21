@@ -484,14 +484,29 @@ static int valid_type(char ch)
 
 static void run_callbacks(bridge_t *br, param_cache_t *line)
 {
-    char buffer[1024*8];
+    char buffer[1024*16];
+    int len = 0;
     if(line->type != 'v') {
         char args[2] = {line->type, 0};
         assert(valid_type(line->type));
-        rtosc_amessage(buffer, sizeof(buffer), line->path, args, &line->val);
+        len = rtosc_amessage(buffer, sizeof(buffer), line->path, args, &line->val);
     } else {
-        rtosc_amessage(buffer, sizeof(buffer), line->path, line->vec_type,
+        len = rtosc_amessage(buffer, sizeof(buffer), line->path, line->vec_type,
                 line->vec_value);
+    }
+
+    if(len == 0) {
+        //TODO USE DYNAMIC ALLOCATION...
+        printf("[ERROR] Message Too long for cache line <%s>\n", line->path);
+        if(line->type != 'v') {
+            char args[2] = {line->type, 0};
+            assert(valid_type(line->type));
+            len = rtosc_amessage(0, 0, line->path, args, &line->val);
+        } else {
+            len = rtosc_amessage(0, 0, line->path, line->vec_type,
+                    line->vec_value);
+        }
+        printf("[ERROR] Needs %d bytes of space...\n", len);
     }
 
     //run callbacks
