@@ -871,12 +871,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PStereo",
+        "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo/Mono Mode",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PPanning",
+        "shortname": "panning",
         "name"     : "PPanning",
         "tooltip"  : "Left Right Panning",
         "type"     : "i",
@@ -884,6 +886,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PVolume",
+        "shortname": "vol",
         "name"     : "PVolume",
         "tooltip"  : "Synth Volume",
         "type"     : "i",
@@ -891,6 +894,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PAmpVelocityScaleFunction",
+        "shortname": "sense",
         "name"     : "PAmpVelocityScaleFunction",
         "tooltip"  : "Amplitude Velocity Sensing function",
         "type"     : "i",
@@ -905,6 +909,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PPunchStrength",
+        "shortname": "strength",
         "name"     : "PPunchStrength",
         "tooltip"  : "Punch Strength",
         "type"     : "i",
@@ -912,13 +917,15 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PPunchTime",
+        "shortname": "time",
         "name"     : "PPunchTime",
-        "tooltip"  : "UNKNOWN",
+        "tooltip"  : "Length of punch",
         "type"     : "i",
         "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PPunchStretch",
+        "shortname": "stretch",
         "name"     : "PPunchStretch",
         "tooltip"  : "How Punch changes with note frequency",
         "type"     : "i",
@@ -926,6 +933,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PPunchVelocitySensing",
+        "shortname": "sense",
         "name"     : "PPunchVelocitySensing",
         "tooltip"  : "Punch Velocity control",
         "type"     : "i",
@@ -933,6 +941,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PFilterVelocityScale",
+        "shortname": "scale",
         "name"     : "PFilterVelocityScale",
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
@@ -940,6 +949,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PFilterVelocityScaleFunction",
+        "shortname": "sense",
         "name"     : "PFilterVelocityScaleFunction",
         "tooltip"  : "Filter Velocity Function Shape",
         "type"     : "i",
@@ -947,12 +957,14 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/Pfixedfreq",
+        "shortname": "fixed",
         "name"     : "Pfixedfreq",
         "tooltip"  : "Base frequency fixed frequency enable",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PfixedfreqET",
+        "shortname": "f.ET",
         "name"     : "PfixedfreqET",
         "tooltip"  : "Equal temeperate control for fixed frequency operation",
         "type"     : "i",
@@ -967,6 +979,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/POffsetHz",
+        "shortname": "offset",
         "name"     : "POffsetHz",
         "tooltip"  : "Voice constant offset",
         "type"     : "i",
@@ -974,18 +987,21 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PDetune",
+        "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PCoarseDetune",
+        "shortname": "coarse",
         "name"     : "PCoarseDetune",
         "tooltip"  : "Coarse Detune",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PDetuneType",
+        "shortname": "type",
         "name"     : "PDetuneType",
         "tooltip"  : "Magnitude of Detune",
         "type"     : "i",
