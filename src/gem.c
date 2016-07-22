@@ -539,6 +539,25 @@ clone_vec_value(char *type, rtosc_arg_t *val)
     return nargs;
 }
 
+static void
+declone_value(char type, rtosc_arg_t val)
+{
+    if(type == 'b')
+        free(val.b.data);
+    else if(type == 's')
+        free(strdup(val.s));
+}
+
+static void
+declone_vec_value(const char *type, rtosc_arg_t *val)
+{
+    int n = strlen(type);
+    for(int i=0; i<n; ++i)
+        declone_value(type[i], val[i]);
+    free(val);
+    free((void*)type);
+}
+
 //returns true when the cache has changed values
 static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val, int skip_debounce)
 {
@@ -581,9 +600,11 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
     if(!line->valid || line->type != 'v' || strcmp(line->vec_type, types) ||
             memcmp(&line->vec_value, &args, sizeof(args[0])*line_size))
     {
+        if(line->type == 'v')
+            declone_vec_value(line->vec_type, line->vec_value);
+
         line->valid     = true;
         line->type      = 'v';
-        //TODO fix memory leak
         line->vec_type  = strdup(types);
         line->vec_value = clone_vec_value(types, args);
 

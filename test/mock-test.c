@@ -160,6 +160,7 @@ void test_vector_functionality(bridge_t *br)
     char buffer[1024];
     rtosc_message(buffer, sizeof(buffer), "/vector/test", "ffff", 1.1, 2.2, 3.3, 4.4);
     br_recv(br, buffer);
+    br_recv(br, buffer);
     void **v1_ = malloc(sizeof(void*));
     *v1_ = &v1;
 
