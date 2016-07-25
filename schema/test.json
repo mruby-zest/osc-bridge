@@ -1009,6 +1009,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/octave",
+        "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
         "type"     : "i"
@@ -6957,7 +6958,7 @@
         },
         {
             "id"     : 8,
-            "value"  : "DynamicFilter"
+            "value"  : "DynFilter"
         }
         ]
     },
@@ -7119,7 +7120,69 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Undistorted"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Arctangent"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Asymmetric"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Pow"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Sine"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Zigzag"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Limiter"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Upper Limiter"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Lower Limiter"
+        },
+        {
+            "id"     : 10,
+            "value"  : "Inverse Limiter"
+        },
+        {
+            "id"     : 11,
+            "value"  : "Clip"
+        },
+        {
+            "id"     : 12,
+            "value"  : "Asym2"
+        },
+        {
+            "id"     : 13,
+            "value"  : "Pow2"
+        },
+        {
+            "id"     : 14,
+            "value"  : "sigmoid"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pnegate",
@@ -8318,7 +8381,7 @@
         },
         {
             "id"     : 8,
-            "value"  : "DynamicFilter"
+            "value"  : "DynFilter"
         }
         ]
     },
@@ -8480,7 +8543,69 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Undistorted"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Arctangent"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Asymmetric"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Pow"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Sine"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Zigzag"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Limiter"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Upper Limiter"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Lower Limiter"
+        },
+        {
+            "id"     : 10,
+            "value"  : "Inverse Limiter"
+        },
+        {
+            "id"     : 11,
+            "value"  : "Clip"
+        },
+        {
+            "id"     : 12,
+            "value"  : "Asym2"
+        },
+        {
+            "id"     : 13,
+            "value"  : "Pow2"
+        },
+        {
+            "id"     : 14,
+            "value"  : "sigmoid"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Distorsion/Pnegate",
@@ -9250,7 +9375,7 @@
         },
         {
             "id"     : 8,
-            "value"  : "DynamicFilter"
+            "value"  : "DynFilter"
         }
         ]
     },
@@ -9412,7 +9537,69 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Undistorted"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Arctangent"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Asymmetric"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Pow"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Sine"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Zigzag"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Limiter"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Upper Limiter"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Lower Limiter"
+        },
+        {
+            "id"     : 10,
+            "value"  : "Inverse Limiter"
+        },
+        {
+            "id"     : 11,
+            "value"  : "Clip"
+        },
+        {
+            "id"     : 12,
+            "value"  : "Asym2"
+        },
+        {
+            "id"     : 13,
+            "value"  : "Pow2"
+        },
+        {
+            "id"     : 14,
+            "value"  : "sigmoid"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Distorsion/Pnegate",
