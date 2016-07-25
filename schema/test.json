@@ -1005,7 +1005,25 @@
         "name"     : "PDetuneType",
         "tooltip"  : "Magnitude of Detune",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "L35cents"
+        },
+        {
+            "id"     : 1,
+            "value"  : "L10cents"
+        },
+        {
+            "id"     : 2,
+            "value"  : "E100cents"
+        },
+        {
+            "id"     : 3,
+            "value"  : "E1200cents"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/octave",
@@ -4392,7 +4410,25 @@
         "name"     : "PDetuneType",
         "tooltip"  : "Magnitude of Detune",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "L35cents"
+        },
+        {
+            "id"     : 1,
+            "value"  : "L10cents"
+        },
+        {
+            "id"     : 2,
+            "value"  : "E100cents"
+        },
+        {
+            "id"     : 3,
+            "value"  : "E1200cents"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFreqEnvelopeEnabled",
@@ -6981,7 +7017,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "triangle"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/PStereo",
@@ -7097,8 +7143,9 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plrcross",
+        "shortname": "l/r",
         "name"     : "Plrcross",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
@@ -7238,7 +7285,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sin"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/PStereo",
@@ -7453,8 +7510,18 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.PLFOtype",
         "shortname": "type",
         "name"     : "lfo.PLFOtype",
-        "tooltip"  : "",
-        "type"     : "i"
+        "tooltip"  : "lfo shape",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Pstereo",
@@ -7495,13 +7562,14 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
-        "tooltip"  : "",
+        "tooltip"  : "Offset",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Poutsub",
+        "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "",
         "type"     : "t"
     },
     {
@@ -7650,7 +7718,21 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Random"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Freeverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Bandwidth"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Reverb/Proomsize",
@@ -8404,7 +8486,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "triangle"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/PStereo",
@@ -8520,8 +8612,9 @@
     },
     {
         "path"     : "/sysefx[0,3]/Distorsion/Plrcross",
+        "shortname": "l/r",
         "name"     : "Plrcross",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
@@ -8661,7 +8754,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sin"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/DynamicFilter/PStereo",
@@ -8876,8 +8979,18 @@
         "path"     : "/sysefx[0,3]/Phaser/lfo.PLFOtype",
         "shortname": "type",
         "name"     : "lfo.PLFOtype",
-        "tooltip"  : "",
-        "type"     : "i"
+        "tooltip"  : "lfo shape",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/lfo.Pstereo",
@@ -8918,13 +9031,14 @@
         "path"     : "/sysefx[0,3]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
-        "tooltip"  : "",
+        "tooltip"  : "Offset",
         "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Poutsub",
+        "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "",
         "type"     : "t"
     },
     {
@@ -9073,7 +9187,21 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Random"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Freeverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Bandwidth"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Reverb/Proomsize",
@@ -9398,7 +9526,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "triangle"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/PStereo",
@@ -9514,8 +9652,9 @@
     },
     {
         "path"     : "/insefx[0,7]/Distorsion/Plrcross",
+        "shortname": "l/r",
         "name"     : "Plrcross",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "Left/Right Crossover",
         "type"     : "i"
     },
     {
@@ -9655,7 +9794,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sin"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/DynamicFilter/PStereo",
@@ -9870,8 +10019,18 @@
         "path"     : "/insefx[0,7]/Phaser/lfo.PLFOtype",
         "shortname": "type",
         "name"     : "lfo.PLFOtype",
-        "tooltip"  : "",
-        "type"     : "i"
+        "tooltip"  : "lfo shape",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/lfo.Pstereo",
@@ -9912,13 +10071,14 @@
         "path"     : "/insefx[0,7]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
-        "tooltip"  : "",
+        "tooltip"  : "Offset",
         "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Poutsub",
+        "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "",
         "type"     : "t"
     },
     {
@@ -10067,7 +10227,21 @@
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Type",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Random"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Freeverb"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Bandwidth"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Reverb/Proomsize",
@@ -10188,8 +10362,9 @@
     },
     {
         "path"     : "/microtonal/Pcomment",
+        "shortname": "comment",
         "name"     : "Pcomment",
-        "tooltip"  : ":shortname",
+        "tooltip"  : "Microtonal comments",
         "type"     : "s"
     },
     {
