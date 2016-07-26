@@ -714,16 +714,31 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
             cache_update(br, ch);
             return;
         }
-        char buffer[1024*8];
+        char buffer[1024*16];
+        int len = 0;
 
         if(ch->type != 'v') {
             char typestr[2] = {ch->type,0};
-            rtosc_amessage(buffer, sizeof(buffer), ch->path,
+            len = rtosc_amessage(buffer, sizeof(buffer), ch->path,
                     typestr, &ch->val);
         } else {
-            rtosc_amessage(buffer, sizeof(buffer), ch->path, ch->vec_type,
+            len = rtosc_amessage(buffer, sizeof(buffer), ch->path, ch->vec_type,
                     ch->vec_value);
         }
+        if(len == 0) {
+            //TODO USE DYNAMIC ALLOCATION...
+            printf("[ERROR] Message Too long for cache line <%s> @ %d\n", ch->path, __LINE__);
+            if(ch->type != 'v') {
+                char args[2] = {ch->type, 0};
+                assert(valid_type(ch->type));
+                len = rtosc_amessage(0, 0, ch->path, args, &ch->val);
+            } else {
+                len = rtosc_amessage(0, 0, ch->path, ch->vec_type,
+                        ch->vec_value);
+            }
+            printf("[ERROR] Needs %d bytes of space...\n", len);
+        }
+
         callback(buffer, data);
     }
 }
