@@ -97,6 +97,9 @@ typedef struct {
     uv_udp_t socket;
     void *pending_requests;
 
+    char *address;
+    int port;
+
     param_cache_t     *cache;
     debounce_t        *bounce;
     bridge_callback_t *callback;

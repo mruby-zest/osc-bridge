@@ -251,7 +251,7 @@ void osc_request(bridge_t *br, const char *path)
     //char *slip = send_slip(buffer, len_org, &len_slip);
     uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
     struct sockaddr_in send_addr;
-    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
     //printf("osc request done<%s>?\n", path);
 }
@@ -265,7 +265,7 @@ void osc_send(bridge_t *br, const char *message)
     //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
     uv_buf_t buf = uv_buf_init((char*)message, len_org);
     struct sockaddr_in send_addr;
-    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
     //printf("osc sent...<%s>?\n", message);
 }
@@ -287,6 +287,20 @@ bridge_t *br_create(uri_t uri)
     br->socket.data = br;
 
     uv_udp_recv_start(&br->socket, alloc_buffer, on_read);
+
+    //parse the url to read
+    if(strstr(uri, "osc.udp://") != uri) {
+        fprintf(stderr, "[ERROR] Unknown protocol in '%s'\n", uri);
+        fprintf(stderr, "[ERROR] Try something like osc.udp://localhost:1234\n");
+        exit(1);
+    }
+    uri = uri+10;
+    char *tmp = br->address = strdup(uri);
+    while(*tmp && *tmp != ':') ++tmp;
+    if(*tmp == ':')
+        *tmp++ = 0;
+
+    br->port = atoi(tmp);
 
     return br;
 }
@@ -780,11 +794,12 @@ void br_watch(bridge_t *br, const char *uri)
     uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     char *buffer = malloc(4096);
     size_t len_org = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
-    unsigned len_slip = 0;
-    char *slip = send_slip(buffer, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    //unsigned len_slip = 0;
+    //char *slip = send_slip(buffer, len_org, &len_slip);
+    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
+    uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
     struct sockaddr_in send_addr;
-    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
 
 }
@@ -799,7 +814,7 @@ void br_action(bridge_t *br, const char *uri, const char *argt,
     char *slip = send_slip(buffer, len_org, &len_slip);
     uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
     struct sockaddr_in send_addr;
-    uv_ip4_addr("127.0.0.1", 1337, &send_addr);
+    uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
 
 }
