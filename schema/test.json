@@ -6961,6 +6961,22 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/Pvolume",
+        "shortname": "amt",
+        "name"     : "Pvolume",
+        "tooltip"  : "amount of effect",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Ppanning",
+        "shortname": "pan",
+        "name"     : "Ppanning",
+        "tooltip"  : "panning",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/parameter[0,127]",
         "name"     : "parameter#128",
         "tooltip"  : "Parameter Accessor",
@@ -8430,6 +8446,22 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/sysefx[0,3]/Pvolume",
+        "shortname": "amt",
+        "name"     : "Pvolume",
+        "tooltip"  : "amount of effect",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/sysefx[0,3]/Ppanning",
+        "shortname": "pan",
+        "name"     : "Ppanning",
+        "tooltip"  : "panning",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/sysefx[0,3]/parameter[0,127]",
         "name"     : "parameter#128",
         "tooltip"  : "Parameter Accessor",
@@ -9466,6 +9498,22 @@
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/insefx[0,7]/Pvolume",
+        "shortname": "amt",
+        "name"     : "Pvolume",
+        "tooltip"  : "amount of effect",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/insefx[0,7]/Ppanning",
+        "shortname": "pan",
+        "name"     : "Ppanning",
+        "tooltip"  : "panning",
         "type"     : "i",
         "range"    : [0,127]
     },
