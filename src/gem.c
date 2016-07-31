@@ -237,36 +237,44 @@ void on_read(uv_udp_t *req, ssize_t nread, const uv_buf_t *buf,
     //free(req);
 }
 
+typedef struct {
+    uv_udp_send_t send_req;
+    char *data;
+} req_t;
+
 static void send_cb(uv_udp_send_t* req, int status)
 {
-    free(req);
+    req_t *request = (req_t*)req;
+    free(request->data);
+    free(request);
 }
+
+static void do_send(bridge_t *br, char *buffer, unsigned len)
+{
+    req_t *request = malloc(sizeof(req_t));
+    request->data  = buffer;
+    uv_buf_t buf   = uv_buf_init((char*)buffer, len);
+
+    struct sockaddr_in send_addr;
+    uv_ip4_addr(br->address, br->port, &send_addr);
+    uv_udp_send(&request->send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+}
+
 
 void osc_request(bridge_t *br, const char *path)
 {
-    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
-    char *buffer      = malloc(4096);
-    size_t len_org    = rtosc_message(buffer, 4096, path, "");
-    //unsigned len_slip = 0;
-    //char *slip = send_slip(buffer, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
-    struct sockaddr_in send_addr;
-    uv_ip4_addr(br->address, br->port, &send_addr);
-    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    char *buffer = malloc(4096);
+    size_t len   = rtosc_message(buffer, 4096, path, "");
+    do_send(br, buffer, len);
     //printf("osc request done<%s>?\n", path);
 }
 
 void osc_send(bridge_t *br, const char *message)
 {
-    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
-    size_t   len_org  = rtosc_message_length(message, -1);
-    //unsigned len_slip = 0;
-    //char *slip = send_slip(message, len_org, &len_slip);
-    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
-    uv_buf_t buf = uv_buf_init((char*)message, len_org);
-    struct sockaddr_in send_addr;
-    uv_ip4_addr(br->address, br->port, &send_addr);
-    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    size_t   len   = rtosc_message_length(message, -1);
+    char     *copy = malloc(len);
+    memcpy(copy, message, len);
+    do_send(br, copy, len);
     //printf("osc sent...<%s>?\n", message);
 }
 
@@ -335,6 +343,8 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     FILE *f = fopen("schema/test.json", "r");
     if(!f)
         f = fopen("src/osc-bridge/schema/test.json", "r");
+    if(!f)
+        f = fopen("/home/mark/code/mruby-zest-build/src/osc-bridge/schema/test.json", "r");
     assert(f && "opening json file");
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
@@ -623,12 +633,12 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
         line->vec_value = clone_vec_value(types, args);
 
         //check if cache line is currently debounced...
-        int debounced = false;
-        for(int i=0; i<br->debounce_len; ++i)
-            if(!strcmp(br->bounce[i].path, line->path))
-                debounced = true;
+        //int debounced = false;
+        //for(int i=0; i<br->debounce_len; ++i)
+        //    if(!strcmp(br->bounce[i].path, line->path))
+        //        debounced = true;
 
-        if(!debounced)
+        //if(!debounced)
             run_callbacks(br, line);
 
         return true;
@@ -781,42 +791,31 @@ void br_refresh(bridge_t *br, uri_t uri)
 {
     param_cache_t *cline = cache_get(br, uri);
 
+    uv_update_time(uv_default_loop());
     double now = 1e-3*uv_now(uv_default_loop());
 
-    if(cline->request_time < now - 30e-3) {
+    if(cline->request_time < now) {
         cline->request_time = now;
         osc_request(br, uri);
+    } else {
+        printf("skipping refresh for %s at dt = %f\n", uri, cline->request_time-now);
     }
 }
 
 void br_watch(bridge_t *br, const char *uri)
 {
-    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     char *buffer = malloc(4096);
-    size_t len_org = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
-    //unsigned len_slip = 0;
-    //char *slip = send_slip(buffer, len_org, &len_slip);
-    //uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
-    uv_buf_t buf = uv_buf_init((char*)buffer, len_org);
-    struct sockaddr_in send_addr;
-    uv_ip4_addr(br->address, br->port, &send_addr);
-    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    size_t len   = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
+    do_send(br, buffer, len);
 
 }
 
 void br_action(bridge_t *br, const char *uri, const char *argt,
         const rtosc_arg_t *args)
 {
-    uv_udp_send_t *send_req = malloc(sizeof(uv_udp_send_t));
     char *buffer = malloc(4096);
-    size_t len_org = rtosc_amessage(buffer, 4096, uri, argt, args);
-    unsigned len_slip = 0;
-    char *slip = send_slip(buffer, len_org, &len_slip);
-    uv_buf_t buf = uv_buf_init((char*)slip, len_slip);
-    struct sockaddr_in send_addr;
-    uv_ip4_addr(br->address, br->port, &send_addr);
-    uv_udp_send(send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
-
+    size_t len   = rtosc_amessage(buffer, 4096, uri, argt, args);
+    do_send(br, buffer, len);
 }
 
 void br_recv(bridge_t *br, const char *msg)
@@ -879,7 +878,7 @@ void br_tick(bridge_t *br)
     if(br->debounce_len == 0)
         return;
     uint64_t now  = 1e-3*uv_now(uv_default_loop());
-    double delta  = 300e-3;
+    double delta  = 100e-3;
     double thresh = now - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
         if(br->bounce[i].last_set < thresh) {
