@@ -349,7 +349,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
     rewind(f);
-    char *json = malloc(len);
+    char *json = calloc(1, len+1);
     fread(json, 1, len, f);
     fclose(f);
 
@@ -590,6 +590,10 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val, int sk
     line->pending = false;
     if(!line->valid || line->type != type || memcmp(&line->val, &val, sizeof(val)))
     {
+        if(line->type == 'v')
+            declone_vec_value(line->vec_type, line->vec_value);
+        else
+            declone_value(line->type, line->val);
         line->valid = true;
         line->type  = type;
         line->val   = clone_value(type, val);
