@@ -802,7 +802,7 @@ void br_refresh(bridge_t *br, uri_t uri)
         cline->request_time = now;
         osc_request(br, uri);
     } else {
-        printf("skipping refresh for %s at dt = %f\n", uri, cline->request_time-now);
+        //printf("skipping refresh for %s at dt = %f\n", uri, cline->request_time-now);
     }
 }
 
