@@ -1030,13 +1030,16 @@
         "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-8,7]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/coarsedetune",
+        "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,63]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Prand",
@@ -4555,7 +4558,7 @@
         },
         {
             "id"     : 5,
-            "value"  : "pitch"
+            "value"  : "pulse"
         }
         ]
     },
@@ -4653,28 +4656,35 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/octave",
+        "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-8,7]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/coarsedetune",
+        "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,63]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMoctave",
         "shortname": "octave",
         "name"     : "FMoctave",
         "tooltip"  : "Octave note offset for modulator",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-8,7]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMcoarsedetune",
+        "shortname": "coarse",
         "name"     : "FMcoarsedetune",
         "tooltip"  : "Coarse note detune for modulator",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,63]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Penabled",
@@ -5726,15 +5736,19 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/octave",
+        "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-8,7]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/coarsedetune",
+        "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,63]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pstereo",
@@ -6642,15 +6656,19 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/octave",
+        "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Note octave shift",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-8,7]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/coarsedetune",
+        "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Note coarse detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,63]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/Penabled",
