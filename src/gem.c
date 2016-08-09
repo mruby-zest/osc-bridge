@@ -412,7 +412,8 @@ static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
 
 static void debounce_update(bridge_t *br, param_cache_t *line)
 {
-    uint64_t now = uv_now(uv_default_loop());
+    uv_update_time(br->loop);
+    uint64_t now = uv_now(br->loop);
     double obs   = 1e-3*now;
     for(int i=0; i<br->debounce_len; ++i) {
         if(!strcmp(line->path, br->bounce[i].path)) {
@@ -795,8 +796,8 @@ void br_refresh(bridge_t *br, uri_t uri)
 {
     param_cache_t *cline = cache_get(br, uri);
 
-    uv_update_time(uv_default_loop());
-    double now = 1e-3*uv_now(uv_default_loop());
+    uv_update_time(br->loop);
+    double now = 1e-3*uv_now(br->loop);
 
     if(cline->request_time < now) {
         cline->request_time = now;
@@ -881,7 +882,8 @@ void br_tick(bridge_t *br)
     //Attempt to disable debouncing
     if(br->debounce_len == 0)
         return;
-    uint64_t now  = 1e-3*uv_now(uv_default_loop());
+    uv_update_time(br->loop);
+    uint64_t now  = 1e-3*uv_now(br->loop);
     double delta  = 100e-3;
     double thresh = now - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
