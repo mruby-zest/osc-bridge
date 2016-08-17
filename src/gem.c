@@ -283,7 +283,8 @@ bridge_t *br_create(uri_t uri)
 {
     bridge_t *br = calloc(1,sizeof(bridge_t));
 
-    br->loop = uv_default_loop();
+    br->loop = calloc(1, sizeof(uv_loop_t));
+    uv_loop_init(br->loop);
 
     uv_udp_init(br->loop, &br->socket);
     for(int offset=0; offset < 1000; ++offset) {
@@ -315,6 +316,20 @@ bridge_t *br_create(uri_t uri)
 
 void br_destroy(bridge_t *br)
 {
+    int close;
+    close = uv_udp_recv_stop(&br->socket);
+    if(close)
+        fprintf(stderr, "[Warning] UV UDP cannot be stopped [%d] (UV_EBUSY=%d)\n", close, UV_EBUSY);
+    uv_close((uv_handle_t*)&br->socket, NULL);
+
+    //Flush Events
+    while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
+
+    close = uv_loop_close(br->loop);
+    if(close)
+        fprintf(stderr, "[Warning] UV Loop Cannot be closed [%d] (UV_EBUSY=%d)\n", close, UV_EBUSY);
+    free(br->loop);
+
     for(int i=0; i<br->cache_len; ++i) {
         free((void*)br->cache[i].path);
         if(br->cache[i].type == 'v') {
@@ -329,6 +344,7 @@ void br_destroy(bridge_t *br)
         free((void*)br->callback[i].path);
     }
     free(br->callback);
+    free(br->address);
     free(br);
 }
 

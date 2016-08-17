@@ -91,7 +91,7 @@ int main()
     test_plan(17);
     //Define that there is a bridge on localhost:1337
     printf("#Creating Bridge To Remote...\n");
-    bridge_t *bridge = br_create("localhost:1337");
+    bridge_t *bridge = br_create("osc.udp://localhost:1337");
 
     //Get the bridge to obtain the schema
     printf("#Creating Schema For Remote...\n");

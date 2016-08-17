@@ -178,7 +178,7 @@ int main()
     osc_socket_hook  = osc_socket_hook_fn;
 
     //Define that there is a bridge on localhost:1337
-    bridge_t *bridge = br_create("localhost:1337");
+    bridge_t *bridge = br_create("osc.udp://localhost:1337");
     assert_non_null(bridge, "A Bridge is allocated", __LINE__);
 
     //Get the bridge to obtain the schema
