@@ -7863,6 +7863,7 @@
     },
     {
         "path"     : "/part[0,15]/ctl/pitchwheel.bendrange",
+        "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
         "type"     : "i"
@@ -7962,8 +7963,9 @@
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.updowntimestretch",
+        "shortname": "up/dwn",
         "name"     : "portamento.updowntimestretch",
-        "tooltip"  : "UNDOCUMENTED",
+        "tooltip"  : "Relative length of glide up vs glide down",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8006,6 +8008,7 @@
     },
     {
         "path"     : "/part[0,15]/Ppanning",
+        "shortname": "pan",
         "name"     : "Ppanning",
         "tooltip"  : "Set Panning",
         "type"     : "i",
@@ -8013,6 +8016,7 @@
     },
     {
         "path"     : "/part[0,15]/Pkeylimit",
+        "shortname": "limit",
         "name"     : "Pkeylimit",
         "tooltip"  : "Key limit per part",
         "type"     : "i",
@@ -8117,6 +8121,7 @@
     },
     {
         "path"     : "/part[0,15]/Pvelsns",
+        "shortname": "sense",
         "name"     : "Pvelsns",
         "tooltip"  : "Velocity sensing",
         "type"     : "i",
@@ -8124,6 +8129,7 @@
     },
     {
         "path"     : "/part[0,15]/Pveloffs",
+        "shortname": "offset",
         "name"     : "Pveloffs",
         "tooltip"  : "Velocity offset",
         "type"     : "i",
@@ -10514,6 +10520,7 @@
     },
     {
         "path"     : "/ctl/pitchwheel.bendrange",
+        "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
         "type"     : "i"
@@ -10613,8 +10620,9 @@
     },
     {
         "path"     : "/ctl/portamento.updowntimestretch",
+        "shortname": "up/dwn",
         "name"     : "portamento.updowntimestretch",
-        "tooltip"  : "UNDOCUMENTED",
+        "tooltip"  : "Relative length of glide up vs glide down",
         "type"     : "i",
         "range"    : [0,127]
     },
