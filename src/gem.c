@@ -734,7 +734,7 @@ void br_set_value_string(bridge_t *br, uri_t uri, const char *str)
         char buffer[1024];
         rtosc_message(buffer, 1024, uri, "s", str);
         osc_send(br, buffer);
-        debounce_update(br, cache_get(br, uri));
+        //debounce_update(br, cache_get(br, uri));
     }
 }
 
@@ -848,6 +848,7 @@ void br_recv(bridge_t *br, const char *msg)
 
     //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
     //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
+    br->last_update = 1e-3*uv_now(br->loop);
 
     if(!strcmp("/damage", msg) && !strcmp("s", rtosc_argument_string(msg))) {
         const char *dmg = rtosc_argument(msg, 0).s;
@@ -908,6 +909,11 @@ void br_tick(bridge_t *br)
             debounce_pop(br, i);
         }
     }
+}
+
+int br_last_update(bridge_t *br)
+{
+    return 1e-3*uv_now(br->loop)-br->last_update;
 }
 
 //Views

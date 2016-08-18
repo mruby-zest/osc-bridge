@@ -106,6 +106,7 @@ typedef struct {
     int cache_len;
     int debounce_len;
     int callback_len;
+    uint64_t last_update;
 } bridge_t;
 
 bridge_t *br_create(uri_t);
@@ -129,6 +130,7 @@ void br_action(bridge_t *, uri_t, const char *argt, const rtosc_arg_t *args);
 void br_recv(bridge_t *, const char *);
 int br_pending(bridge_t *);
 void br_tick(bridge_t *);
+int  br_last_update(bridge_t *);//returns delta time in seconds
 
 //Views
 void vw_add_float(void);
