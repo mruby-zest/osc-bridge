@@ -355,6 +355,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -451,6 +458,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -545,6 +559,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvdt[0,39]",
@@ -990,7 +1011,8 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,16383]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PCoarseDetune",
@@ -3496,6 +3518,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -3590,6 +3619,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvdt[0,39]",
@@ -3688,6 +3724,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -3784,6 +3827,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -3878,6 +3928,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvdt[0,39]",
@@ -5079,6 +5136,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -5175,6 +5239,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -5269,6 +5340,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvdt[0,39]",
@@ -5786,7 +5864,8 @@
         "shortname": "detune",
         "name"     : "PDetune",
         "tooltip"  : "Detune in detune type units",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,16383]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/PCoarseDetune",
@@ -6023,6 +6102,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -6117,6 +6203,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvdt[0,39]",
@@ -6215,6 +6308,13 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvdt[0,39]",
         "name"     : "Penvdt#40",
         "tooltip"  : "Envelope Delay Times",
@@ -6309,6 +6409,13 @@
         "name"     : "Pfreemode",
         "tooltip"  : "Complex Envelope Definitions",
         "type"     : "t"
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvsustain",
+        "name"     : "Penvsustain",
+        "tooltip"  : "Location of the sustain point",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvdt[0,39]",
@@ -7143,7 +7250,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/PStereo",
@@ -8208,7 +8325,21 @@
         "path"     : "/part[0,15]/Pefxroute[0,2]",
         "name"     : "Pefxroute#3",
         "tooltip"  : "Effect Routing",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Next Effect"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Part Out"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Dry Out"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/Pefxbypass[0,2]",
@@ -8634,7 +8765,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/PStereo",
@@ -9690,7 +9831,17 @@
         "shortname": "shape",
         "name"     : "PLFOtype",
         "tooltip"  : "LFO Shape",
-        "type"     : "i"
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "sine"
+        },
+        {
+            "id"     : 1,
+            "value"  : "tri"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/PStereo",
@@ -10655,8 +10806,12 @@
         "type"     : "i",
         "options"  : [
         {
-            "id"     : -1,
+            "id"     : -2,
             "value"  : "Master"
+        },
+        {
+            "id"     : -1,
+            "value"  : "Off"
         },
         {
             "id"     : 0,
