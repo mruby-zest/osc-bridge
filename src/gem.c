@@ -258,6 +258,7 @@ static void do_send(bridge_t *br, char *buffer, unsigned len)
     struct sockaddr_in send_addr;
     uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(&request->send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
+    uv_run(br->loop, UV_RUN_NOWAIT);
 }
 
 
