@@ -745,6 +745,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -826,6 +827,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -833,6 +835,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -840,6 +843,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -871,6 +875,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -878,6 +883,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -885,6 +891,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -1163,7 +1170,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Padaptiveharmonicspar",
-        "shortname": "par",
+        "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
@@ -1338,6 +1345,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Pwaveshaping",
+        "shortname": "amount",
         "name"     : "Pwaveshaping",
         "tooltip"  : "Degree Of Waveshaping",
         "type"     : "i",
@@ -1538,7 +1546,8 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,64]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Pharmonicshiftfirst",
@@ -2175,7 +2184,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Padaptiveharmonicspar",
-        "shortname": "par",
+        "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
@@ -2350,6 +2359,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Pwaveshaping",
+        "shortname": "amount",
         "name"     : "Pwaveshaping",
         "tooltip"  : "Degree Of Waveshaping",
         "type"     : "i",
@@ -2550,7 +2560,8 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,64]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Pharmonicshiftfirst",
@@ -2722,7 +2733,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Padaptiveharmonicspar",
-        "shortname": "par",
+        "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
@@ -2897,6 +2908,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Pwaveshaping",
+        "shortname": "amount",
         "name"     : "Pwaveshaping",
         "tooltip"  : "Degree Of Waveshaping",
         "type"     : "i",
@@ -3097,7 +3109,8 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [-64,64]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Pharmonicshiftfirst",
@@ -4114,6 +4127,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -4195,6 +4209,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -4202,6 +4217,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -4209,6 +4225,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -4240,6 +4257,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -4247,6 +4265,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -4254,6 +4273,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -5530,6 +5550,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -5611,6 +5632,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -5618,6 +5640,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -5625,6 +5648,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -5656,6 +5680,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -5663,6 +5688,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -5670,6 +5696,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -6599,6 +6626,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -6680,6 +6708,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -6687,6 +6716,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -6694,6 +6724,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -6725,6 +6756,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -6732,6 +6764,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -6739,6 +6772,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -6944,6 +6978,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -7025,6 +7060,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -7032,6 +7068,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -7039,6 +7076,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -7070,6 +7108,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -7077,6 +7116,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -7084,6 +7124,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -7163,6 +7204,30 @@
         ]
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/Alienwah/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "wah 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "wah 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "wah 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "wah 4"
+        }
+        ]
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -7234,6 +7299,54 @@
         "name"     : "Pphase",
         "tooltip"  : "Phase",
         "type"     : "i"
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Chorus/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Chorus1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Chorus2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Chorus3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Celeste1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Celeste2"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Flange1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Flange2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Flange3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Flange4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Flange5"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pfreq",
@@ -7316,6 +7429,38 @@
         "type"     : "t"
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Overdrive 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Overdrive 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "A. Exciter 1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "A. Exciter 2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Guitar Amp"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        }
+        ]
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
@@ -7345,62 +7490,58 @@
         "options"  : [
         {
             "id"     : 0,
-            "value"  : "Undistorted"
-        },
-        {
-            "id"     : 1,
             "value"  : "Arctangent"
         },
         {
-            "id"     : 2,
+            "id"     : 1,
             "value"  : "Asymmetric"
         },
         {
-            "id"     : 3,
+            "id"     : 2,
             "value"  : "Pow"
         },
         {
-            "id"     : 4,
+            "id"     : 3,
             "value"  : "Sine"
         },
         {
-            "id"     : 5,
+            "id"     : 4,
             "value"  : "Quantisize"
         },
         {
-            "id"     : 6,
+            "id"     : 5,
             "value"  : "Zigzag"
         },
         {
-            "id"     : 7,
+            "id"     : 6,
             "value"  : "Limiter"
         },
         {
-            "id"     : 8,
+            "id"     : 7,
             "value"  : "Upper Limiter"
         },
         {
-            "id"     : 9,
+            "id"     : 8,
             "value"  : "Lower Limiter"
         },
         {
-            "id"     : 10,
+            "id"     : 9,
             "value"  : "Inverse Limiter"
         },
         {
-            "id"     : 11,
+            "id"     : 10,
             "value"  : "Clip"
         },
         {
-            "id"     : 12,
+            "id"     : 11,
             "value"  : "Asym2"
         },
         {
-            "id"     : 13,
+            "id"     : 12,
             "value"  : "Pow2"
         },
         {
-            "id"     : 14,
+            "id"     : 13,
             "value"  : "sigmoid"
         }
         ]
@@ -7665,6 +7806,62 @@
         "tooltip"  : "",
         "type"     : "i",
         "range"    : [0,4]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Phaser/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Phaser 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Phaser 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Phaser 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Phaser 4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser 5"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Phaser 6"
+        },
+        {
+            "id"     : 6,
+            "value"  : "APhaser 1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "APhaser 2"
+        },
+        {
+            "id"     : 8,
+            "value"  : "APhaser 3"
+        },
+        {
+            "id"     : 9,
+            "value"  : "APhaser 4"
+        },
+        {
+            "id"     : 10,
+            "value"  : "APhaser 5"
+        },
+        {
+            "id"     : 11,
+            "value"  : "APhaser 6"
+        }
+        ]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Pfreq",
@@ -8459,6 +8656,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -8540,6 +8738,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -8547,6 +8746,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -8554,6 +8754,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -8585,6 +8786,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -8592,6 +8794,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -8599,6 +8802,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -8678,6 +8882,30 @@
         ]
     },
     {
+        "path"     : "/sysefx[0,3]/Alienwah/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "wah 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "wah 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "wah 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "wah 4"
+        }
+        ]
+    },
+    {
         "path"     : "/sysefx[0,3]/Alienwah/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -8749,6 +8977,54 @@
         "name"     : "Pphase",
         "tooltip"  : "Phase",
         "type"     : "i"
+    },
+    {
+        "path"     : "/sysefx[0,3]/Chorus/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Chorus1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Chorus2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Chorus3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Celeste1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Celeste2"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Flange1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Flange2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Flange3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Flange4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Flange5"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pfreq",
@@ -8831,6 +9107,38 @@
         "type"     : "t"
     },
     {
+        "path"     : "/sysefx[0,3]/Distorsion/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Overdrive 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Overdrive 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "A. Exciter 1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "A. Exciter 2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Guitar Amp"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        }
+        ]
+    },
+    {
         "path"     : "/sysefx[0,3]/Distorsion/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
@@ -8860,62 +9168,58 @@
         "options"  : [
         {
             "id"     : 0,
-            "value"  : "Undistorted"
-        },
-        {
-            "id"     : 1,
             "value"  : "Arctangent"
         },
         {
-            "id"     : 2,
+            "id"     : 1,
             "value"  : "Asymmetric"
         },
         {
-            "id"     : 3,
+            "id"     : 2,
             "value"  : "Pow"
         },
         {
-            "id"     : 4,
+            "id"     : 3,
             "value"  : "Sine"
         },
         {
-            "id"     : 5,
+            "id"     : 4,
             "value"  : "Quantisize"
         },
         {
-            "id"     : 6,
+            "id"     : 5,
             "value"  : "Zigzag"
         },
         {
-            "id"     : 7,
+            "id"     : 6,
             "value"  : "Limiter"
         },
         {
-            "id"     : 8,
+            "id"     : 7,
             "value"  : "Upper Limiter"
         },
         {
-            "id"     : 9,
+            "id"     : 8,
             "value"  : "Lower Limiter"
         },
         {
-            "id"     : 10,
+            "id"     : 9,
             "value"  : "Inverse Limiter"
         },
         {
-            "id"     : 11,
+            "id"     : 10,
             "value"  : "Clip"
         },
         {
-            "id"     : 12,
+            "id"     : 11,
             "value"  : "Asym2"
         },
         {
-            "id"     : 13,
+            "id"     : 12,
             "value"  : "Pow2"
         },
         {
-            "id"     : 14,
+            "id"     : 13,
             "value"  : "sigmoid"
         }
         ]
@@ -9180,6 +9484,62 @@
         "tooltip"  : "",
         "type"     : "i",
         "range"    : [0,4]
+    },
+    {
+        "path"     : "/sysefx[0,3]/Phaser/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Phaser 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Phaser 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Phaser 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Phaser 4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser 5"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Phaser 6"
+        },
+        {
+            "id"     : 6,
+            "value"  : "APhaser 1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "APhaser 2"
+        },
+        {
+            "id"     : 8,
+            "value"  : "APhaser 3"
+        },
+        {
+            "id"     : 9,
+            "value"  : "APhaser 4"
+        },
+        {
+            "id"     : 10,
+            "value"  : "APhaser 5"
+        },
+        {
+            "id"     : 11,
+            "value"  : "APhaser 6"
+        }
+        ]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/lfo.Pfreq",
@@ -9525,6 +9885,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
+        "range"    : [1,5],
         "options"  : [
         {
             "id"     : 0,
@@ -9606,6 +9967,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencesize",
+        "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
@@ -9613,6 +9975,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencestretch",
+        "shortname": "seq.str",
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
@@ -9620,6 +9983,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencereversed",
+        "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
         "type"     : "t"
@@ -9651,6 +10015,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/freq",
+        "shortname": "f.freq",
         "name"     : "freq",
         "tooltip"  : "Formant frequency",
         "type"     : "i",
@@ -9658,6 +10023,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/amp",
+        "shortname": "f.str",
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
@@ -9665,6 +10031,7 @@
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
+        "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "Quality Factor",
         "type"     : "i",
@@ -9744,6 +10111,30 @@
         ]
     },
     {
+        "path"     : "/insefx[0,7]/Alienwah/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "wah 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "wah 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "wah 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "wah 4"
+        }
+        ]
+    },
+    {
         "path"     : "/insefx[0,7]/Alienwah/Pfreq",
         "shortname": "freq",
         "name"     : "Pfreq",
@@ -9815,6 +10206,54 @@
         "name"     : "Pphase",
         "tooltip"  : "Phase",
         "type"     : "i"
+    },
+    {
+        "path"     : "/insefx[0,7]/Chorus/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Chorus1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Chorus2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Chorus3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Celeste1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Celeste2"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Flange1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "Flange2"
+        },
+        {
+            "id"     : 7,
+            "value"  : "Flange3"
+        },
+        {
+            "id"     : 8,
+            "value"  : "Flange4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "Flange5"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pfreq",
@@ -9897,6 +10336,38 @@
         "type"     : "t"
     },
     {
+        "path"     : "/insefx[0,7]/Distorsion/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Overdrive 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Overdrive 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "A. Exciter 1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "A. Exciter 2"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Guitar Amp"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Quantisize"
+        }
+        ]
+    },
+    {
         "path"     : "/insefx[0,7]/Distorsion/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
@@ -9926,62 +10397,58 @@
         "options"  : [
         {
             "id"     : 0,
-            "value"  : "Undistorted"
-        },
-        {
-            "id"     : 1,
             "value"  : "Arctangent"
         },
         {
-            "id"     : 2,
+            "id"     : 1,
             "value"  : "Asymmetric"
         },
         {
-            "id"     : 3,
+            "id"     : 2,
             "value"  : "Pow"
         },
         {
-            "id"     : 4,
+            "id"     : 3,
             "value"  : "Sine"
         },
         {
-            "id"     : 5,
+            "id"     : 4,
             "value"  : "Quantisize"
         },
         {
-            "id"     : 6,
+            "id"     : 5,
             "value"  : "Zigzag"
         },
         {
-            "id"     : 7,
+            "id"     : 6,
             "value"  : "Limiter"
         },
         {
-            "id"     : 8,
+            "id"     : 7,
             "value"  : "Upper Limiter"
         },
         {
-            "id"     : 9,
+            "id"     : 8,
             "value"  : "Lower Limiter"
         },
         {
-            "id"     : 10,
+            "id"     : 9,
             "value"  : "Inverse Limiter"
         },
         {
-            "id"     : 11,
+            "id"     : 10,
             "value"  : "Clip"
         },
         {
-            "id"     : 12,
+            "id"     : 11,
             "value"  : "Asym2"
         },
         {
-            "id"     : 13,
+            "id"     : 12,
             "value"  : "Pow2"
         },
         {
-            "id"     : 14,
+            "id"     : 13,
             "value"  : "sigmoid"
         }
         ]
@@ -10246,6 +10713,62 @@
         "tooltip"  : "",
         "type"     : "i",
         "range"    : [0,4]
+    },
+    {
+        "path"     : "/insefx[0,7]/Phaser/preset",
+        "name"     : "preset",
+        "tooltip"  : "Instrument Presets",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "Phaser 1"
+        },
+        {
+            "id"     : 1,
+            "value"  : "Phaser 2"
+        },
+        {
+            "id"     : 2,
+            "value"  : "Phaser 3"
+        },
+        {
+            "id"     : 3,
+            "value"  : "Phaser 4"
+        },
+        {
+            "id"     : 4,
+            "value"  : "Phaser 5"
+        },
+        {
+            "id"     : 5,
+            "value"  : "Phaser 6"
+        },
+        {
+            "id"     : 6,
+            "value"  : "APhaser 1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "APhaser 2"
+        },
+        {
+            "id"     : 8,
+            "value"  : "APhaser 3"
+        },
+        {
+            "id"     : 9,
+            "value"  : "APhaser 4"
+        },
+        {
+            "id"     : 10,
+            "value"  : "APhaser 5"
+        },
+        {
+            "id"     : 11,
+            "value"  : "APhaser 6"
+        }
+        ]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/lfo.Pfreq",
