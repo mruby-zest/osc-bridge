@@ -99,15 +99,20 @@ typedef struct {
 
     char *address;
     int port;
+    int frame_messages;
 
     param_cache_t     *cache;
     debounce_t        *bounce;
     bridge_callback_t *callback;
+    char             **rlimit;
     int cache_len;
     int debounce_len;
     int callback_len;
+    int rlimit_len;
     uint64_t last_update;
 } bridge_t;
+
+#define BR_RATE_LIMIT 50
 
 bridge_t *br_create(uri_t);
 void      br_destroy(bridge_t *br);
@@ -122,6 +127,7 @@ void br_set_value_float(bridge_t *, uri_t, float);
 void br_set_value_string(bridge_t *, uri_t, const char *);
 int  br_has_callback(bridge_t *, uri_t);
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
+void br_add_action_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_del_callback(bridge_t *, uri_t, bridge_cb_t, void*);
 void br_damage(bridge_t *, uri_t);
 void br_refresh(bridge_t *, uri_t);

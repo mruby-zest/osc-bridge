@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
+#include <unistd.h>
 
 //Testing Hooks
 int  (*osc_socket_hook)(void) = NULL;
@@ -116,7 +117,7 @@ schema_handle_t sm_get(schema_t sch, uri_t u)
     for(int i=0; i<sch.elements; ++i)
         if(match_path(u, sch.handles[i].pattern))
             return sch.handles[i];
-    printf("invalid handle(%s)...\n", u);
+    printf("[WARNING:osc-bridge] Invalid Handle \"%s\"...\n", u);
     return invalid;
 }
 opt_t sm_get_opts(schema_handle_t);
@@ -249,8 +250,18 @@ static void send_cb(uv_udp_send_t* req, int status)
     free(request);
 }
 
+//I know that 300 messages within a single frame results in lost packets, so
+//lets identify a reasonable limit of 100 messages per frame
+
 static void do_send(bridge_t *br, char *buffer, unsigned len)
 {
+    if(br->frame_messages >= BR_RATE_LIMIT) {
+        br->rlimit_len++;
+        br->rlimit = realloc(br->rlimit, sizeof(char**)*br->rlimit_len);
+        br->rlimit[br->rlimit_len-1] = buffer;
+        return;
+    }
+    br->frame_messages++;
     req_t *request = malloc(sizeof(req_t));
     request->data  = buffer;
     uv_buf_t buf   = uv_buf_init((char*)buffer, len);
@@ -258,9 +269,8 @@ static void do_send(bridge_t *br, char *buffer, unsigned len)
     struct sockaddr_in send_addr;
     uv_ip4_addr(br->address, br->port, &send_addr);
     uv_udp_send(&request->send_req, &br->socket, &buf, 1, (const struct sockaddr *)&send_addr, send_cb);
-    uv_run(br->loop, UV_RUN_NOWAIT);
+    //uv_run(br->loop, UV_RUN_NOWAIT);
 }
-
 
 void osc_request(bridge_t *br, const char *path)
 {
@@ -789,6 +799,12 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     }
 }
 
+void br_add_action_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
+{
+    assert(br);
+    callback_push(br, uri, callback, data);
+}
+
 void br_del_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
 {
     callback_pop(br, uri, callback, data);
@@ -896,6 +912,35 @@ void br_tick(bridge_t *br)
 {
     //Run all network events
     while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
+
+    if(br->frame_messages >= BR_RATE_LIMIT) {
+        printf("[INFO] Hit rate limit\n");
+    }
+
+    br->frame_messages = 0;
+    if(br->rlimit) {
+        printf("[INFO] Reading through rate limited fields\n");
+        for(int i=0; i<br->rlimit_len && i<BR_RATE_LIMIT; ++i) {
+            char *msg = br->rlimit[i];
+            //printf("[DEBUG] message = \"%s\"\n", msg);
+            do_send(br, msg, rtosc_message_length(msg, -1));
+        }
+        if(br->frame_messages == br->rlimit_len) {
+            printf("[INFO] Clearing rate limit queue\n");
+            br->rlimit_len = 0;
+            free(br->rlimit);
+            br->rlimit = 0;
+        } else {
+            char **base = br->rlimit;
+            int N = br->frame_messages;
+            int M = br->rlimit_len;
+            printf("[INFO] Shrinking rate limit queue %d=>%d\n", M, M-N);
+            memmove(base, base+N, sizeof(void*)*(M-N));
+            br->rlimit_len = M-N;
+        }
+        //wait 10ms
+        usleep(10000);
+    }
 
     //Attempt to disable debouncing
     if(br->debounce_len == 0)
