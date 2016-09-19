@@ -745,29 +745,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreqtrack",
@@ -930,6 +908,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/Fadein_adjustment",
+        "shortname": "a.pop.",
         "name"     : "Fadein_adjustment",
         "tooltip"  : "Adjustment for anti-pop strategy.",
         "type"     : "i",
@@ -4127,29 +4106,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreqtrack",
@@ -5550,29 +5507,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreqtrack",
@@ -5914,15 +5849,19 @@
         "options"  : [
         {
             "id"     : 0,
-            "value"  : "100 cents"
+            "value"  : "L35 cents"
         },
         {
             "id"     : 1,
-            "value"  : "200 cents"
+            "value"  : "L10 cents"
         },
         {
             "id"     : 2,
-            "value"  : "500 cents"
+            "value"  : "E100 cents"
+        },
+        {
+            "id"     : 3,
+            "value"  : "E1200 cents"
         }
         ]
     },
@@ -6626,29 +6565,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreqtrack",
@@ -6978,29 +6895,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreqtrack",
@@ -7262,8 +7157,8 @@
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pdepth",
@@ -7284,7 +7179,8 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,100]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Plrcross",
@@ -7383,8 +7279,8 @@
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pdepth",
@@ -7616,7 +7512,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
+        "tooltip"  : "Stereo Mode",
         "type"     : "i"
     },
     {
@@ -7899,7 +7795,7 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "",
-        "type"     : "t"
+        "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pdepth",
@@ -7920,7 +7816,8 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Plrcross",
@@ -8035,10 +7932,6 @@
         {
             "id"     : 12,
             "value"  : "VeryLong2"
-        },
-        {
-            "id"     : 13,
-            "value"  : "n"
         }
         ]
     },
@@ -8656,29 +8549,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pfreqtrack",
@@ -8940,8 +8811,8 @@
         "path"     : "/sysefx[0,3]/Alienwah/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Pdepth",
@@ -8962,7 +8833,8 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,100]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Plrcross",
@@ -9061,8 +8933,8 @@
         "path"     : "/sysefx[0,3]/Chorus/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pdepth",
@@ -9294,7 +9166,7 @@
         "path"     : "/sysefx[0,3]/DynamicFilter/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
+        "tooltip"  : "Stereo Mode",
         "type"     : "i"
     },
     {
@@ -9577,7 +9449,7 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "",
-        "type"     : "t"
+        "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pdepth",
@@ -9598,7 +9470,8 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,12]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Plrcross",
@@ -9713,10 +9586,6 @@
         {
             "id"     : 12,
             "value"  : "VeryLong2"
-        },
-        {
-            "id"     : 13,
-            "value"  : "n"
         }
         ]
     },
@@ -9885,29 +9754,7 @@
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
         "type"     : "i",
-        "range"    : [1,5],
-        "options"  : [
-        {
-            "id"     : 0,
-            "value"  : "1"
-        },
-        {
-            "id"     : 1,
-            "value"  : "2"
-        },
-        {
-            "id"     : 2,
-            "value"  : "3"
-        },
-        {
-            "id"     : 3,
-            "value"  : "4"
-        },
-        {
-            "id"     : 4,
-            "value"  : "5"
-        }
-        ]
+        "range"    : [0,5]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pfreqtrack",
@@ -10169,8 +10016,8 @@
         "path"     : "/insefx[0,7]/Alienwah/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Pdepth",
@@ -10191,7 +10038,8 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,100]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Plrcross",
@@ -10290,8 +10138,8 @@
         "path"     : "/insefx[0,7]/Chorus/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
-        "type"     : "t"
+        "tooltip"  : "Stereo Mode",
+        "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pdepth",
@@ -10523,7 +10371,7 @@
         "path"     : "/insefx[0,7]/DynamicFilter/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
-        "tooltip"  : "Stereo/Mono Mode",
+        "tooltip"  : "Stereo Mode",
         "type"     : "i"
     },
     {
@@ -10806,7 +10654,7 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "",
-        "type"     : "t"
+        "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pdepth",
@@ -10827,7 +10675,8 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [1,12]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Plrcross",
@@ -10942,10 +10791,6 @@
         {
             "id"     : 12,
             "value"  : "VeryLong2"
-        },
-        {
-            "id"     : 13,
-            "value"  : "n"
         }
         ]
     },
