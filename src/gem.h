@@ -70,6 +70,7 @@ typedef struct {
     char  pending;
     char  type;
     double request_time;
+    int   requests;
     union {
         rtosc_arg_t val;
         struct {
@@ -112,7 +113,7 @@ typedef struct {
     uint64_t last_update;
 } bridge_t;
 
-#define BR_RATE_LIMIT 50
+#define BR_RATE_LIMIT 128
 
 bridge_t *br_create(uri_t);
 void      br_destroy(bridge_t *br);

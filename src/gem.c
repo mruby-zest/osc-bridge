@@ -404,18 +404,22 @@ static int cache_has(param_cache_t *c, size_t len, uri_t uri)
 
 static void cache_update(bridge_t *br, param_cache_t *ch)
 {
+    double now  = 1e-3*uv_now(br->loop);
     uri_t uri   = ch->path;
     ch->valid   = 0;
     ch->type    = 0;
     ch->pending = 1;
-    ch->request_time = 0;
+    ch->request_time = now;
+    ch->requests++;
     memset(&ch->val, 0, sizeof(ch->val));
 
-    char buffer[128];
-    rtosc_message(buffer, 128, uri, "");
-    if(osc_request_hook)
+    if(osc_request_hook) {
+        char buffer[128];
+        const int len = rtosc_message(buffer, 128, uri, "");
+        if(len <= 0)
+            fprintf(stderr, "[ERROR] Osc Bridge Could Not Request Update For \"%s\"\n", uri);
     	osc_request_hook(br, buffer);
-    else
+    } else
         osc_request(br, uri);
 }
 
@@ -424,6 +428,7 @@ static void cache_push(bridge_t *br, uri_t uri)
     br->cache_len += 1;
     br->cache = realloc(br->cache, br->cache_len*sizeof(param_cache_t));
     param_cache_t *ch = br->cache + (br->cache_len - 1);
+    memset(ch, 0, sizeof(param_cache_t));
     ch->path    = strdup(uri);
     cache_update(br, ch);
 }
@@ -479,7 +484,6 @@ static void callback_pop(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
         bridge_callback_t item = br->callback[idx];
         if(!strcmp(item.path, uri) && item.cb == cb && item.data == data) {
             //We should remove this element
-            //printf("Deleting callback...\n");
 
             //Deallocate resources
             free((void*)item.path);
@@ -560,6 +564,7 @@ static void run_callbacks(bridge_t *br, param_cache_t *line)
         }
         printf("[ERROR] Needs %d bytes of space...\n", len);
     }
+
 
     //run callbacks
     for(int i=0; i<br->callback_len; ++i)
@@ -863,8 +868,10 @@ void br_recv(bridge_t *br, const char *msg)
     if(!msg)
         return;
 
-    //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
-    //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
+    //if(rtosc_narguments(msg) < 3) {
+    //    //printf("BR RECEIVE %s:%s\n", msg, rtosc_argument_string(msg));
+    //    //printf("MESSAGE IS %d bytes\n", rtosc_message_length(msg, -1));
+    //}
     br->last_update = 1e-3*uv_now(br->loop);
 
     if(!strcmp("/damage", msg) && !strcmp("s", rtosc_argument_string(msg))) {
@@ -939,14 +946,33 @@ void br_tick(bridge_t *br)
             br->rlimit_len = M-N;
         }
         //wait 10ms
-        usleep(10000);
+        //usleep(10000);
+    }
+    uv_update_time(br->loop);
+    double now  = 1e-3*uv_now(br->loop);
+    
+    if(!br->rlimit) {
+        for(int i=0; i<br->cache_len; ++i) {
+            char *path   = br->cache[i].path;
+            int   pend   = br->cache[i].pending;
+            int   valid  = br->cache[i].valid;
+            double uptim = br->cache[i].request_time;
+            int   rq     = br->cache[i].requests;
+            if(pend || !valid) {
+                //printf("cache status = <%s, %d, %d, %f, %d>\n", path, pend, valid, uptim, rq);
+                if(uptim < now - 300e-3) {
+                    if(rq < 10)
+                        cache_update(br, &br->cache[i]);
+                    else if(br->cache[i].requests++ == 10)
+                        printf("[ERROR] Invalid parameter cannot be accessed at <%s>\n", path);
+                }
+            }
+        }
     }
 
     //Attempt to disable debouncing
     if(br->debounce_len == 0)
         return;
-    uv_update_time(br->loop);
-    uint64_t now  = 1e-3*uv_now(br->loop);
     double delta  = 100e-3;
     double thresh = now - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
@@ -955,6 +981,8 @@ void br_tick(bridge_t *br)
             debounce_pop(br, i);
         }
     }
+
+
 }
 
 int br_last_update(bridge_t *br)
