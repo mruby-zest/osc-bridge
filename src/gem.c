@@ -408,6 +408,7 @@ static void cache_update(bridge_t *br, param_cache_t *ch)
     uri_t uri   = ch->path;
     ch->valid   = 0;
     ch->type    = 0;
+    ch->usable  = 1;
     ch->pending = 1;
     ch->request_time = now;
     ch->requests++;
@@ -630,6 +631,7 @@ static int cache_set(bridge_t *br, uri_t uri, char type, rtosc_arg_t val, int sk
         line->valid = true;
         line->type  = type;
         line->val   = clone_value(type, val);
+        line->requests = 0;
 
         //check if cache line is currently debounced...
         int debounced = false;
@@ -668,6 +670,7 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
         line->type      = 'v';
         line->vec_type  = strdup(types);
         line->vec_value = clone_vec_value(types, args);
+        line->requests = 0;
 
         //check if cache line is currently debounced...
         //int debounced = false;
@@ -822,10 +825,12 @@ void br_damage(bridge_t *br, uri_t dmg)
     for(int i=0; i<br->cache_len; ++i) {
         if(strstr(br->cache[i].path, dmg)) {
             int current = br_has_callback(br, br->cache[i].path);
-            if(current)
+            if(current) {
                 osc_request(br, br->cache[i].path);
-            else
-                br->cache[i].valid = false;
+                br->cache[i].pending = true;
+            } else
+                br->cache[i].usable = false;
+            br->cache[i].requests = 0;
         }
     }
 }
@@ -950,15 +955,16 @@ void br_tick(bridge_t *br)
     }
     uv_update_time(br->loop);
     double now  = 1e-3*uv_now(br->loop);
-    
+
     if(!br->rlimit) {
         for(int i=0; i<br->cache_len; ++i) {
             char *path   = br->cache[i].path;
             int   pend   = br->cache[i].pending;
             int   valid  = br->cache[i].valid;
+            int   usable = br->cache[i].usable;
             double uptim = br->cache[i].request_time;
             int   rq     = br->cache[i].requests;
-            if(pend || !valid) {
+            if(usable && (pend || !valid)) {
                 //printf("cache status = <%s, %d, %d, %f, %d>\n", path, pend, valid, uptim, rq);
                 if(uptim < now - 300e-3) {
                     if(rq < 10)

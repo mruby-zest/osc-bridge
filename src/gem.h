@@ -69,6 +69,7 @@ typedef struct {
     char  valid;
     char  pending;
     char  type;
+    char  usable;
     double request_time;
     int   requests;
     union {
