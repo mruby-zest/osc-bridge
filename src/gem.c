@@ -365,13 +365,20 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     schema_t sch;
     int ret;
 
-    printf("[debug] loading json file\n");
-    //FILE *f = fopen("../test-schema.json", "r");
+    //printf("[debug] loading json file\n");
     FILE *f = fopen("schema/test.json", "r");
+    if(!f && br->search_path) {
+        char tmp[256];
+        snprintf(tmp, sizeof(tmp), "%s%s", br->search_path, "schema/test.json");
+        f = fopen(tmp, "r");
+    }
     if(!f)
         f = fopen("src/osc-bridge/schema/test.json", "r");
-    if(!f)
-        f = fopen("/home/mark/code/mruby-zest-build/src/osc-bridge/schema/test.json", "r");
+    if(!f) {
+        printf("[ERROR:Zyn] schema/test.json file is missing.\n");
+        printf("[ERROR:Zyn] Please check your installation for problems\n");
+        exit(1);
+    }
     assert(f && "opening json file");
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
@@ -774,7 +781,7 @@ void br_add_callback(bridge_t *br, uri_t uri, bridge_cb_t callback, void *data)
     } else {
         //instantly respond when possible
         param_cache_t *ch = cache_get(br, uri);
-        if(!ch->valid) {
+        if(!ch->valid || !ch->usable) {
             cache_update(br, ch);
             return;
         }
@@ -979,7 +986,7 @@ void br_tick(bridge_t *br)
     //Attempt to disable debouncing
     if(br->debounce_len == 0)
         return;
-    double delta  = 100e-3;
+    double delta  = 200e-3;
     double thresh = now - delta;
     for(int i=br->debounce_len-1; i >= 0; --i) {
         if(br->bounce[i].last_set < thresh) {

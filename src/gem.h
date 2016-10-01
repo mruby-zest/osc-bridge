@@ -99,6 +99,7 @@ typedef struct {
     uv_udp_t socket;
     void *pending_requests;
 
+    char *search_path;
     char *address;
     int port;
     int frame_messages;
