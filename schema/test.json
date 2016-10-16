@@ -769,7 +769,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pformantslowness",
@@ -783,7 +783,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -809,7 +809,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencestretch",
@@ -1053,7 +1053,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Prand",
         "shortname": "phase rnd",
         "name"     : "Prand",
-        "tooltip"  : "Oscilator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2067,7 +2067,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Prand",
         "shortname": "phase rnd",
         "name"     : "Prand",
-        "tooltip"  : "Oscilator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2616,7 +2616,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Prand",
         "shortname": "phase rnd",
         "name"     : "Prand",
-        "tooltip"  : "Oscilator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -4130,7 +4130,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pformantslowness",
@@ -4144,7 +4144,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -4170,7 +4170,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencestretch",
@@ -4364,7 +4364,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pextoscil",
         "shortname": "ext.",
         "name"     : "Pextoscil",
-        "tooltip"  : "External Oscilator Selection",
+        "tooltip"  : "External Oscillator Selection",
         "type"     : "i",
         "range"    : [-1,16]
     },
@@ -4372,7 +4372,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PextFMoscil",
         "shortname": "ext.",
         "name"     : "PextFMoscil",
-        "tooltip"  : "External FM Oscilator Selection",
+        "tooltip"  : "External FM Oscillator Selection",
         "type"     : "i",
         "range"    : [-1,16]
     },
@@ -4410,7 +4410,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PfixedfreqET",
         "shortname": "e.t.",
         "name"     : "PfixedfreqET",
-        "tooltip"  : "Equal Tempermant Parameter",
+        "tooltip"  : "Equal Temperament Parameter",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -4636,7 +4636,8 @@
         "shortname": "fine",
         "name"     : "PFMDetune",
         "tooltip"  : "Modulator Fine Detune",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,16383]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMCoarseDetune",
@@ -5531,7 +5532,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pformantslowness",
@@ -5545,7 +5546,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -5571,7 +5572,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencestretch",
@@ -5993,9 +5994,9 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/POvertoneSpread.par3",
-        "shortname": "p3",
+        "shortname": "forceH",
         "name"     : "POvertoneSpread.par3",
-        "tooltip"  : "Overtone Parameter",
+        "tooltip"  : "Force Overtones To Harmonics",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -6005,7 +6006,7 @@
         "name"     : "Pnumstages",
         "tooltip"  : "Number of filter stages",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,5]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pbandwidth",
@@ -6589,7 +6590,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pformantslowness",
@@ -6603,7 +6604,7 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -6629,7 +6630,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencestretch",
@@ -6919,7 +6920,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pformantslowness",
@@ -6933,7 +6934,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -6959,7 +6960,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencestretch",
@@ -7691,7 +7692,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/EQ/filter[0,7]/Pq",
         "shortname": "q",
         "name"     : "Pq",
-        "tooltip"  : "",
+        "tooltip"  : "Resonance/Bandwidth",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7699,7 +7700,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/EQ/filter[0,7]/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "",
+        "tooltip"  : "Additional filter stages",
         "type"     : "i",
         "range"    : [0,4]
     },
@@ -7763,14 +7764,14 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Pfreq",
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
-        "tooltip"  : "",
+        "tooltip"  : "LFO frequency",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
-        "tooltip"  : "",
+        "tooltip"  : "LFO randomness",
         "type"     : "i"
     },
     {
@@ -7794,21 +7795,21 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Pstereo",
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
-        "tooltip"  : "",
+        "tooltip"  : "Left/right channel phase shift",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
-        "tooltip"  : "",
+        "tooltip"  : "LFP depth",
         "type"     : "i"
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pfb",
         "shortname": "fb",
         "name"     : "Pfb",
-        "tooltip"  : "",
+        "tooltip"  : "Feedback",
         "type"     : "i"
     },
     {
@@ -7823,7 +7824,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
-        "tooltip"  : "",
+        "tooltip"  : "Channel routing",
         "type"     : "i"
     },
     {
@@ -7837,7 +7838,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Poutsub",
         "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : "",
+        "tooltip"  : "Invert output",
         "type"     : "t"
     },
     {
@@ -7858,7 +7859,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Phyper",
         "shortname": "hyp.",
         "name"     : "Phyper",
-        "tooltip"  : "",
+        "tooltip"  : "Square the LFO",
         "type"     : "t"
     },
     {
@@ -7872,7 +7873,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Panalog",
         "shortname": "analog",
         "name"     : "Panalog",
-        "tooltip"  : "",
+        "tooltip"  : "Use analog phaser",
         "type"     : "t"
     },
     {
@@ -7965,7 +7966,7 @@
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Reverb/Phpf",
-        "shortname": "lpf",
+        "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
         "type"     : "i"
@@ -8123,7 +8124,7 @@
     {
         "path"     : "/part[0,15]/ctl/portamento.portamento",
         "name"     : "portamento.portamento",
-        "tooltip"  : "UNDOCUMENTED",
+        "tooltip"  : "Portamento Enable",
         "type"     : "t"
     },
     {
@@ -8138,14 +8139,14 @@
         "path"     : "/part[0,15]/ctl/portamento.proportional",
         "shortname": "propt.",
         "name"     : "portamento.proportional",
-        "tooltip"  : "If all portamentos are proportional to the distance they span",
+        "tooltip"  : "Whether the portamento time is proportionalto the size of the interval between two notes.",
         "type"     : "t"
     },
     {
         "path"     : "/part[0,15]/ctl/portamento.propRate",
-        "shortname": "rate",
+        "shortname": "scale",
         "name"     : "portamento.propRate",
-        "tooltip"  : "Portamento proportional rate",
+        "tooltip"  : "Portamento proportional scale",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8573,7 +8574,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pformantslowness",
@@ -8587,7 +8588,7 @@
         "path"     : "/sysefx[0,3]/filterpars/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8613,7 +8614,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencestretch",
@@ -9345,7 +9346,7 @@
         "path"     : "/sysefx[0,3]/EQ/filter[0,7]/Pq",
         "shortname": "q",
         "name"     : "Pq",
-        "tooltip"  : "",
+        "tooltip"  : "Resonance/Bandwidth",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -9353,7 +9354,7 @@
         "path"     : "/sysefx[0,3]/EQ/filter[0,7]/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "",
+        "tooltip"  : "Additional filter stages",
         "type"     : "i",
         "range"    : [0,4]
     },
@@ -9417,14 +9418,14 @@
         "path"     : "/sysefx[0,3]/Phaser/lfo.Pfreq",
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
-        "tooltip"  : "",
+        "tooltip"  : "LFO frequency",
         "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
-        "tooltip"  : "",
+        "tooltip"  : "LFO randomness",
         "type"     : "i"
     },
     {
@@ -9448,21 +9449,21 @@
         "path"     : "/sysefx[0,3]/Phaser/lfo.Pstereo",
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
-        "tooltip"  : "",
+        "tooltip"  : "Left/right channel phase shift",
         "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
-        "tooltip"  : "",
+        "tooltip"  : "LFP depth",
         "type"     : "i"
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pfb",
         "shortname": "fb",
         "name"     : "Pfb",
-        "tooltip"  : "",
+        "tooltip"  : "Feedback",
         "type"     : "i"
     },
     {
@@ -9477,7 +9478,7 @@
         "path"     : "/sysefx[0,3]/Phaser/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
-        "tooltip"  : "",
+        "tooltip"  : "Channel routing",
         "type"     : "i"
     },
     {
@@ -9491,7 +9492,7 @@
         "path"     : "/sysefx[0,3]/Phaser/Poutsub",
         "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : "",
+        "tooltip"  : "Invert output",
         "type"     : "t"
     },
     {
@@ -9512,7 +9513,7 @@
         "path"     : "/sysefx[0,3]/Phaser/Phyper",
         "shortname": "hyp.",
         "name"     : "Phyper",
-        "tooltip"  : "",
+        "tooltip"  : "Square the LFO",
         "type"     : "t"
     },
     {
@@ -9526,7 +9527,7 @@
         "path"     : "/sysefx[0,3]/Phaser/Panalog",
         "shortname": "analog",
         "name"     : "Panalog",
-        "tooltip"  : "",
+        "tooltip"  : "Use analog phaser",
         "type"     : "t"
     },
     {
@@ -9619,7 +9620,7 @@
     },
     {
         "path"     : "/sysefx[0,3]/Reverb/Phpf",
-        "shortname": "lpf",
+        "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
         "type"     : "i"
@@ -9778,7 +9779,7 @@
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [1,12]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pformantslowness",
@@ -9792,7 +9793,7 @@
         "path"     : "/insefx[0,7]/filterpars/Pvowelclearness",
         "shortname": "clarity",
         "name"     : "Pvowelclearness",
-        "tooltip"  : "Cost for mixing vowels",
+        "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -9818,7 +9819,7 @@
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,8]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencestretch",
@@ -10550,7 +10551,7 @@
         "path"     : "/insefx[0,7]/EQ/filter[0,7]/Pq",
         "shortname": "q",
         "name"     : "Pq",
-        "tooltip"  : "",
+        "tooltip"  : "Resonance/Bandwidth",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -10558,7 +10559,7 @@
         "path"     : "/insefx[0,7]/EQ/filter[0,7]/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
-        "tooltip"  : "",
+        "tooltip"  : "Additional filter stages",
         "type"     : "i",
         "range"    : [0,4]
     },
@@ -10622,14 +10623,14 @@
         "path"     : "/insefx[0,7]/Phaser/lfo.Pfreq",
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
-        "tooltip"  : "",
+        "tooltip"  : "LFO frequency",
         "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
-        "tooltip"  : "",
+        "tooltip"  : "LFO randomness",
         "type"     : "i"
     },
     {
@@ -10653,21 +10654,21 @@
         "path"     : "/insefx[0,7]/Phaser/lfo.Pstereo",
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
-        "tooltip"  : "",
+        "tooltip"  : "Left/right channel phase shift",
         "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
-        "tooltip"  : "",
+        "tooltip"  : "LFP depth",
         "type"     : "i"
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pfb",
         "shortname": "fb",
         "name"     : "Pfb",
-        "tooltip"  : "",
+        "tooltip"  : "Feedback",
         "type"     : "i"
     },
     {
@@ -10682,7 +10683,7 @@
         "path"     : "/insefx[0,7]/Phaser/Plrcross",
         "shortname": "cross",
         "name"     : "Plrcross",
-        "tooltip"  : "",
+        "tooltip"  : "Channel routing",
         "type"     : "i"
     },
     {
@@ -10696,7 +10697,7 @@
         "path"     : "/insefx[0,7]/Phaser/Poutsub",
         "shortname": "sub",
         "name"     : "Poutsub",
-        "tooltip"  : "",
+        "tooltip"  : "Invert output",
         "type"     : "t"
     },
     {
@@ -10717,7 +10718,7 @@
         "path"     : "/insefx[0,7]/Phaser/Phyper",
         "shortname": "hyp.",
         "name"     : "Phyper",
-        "tooltip"  : "",
+        "tooltip"  : "Square the LFO",
         "type"     : "t"
     },
     {
@@ -10731,7 +10732,7 @@
         "path"     : "/insefx[0,7]/Phaser/Panalog",
         "shortname": "analog",
         "name"     : "Panalog",
-        "tooltip"  : "",
+        "tooltip"  : "Use analog phaser",
         "type"     : "t"
     },
     {
@@ -10824,7 +10825,7 @@
     },
     {
         "path"     : "/insefx[0,7]/Reverb/Phpf",
-        "shortname": "lpf",
+        "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
         "type"     : "i"
@@ -11092,7 +11093,7 @@
     {
         "path"     : "/ctl/portamento.portamento",
         "name"     : "portamento.portamento",
-        "tooltip"  : "UNDOCUMENTED",
+        "tooltip"  : "Portamento Enable",
         "type"     : "t"
     },
     {
@@ -11107,14 +11108,14 @@
         "path"     : "/ctl/portamento.proportional",
         "shortname": "propt.",
         "name"     : "portamento.proportional",
-        "tooltip"  : "If all portamentos are proportional to the distance they span",
+        "tooltip"  : "Whether the portamento time is proportionalto the size of the interval between two notes.",
         "type"     : "t"
     },
     {
         "path"     : "/ctl/portamento.propRate",
-        "shortname": "rate",
+        "shortname": "scale",
         "name"     : "portamento.propRate",
-        "tooltip"  : "Portamento proportional rate",
+        "tooltip"  : "Portamento proportional scale",
         "type"     : "i",
         "range"    : [0,127]
     },
