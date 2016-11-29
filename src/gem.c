@@ -938,19 +938,19 @@ void br_tick(bridge_t *br)
         uv_run(br->loop, UV_RUN_NOWAIT);
 
     if(br->frame_messages >= BR_RATE_LIMIT) {
-        printf("[INFO] Hit rate limit\n");
+        //printf("[INFO] Hit rate limit\n");
     }
 
     br->frame_messages = 0;
     if(br->rlimit) {
-        printf("[INFO] Reading through rate limited fields\n");
+        //printf("[INFO] Reading through rate limited fields\n");
         for(int i=0; i<br->rlimit_len && i<BR_RATE_LIMIT; ++i) {
             char *msg = br->rlimit[i];
             //printf("[DEBUG] message = \"%s\"\n", msg);
             do_send(br, msg, rtosc_message_length(msg, -1));
         }
         if(br->frame_messages == br->rlimit_len) {
-            printf("[INFO] Clearing rate limit queue\n");
+            //printf("[INFO] Clearing rate limit queue\n");
             br->rlimit_len = 0;
             free(br->rlimit);
             br->rlimit = 0;
@@ -958,7 +958,7 @@ void br_tick(bridge_t *br)
             char **base = br->rlimit;
             int N = br->frame_messages;
             int M = br->rlimit_len;
-            printf("[INFO] Shrinking rate limit queue %d=>%d\n", M, M-N);
+            //printf("[INFO] Shrinking rate limit queue %d=>%d\n", M, M-N);
             memmove(base, base+N, sizeof(void*)*(M-N));
             br->rlimit_len = M-N;
         }
