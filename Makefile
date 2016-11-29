@@ -8,5 +8,5 @@ remote-test: src/gem.c src/parse-schema.c test/basic-remote.c
 	$(CC) -std=gnu99 -o remote-test src/gem.c src/parse-schema.c test/basic-remote.c -lrtosc -luv -g -O0
 
 lib: src/gem.c src/parse-schema.c
-	$(CC) -std=gnu99 -O0 -g -fPIC -c src/gem.c src/parse-schema.c -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
+	$(CC) $(CFLAGS) -std=gnu99 -O0 -g -fPIC -c src/gem.c src/parse-schema.c -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
 	$(AR) rcs libosc-bridge.a gem.o parse-schema.o

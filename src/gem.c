@@ -334,7 +334,10 @@ void br_destroy(bridge_t *br)
     uv_close((uv_handle_t*)&br->socket, NULL);
 
     //Flush Events
-    while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
+    int i=100;
+    while(uv_run(br->loop, UV_RUN_NOWAIT) > 1)
+        if(i-- < 0)
+            break;
 
     close = uv_loop_close(br->loop);
     if(close)
@@ -389,6 +392,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
 
     printf("[debug] parsing json file\n");
     parse_schema(json, &sch);
+    printf("[debug] json parsed succesfully\n");
     sch.json = json;
 
 
@@ -930,7 +934,8 @@ int br_pending(bridge_t *br)
 void br_tick(bridge_t *br)
 {
     //Run all network events
-    while(uv_run(br->loop, UV_RUN_NOWAIT) > 1);
+    for(int i=0; i<200; ++i)
+        uv_run(br->loop, UV_RUN_NOWAIT);
 
     if(br->frame_messages >= BR_RATE_LIMIT) {
         printf("[INFO] Hit rate limit\n");
