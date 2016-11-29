@@ -17,7 +17,7 @@ int  (*osc_request_hook)(bridge_t *, const char *) = NULL;
 #define ESC_ESC '\xdd'
 char *send_slip(const char *data, unsigned size, unsigned *nsize)
 {
-    char *tmp_buf = malloc(size*2);
+    char *tmp_buf = (char*)malloc(size*2);
     unsigned i;
     unsigned j;
     //Escape sequence
@@ -257,12 +257,12 @@ static void do_send(bridge_t *br, char *buffer, unsigned len)
 {
     if(br->frame_messages >= BR_RATE_LIMIT) {
         br->rlimit_len++;
-        br->rlimit = realloc(br->rlimit, sizeof(char**)*br->rlimit_len);
+        br->rlimit = (char**)realloc(br->rlimit, sizeof(char**)*br->rlimit_len);
         br->rlimit[br->rlimit_len-1] = buffer;
         return;
     }
     br->frame_messages++;
-    req_t *request = malloc(sizeof(req_t));
+    req_t *request = (req_t*)malloc(sizeof(req_t));
     request->data  = buffer;
     uv_buf_t buf   = uv_buf_init((char*)buffer, len);
 
@@ -274,7 +274,7 @@ static void do_send(bridge_t *br, char *buffer, unsigned len)
 
 void osc_request(bridge_t *br, const char *path)
 {
-    char *buffer = malloc(4096);
+    char *buffer = (char*)malloc(4096);
     size_t len   = rtosc_message(buffer, 4096, path, "");
     do_send(br, buffer, len);
     //printf("osc request done<%s>?\n", path);
@@ -283,7 +283,7 @@ void osc_request(bridge_t *br, const char *path)
 void osc_send(bridge_t *br, const char *message)
 {
     size_t   len   = rtosc_message_length(message, -1);
-    char     *copy = malloc(len);
+    char     *copy = (char*)malloc(len);
     memcpy(copy, message, len);
     do_send(br, copy, len);
     //printf("osc sent...<%s>?\n", message);
@@ -292,9 +292,9 @@ void osc_send(bridge_t *br, const char *message)
 //Bridge
 bridge_t *br_create(uri_t uri)
 {
-    bridge_t *br = calloc(1,sizeof(bridge_t));
+    bridge_t *br = (bridge_t*)calloc(1,sizeof(bridge_t));
 
-    br->loop = calloc(1, sizeof(uv_loop_t));
+    br->loop = (uv_loop_t*)calloc(1, sizeof(uv_loop_t));
     uv_loop_init(br->loop);
 
     uv_udp_init(br->loop, &br->socket);
@@ -325,12 +325,19 @@ bridge_t *br_create(uri_t uri)
     return br;
 }
 
+static void
+declone_value(char type, rtosc_arg_t val);
+static void
+declone_vec_value(const char *type, rtosc_arg_t *val);
+
 void br_destroy(bridge_t *br)
 {
     int close;
     close = uv_udp_recv_stop(&br->socket);
     if(close)
         fprintf(stderr, "[Warning] UV UDP cannot be stopped [%d] (UV_EBUSY=%d)\n", close, UV_EBUSY);
+    else
+        fprintf(stderr, "[INFO] UV UDP Stopped\n");
     uv_close((uv_handle_t*)&br->socket, NULL);
 
     //Flush Events
@@ -342,14 +349,18 @@ void br_destroy(bridge_t *br)
     close = uv_loop_close(br->loop);
     if(close)
         fprintf(stderr, "[Warning] UV Loop Cannot be closed [%d] (UV_EBUSY=%d)\n", close, UV_EBUSY);
+    else
+        fprintf(stderr, "[INFO] UV Loop Stopped\n");
     free(br->loop);
 
     for(int i=0; i<br->cache_len; ++i) {
         free((void*)br->cache[i].path);
         if(br->cache[i].type == 'v') {
-            free((void*)br->cache[i].vec_type);
-            free((void*)br->cache[i].vec_value);
-        }
+            declone_vec_value(br->cache[i].vec_type, br->cache[i].vec_value);
+            //free((void*)br->cache[i].vec_type);
+            //free((void*)br->cache[i].vec_value);
+        } else
+            declone_value(br->cache[i].type, br->cache[i].val);
     }
     free(br->cache);
     free(br->bounce);
@@ -386,7 +397,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     fseek(f, 0, SEEK_END);
     size_t len = ftell(f);
     rewind(f);
-    char *json = calloc(1, len+1);
+    char *json = (char*)calloc(1, len+1);
     fread(json, 1, len, f);
     fclose(f);
 
@@ -438,7 +449,7 @@ static void cache_update(bridge_t *br, param_cache_t *ch)
 static void cache_push(bridge_t *br, uri_t uri)
 {
     br->cache_len += 1;
-    br->cache = realloc(br->cache, br->cache_len*sizeof(param_cache_t));
+    br->cache = (param_cache_t*)realloc(br->cache, br->cache_len*sizeof(param_cache_t));
     param_cache_t *ch = br->cache + (br->cache_len - 1);
     memset(ch, 0, sizeof(param_cache_t));
     ch->path    = strdup(uri);
@@ -448,7 +459,7 @@ static void cache_push(bridge_t *br, uri_t uri)
 static void debounce_push(bridge_t *br, param_cache_t *line, double obs)
 {
     br->debounce_len += 1;
-    br->bounce        = realloc(br->bounce, br->debounce_len*sizeof(debounce_t));
+    br->bounce        = (debounce_t*)realloc(br->bounce, br->debounce_len*sizeof(debounce_t));
     debounce_t *bo = br->bounce + (br->debounce_len - 1);
     bo->path = line->path;
     bo->last_set = obs;
@@ -480,7 +491,7 @@ static void debounce_pop(bridge_t *br, int idx)
 static void callback_push(bridge_t *br, uri_t uri, bridge_cb_t cb, void *data)
 {
     br->callback_len += 1;
-    br->callback = realloc(br->callback, br->callback_len*sizeof(bridge_callback_t));
+    br->callback = (bridge_callback_t*)realloc(br->callback, br->callback_len*sizeof(bridge_callback_t));
     bridge_callback_t *ch = br->callback + (br->callback_len - 1);
     ch->path    = strdup(uri);
     ch->cb      = cb;
@@ -589,7 +600,7 @@ clone_value(char type, rtosc_arg_t val)
 {
     if(type == 'b') {
         char *data = (char*)val.b.data;
-        val.b.data = malloc(val.b.len);
+        val.b.data = (uint8_t*)malloc(val.b.len);
         memcpy(val.b.data, data, val.b.len);
     } else if(type == 's') {
         val.s = strdup(val.s);
@@ -601,7 +612,7 @@ static rtosc_arg_t *
 clone_vec_value(char *type, rtosc_arg_t *val)
 {
     int n = strlen(type);
-    rtosc_arg_t *nargs = calloc(sizeof(rtosc_arg_t), n);
+    rtosc_arg_t *nargs = (rtosc_arg_t*)calloc(sizeof(rtosc_arg_t), n);
     for(int i=0; i<n; ++i) {
         nargs[i] = clone_value(type[i], val[i]);
     }
@@ -614,7 +625,7 @@ declone_value(char type, rtosc_arg_t val)
     if(type == 'b')
         free(val.b.data);
     else if(type == 's')
-        free(strdup(val.s));
+        free((void*)val.s);
 }
 
 static void
@@ -676,6 +687,8 @@ static int cache_set_vector(bridge_t *br, uri_t uri, char *types, rtosc_arg_t *a
     {
         if(line->type == 'v')
             declone_vec_value(line->vec_type, line->vec_value);
+        else
+            declone_value(line->type, line->val);
 
         line->valid     = true;
         line->type      = 'v';
@@ -863,7 +876,7 @@ void br_refresh(bridge_t *br, uri_t uri)
 
 void br_watch(bridge_t *br, const char *uri)
 {
-    char *buffer = malloc(4096);
+    char *buffer = (char*)malloc(4096);
     size_t len   = rtosc_message(buffer, 4096, "/watch/add", "s", uri);
     do_send(br, buffer, len);
 
@@ -872,7 +885,7 @@ void br_watch(bridge_t *br, const char *uri)
 void br_action(bridge_t *br, const char *uri, const char *argt,
         const rtosc_arg_t *args)
 {
-    char *buffer = malloc(4096);
+    char *buffer = (char*)malloc(4096);
     size_t len   = rtosc_amessage(buffer, 4096, uri, argt, args);
     do_send(br, buffer, len);
 }
@@ -904,7 +917,7 @@ void br_recv(bridge_t *br, const char *msg)
         //printf("BRIDGE RECEIVE A VECTOR MESSAGE\n");
         //TODO verify that we've got some sort of uniformity?
         rtosc_arg_itr_t  itr   = rtosc_itr_begin(msg);
-        rtosc_arg_t     *args  = calloc(nargs, sizeof(rtosc_arg_t));
+        rtosc_arg_t     *args  = (rtosc_arg_t*)calloc(nargs, sizeof(rtosc_arg_t));
         char            *types = strdup(rtosc_argument_string(msg));
 
         int offset = 0;
