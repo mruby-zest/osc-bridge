@@ -1,5 +1,5 @@
 #include <rtosc/rtosc.h>
-#include "../src/gem.h"
+#include "../src/bridge.h"
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -139,6 +139,7 @@ void test_enable(schema_t schema, bridge_t *bridge)
 
 void test_options(schema_t schema, bridge_t *bridge)
 {
+    (void) bridge;
     printf("#Grabbing filter type...\n"); 
     uri_t uri = "/part3/kit8/adpars/VoicePar3/FMSmp/Pfiltertype";
     schema_handle_t handle = sm_get(schema, uri);
@@ -184,7 +185,7 @@ int main()
     //Get the bridge to obtain the schema
     printf("#Creating Schema For Remote...\n");
     schema_t schema = br_get_schema(bridge, "/schema");
-    assert_int_eq(771, schema.elements,
+    assert_int_eq(1045, schema.elements,
             "Schema has the right number of elements", __LINE__);
 
     assert_int_eq(255, v1, "Verify pre-callback #1 data", __LINE__);
@@ -213,7 +214,6 @@ int main()
                     bridge->cache[i].pending);
     }
 
-    int old_pending = br_pending(bridge);
     assert_int_eq(0, br_pending(bridge),
             "No Cache Line is Pending", __LINE__);
 

@@ -1,4 +1,4 @@
-#include "gem.h"
+#include "schema.h"
 #define MM_JSON_IMPLEMENTATION
 #include "mm_json.h"
 #include <stdlib.h>
@@ -6,8 +6,8 @@
 #include <assert.h>
 #include <stdio.h>
 
-#define printf(...)
-#define putchar(x)
+#define printf(...) do {} while(0)
+#define putchar(x) (void)(x)
 
 #define strndup(dat, len) strndup_custom(dat,len)
 
@@ -22,7 +22,7 @@ static char *strndup_custom(const char *data, int len)
 
 void print_string(const char *str, unsigned len)
 {
-    for(int i=0; i<len; ++i)
+    for(unsigned i=0; i<len; ++i)
         putchar(str[i]);
 }
 
@@ -59,7 +59,7 @@ opt_t *parse_options(const char *str, int len)
             array2 = mm_json_parse(&pair, &array2);
         }
 
-        assert(id != 0xcafebeef);
+        assert(id != (int) 0xcafebeef);
 
         //Add to the list of options
         o->num_opts++;
@@ -141,7 +141,7 @@ void parse_schema(const char *json, schema_t *sch)
             printf("  ");
             print_string(pair2.name.str, pair2.name.len);
             unsigned pad = pair2.name.len < 10 ? 10-pair2.name.len : 0;
-            for(int i=0; i<pad; ++i)
+            for(unsigned i=0; i<pad; ++i)
                 putchar(' ');
 
             if(pair2.value.type == MM_JSON_STRING) {

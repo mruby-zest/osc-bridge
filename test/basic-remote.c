@@ -1,5 +1,5 @@
 #include <rtosc/rtosc.h>
-#include "../src/gem.h"
+#include "../src/bridge.h"
 #include "common.h"
 #include <sys/time.h>
 #include <stdio.h>
@@ -60,7 +60,7 @@ const char *paths[] = {
 };
 void test_lfo(schema_t schema, bridge_t *bridge)
 {
-    for(int i=0; i<sizeof(paths)/sizeof(paths[0]); ++i) {
+    for(unsigned i=0; i<sizeof(paths)/sizeof(paths[0]); ++i) {
         uri_t uri = paths[i];
         printf("#Testing address '%s'\n", uri);
         schema_handle_t handle = sm_get(schema, uri);
@@ -118,10 +118,9 @@ int main()
     struct timeval tv1;
     struct timeval tv2;
     gettimeofday(&tv1, 0);
-    time_t t1 = time(0);
     int tic = 0;
     while(old_pending) {
-        int ret = uv_run(bridge->loop, UV_RUN_NOWAIT);
+        uv_run(bridge->loop, UV_RUN_NOWAIT);
         int new_pending = br_pending(bridge);
         tic++;
         if(old_pending != new_pending)

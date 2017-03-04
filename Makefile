@@ -1,12 +1,15 @@
+SRC = src/bridge.c src/cache.c src/parse-schema.c src/schema.c
+CFLAGS_ = -std=gnu99 -Wall -Wextra
+
 all: mock-test remote-test lib
 
 
-mock-test: src/gem.c src/parse-schema.c test/mock-test.c
-	$(CC) -std=gnu99 -o mock-test src/gem.c src/parse-schema.c test/mock-test.c -lrtosc -luv -g -O0
+mock-test: $(SRC) test/mock-test.c
+	$(CC) $(CFLAGS_) -o mock-test $(SRC) test/mock-test.c -lrtosc -luv -g -O0
 
-remote-test: src/gem.c src/parse-schema.c test/basic-remote.c
-	$(CC) -std=gnu99 -o remote-test src/gem.c src/parse-schema.c test/basic-remote.c -lrtosc -luv -g -O0
+remote-test: $(SRC) test/basic-remote.c
+	$(CC) $(CFLAGS_) -o remote-test $(SRC) test/basic-remote.c -lrtosc -luv -g -O0
 
-lib: src/gem.c src/parse-schema.c
-	$(CC) $(CFLAGS) -std=gnu99 -O0 -g -fPIC -c src/gem.c src/parse-schema.c -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
+lib: $(SRC)
+	$(CC) $(CFLAGS) $(CFLAGS_) -O0 -g -fPIC -c $(SRC) -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
 	$(AR) rcs libosc-bridge.a gem.o parse-schema.o

@@ -1,85 +1,8 @@
-#include <stdint.h>
 #include <uv.h>
+#include "schema.h"
+#include "cache.h"
 //A means of staying synchonized with respect to a collection of parameters
 //presented over OSC in a REST like fashion
-
-//Database
-typedef struct db_t_ db_t;
-void db_insert_int(void);
-void db_insert_float(void);
-
-//Schema
-typedef struct {
-    int         *ids;
-    const char **labels;
-    unsigned     num_opts;
-} opt_t;
-typedef struct {
-    //all dynamic here
-    int   flag;
-    opt_t *opts;
-    const char *pattern;
-    const char *name;
-    const char *short_name;
-    const char *units;
-    const char *documentation;
-    float value_min;
-    float value_max;
-} schema_handle_t;
-typedef struct {
-    char            *json;
-    schema_handle_t *handles;
-    int              elements;
-} schema_t;
-typedef const char *uri_t;
-typedef const char *str_t;
-
-schema_handle_t sm_get(schema_t, uri_t u);
-opt_t sm_get_opts(schema_handle_t);
-str_t sm_get_name(schema_handle_t);
-str_t sm_get_short(schema_handle_t);
-str_t sm_get_tooltip(schema_handle_t);
-str_t sm_get_units(schema_handle_t);
-float sm_get_min_flt(schema_handle_t);
-float sm_get_max_flt(schema_handle_t);
-
-int sm_valid(schema_handle_t);
-
-#ifndef RTOSC_H
-typedef struct {
-    int32_t len;
-    uint8_t *data;
-} rtosc_blob_t;
-
-typedef union {
-    int32_t       i;   //i,c,r
-    char          T;   //I,T,F,N
-    float         f;   //f
-    double        d;   //d
-    int64_t       h;   //h
-    uint64_t      t;   //t
-    uint8_t       m[4];//m
-    const char   *s;   //s,S
-    rtosc_blob_t  b;   //b
-} rtosc_arg_t;
-#endif
-
-typedef struct {
-    char *path;
-    char  valid;
-    char  pending;
-    char  type;
-    char  usable;
-    double request_time;
-    int   requests;
-    union {
-        rtosc_arg_t val;
-        struct {
-            const char  *vec_type;
-            rtosc_arg_t *vec_value;
-        };
-    };
-} param_cache_t;
 
 typedef struct {
     const char *path;
@@ -115,36 +38,110 @@ typedef struct {
     uint64_t last_update;
 } bridge_t;
 
+//Maximum messages per br_tick() frame
 #define BR_RATE_LIMIT 128
 
+//Create a remote OSC bridge
 bridge_t *br_create(uri_t);
+//Destroy and deallocate an OSC bridge
 void      br_destroy(bridge_t *br);
+
+//Obtain a copy of the scheama used to communicate over OSC
 schema_t br_get_schema(bridge_t*, uri_t);
+//Deallocate a schema instance
 void br_destroy_schema(schema_t);
-void br_request_value(bridge_t *, uri_t, schema_handle_t);
+
+/**
+ * Randomize a value according to schema min/max
+ *
+ * XXX - This method is not yet implemented
+ */
 void br_randomize(bridge_t *, uri_t);
+
+//Value setters
 void br_set_array(bridge_t *, uri_t, char*, rtosc_arg_t*);
 void br_set_value_bool(bridge_t *, uri_t, int);
 void br_set_value_int(bridge_t *, uri_t, int);
 void br_set_value_float(bridge_t *, uri_t, float);
 void br_set_value_string(bridge_t *, uri_t, const char *);
+
+/** Return 1 if uri has a callback bound to it*/
 int  br_has_callback(bridge_t *, uri_t);
+
+/**
+ * Add a callback to the provided uri
+ *
+ * If the provided uri has data in the cache it, the callback is invoked
+ * immediately. Otherwise the data is requested and the callback is
+ * called when data is available. The callback is invoked when the bound
+ * data changes.
+ */
 void br_add_callback(bridge_t *, uri_t, bridge_cb_t, void*);
+
+/**
+ * Add callback to the provided uri without requesting data
+ */
 void br_add_action_callback(bridge_t *, uri_t, bridge_cb_t, void*);
+
+/**
+ * Remove callback from uri
+ */
 void br_del_callback(bridge_t *, uri_t, bridge_cb_t, void*);
+
+/**
+ * Invalidate cached data which matches the partial path provided
+ */
 void br_damage(bridge_t *, uri_t);
+
+/**
+ * Rate limited refresh of given uri
+ */
 void br_refresh(bridge_t *, uri_t);
+
+/**
+ * Start a state watch on remote host via '/watch/add' port
+ */
 void br_watch(bridge_t *, uri_t);
+
+/**
+ * Send a raw OSC message to the remote host
+ *
+ * These messages should conform to the actions specified in the osc schema
+ */
 void br_action(bridge_t *, uri_t, const char *argt, const rtosc_arg_t *args);
+
+/**
+ * Handle incoming OSC messages from remote host
+ */
 void br_recv(bridge_t *, const char *);
-int br_pending(bridge_t *);
+
+//Returns the number of cache fields in the 'pending' state
+int  br_pending(bridge_t *);
+
+/**
+ * Communicate with remote host
+ *
+ * This function should be called frequently (10-120Hz) in the main loop
+ * of the program.
+ *
+ * This routine:
+ * - Sends requests for data
+ * - Receives data based upon requests
+ * - Runs callbacks based upon new data
+ * - Retries requesting data based upon timeouts
+ * - Rate limits data requests
+ */
 void br_tick(bridge_t *);
+
+/*
+ * Report last update from remote in seconds
+ *
+ * Note - For a system which isn't experiencing lag, this should typically be
+ *        zero
+ */
 int  br_last_update(bridge_t *);//returns delta time in seconds
 
-//Views
-void vw_add_float(void);
-void vw_add_enum(void);
-
+//Print statistics about bridge/schema
 void print_stats(bridge_t *br, schema_t sch);
 
 
