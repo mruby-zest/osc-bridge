@@ -11,5 +11,5 @@ remote-test: $(SRC) test/basic-remote.c
 	$(CC) $(CFLAGS_) -o remote-test $(SRC) test/basic-remote.c -lrtosc -luv -g -O0
 
 lib: $(SRC)
-	$(CC) $(CFLAGS) $(CFLAGS_) -O0 -g -fPIC -c $(SRC) -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
+	$(CC) $(CFLAGS) $(CFLAGS_) -O3 -g -fPIC -c $(SRC) -I../../deps/rtosc/include -I../../deps/libuv-v1.9.1/include/
 	$(AR) rcs libosc-bridge.a gem.o parse-schema.o
