@@ -871,7 +871,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -1153,7 +1153,7 @@
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,100]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/Phmagtype",
@@ -2167,7 +2167,7 @@
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,100]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Phmagtype",
@@ -2716,7 +2716,7 @@
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,100]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Phmagtype",
@@ -4232,7 +4232,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -4249,7 +4249,7 @@
         "name"     : "Unison_size",
         "tooltip"  : "Number of subvoices",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,50]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_phase_randomness",
@@ -5634,7 +5634,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -6692,7 +6692,7 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7022,7 +7022,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7087,7 +7087,7 @@
         },
         {
             "id"     : 6,
-            "value"  : "Distorsion"
+            "value"  : "Distortion"
         },
         {
             "id"     : 7,
@@ -7825,14 +7825,16 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Channel routing",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
         "tooltip"  : "Offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Poutsub",
@@ -7846,14 +7848,16 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pwidth",
         "shortname": "width",
         "name"     : "Pwidth",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Phyper",
@@ -8676,7 +8680,7 @@
         "path"     : "/sysefx[0,3]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8741,7 +8745,7 @@
         },
         {
             "id"     : 6,
-            "value"  : "Distorsion"
+            "value"  : "Distortion"
         },
         {
             "id"     : 7,
@@ -9479,14 +9483,16 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Channel routing",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
         "tooltip"  : "Offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Poutsub",
@@ -9500,14 +9506,16 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pwidth",
         "shortname": "width",
         "name"     : "Pwidth",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Phyper",
@@ -9881,7 +9889,7 @@
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
         "shortname": "f.q",
         "name"     : "q",
-        "tooltip"  : "Quality Factor",
+        "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -9946,7 +9954,7 @@
         },
         {
             "id"     : 6,
-            "value"  : "Distorsion"
+            "value"  : "Distortion"
         },
         {
             "id"     : 7,
@@ -10684,14 +10692,16 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Channel routing",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Poffset",
         "shortname": "off",
         "name"     : "Poffset",
         "tooltip"  : "Offset",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Poutsub",
@@ -10705,14 +10715,16 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pwidth",
         "shortname": "width",
         "name"     : "Pwidth",
         "tooltip"  : "",
-        "type"     : "i"
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Phyper",
@@ -10896,7 +10908,7 @@
     },
     {
         "path"     : "/microtonal/PAnote",
-        "shortname": "A note",
+        "shortname": "1/1 midi note",
         "name"     : "PAnote",
         "tooltip"  : "The note for 'A'",
         "type"     : "i",
@@ -10904,7 +10916,7 @@
     },
     {
         "path"     : "/microtonal/PAfreq",
-        "shortname": "A freq",
+        "shortname": "ref freq",
         "name"     : "PAfreq",
         "tooltip"  : "Frequency of the 'A' note",
         "type"     : "f"
