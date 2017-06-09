@@ -11,6 +11,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -110,6 +111,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -117,6 +119,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -125,6 +128,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -224,6 +228,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -231,6 +236,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -239,6 +245,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -338,6 +345,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -345,6 +353,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -724,50 +733,60 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pgain",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -808,6 +827,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -872,6 +892,38 @@
         "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -997,6 +1049,7 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,16383]
     },
@@ -1038,6 +1091,7 @@
         "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-8,7]
     },
@@ -1046,6 +1100,7 @@
         "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,63]
     },
@@ -1054,6 +1109,7 @@
         "shortname": "phase rnd",
         "name"     : "Prand",
         "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -1136,6 +1192,7 @@
         "shortname": "c. freq",
         "name"     : "Padaptiveharmonicsbasefreq",
         "tooltip"  : "Base frequency of adaptive harmonic (30..3000Hz)",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -1144,6 +1201,7 @@
         "shortname": "amount",
         "name"     : "Padaptiveharmonicspower",
         "tooltip"  : "Adaptive Harmonic Strength",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,200]
     },
@@ -1152,6 +1210,7 @@
         "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,100]
     },
@@ -1525,6 +1584,7 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,64]
     },
@@ -1588,6 +1648,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -1595,6 +1656,7 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/magnitude[0,127]",
         "name"     : "magnitude#128",
         "tooltip"  : "Sets harmonic magnitude",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -1905,6 +1967,7 @@
         "shortname": "p1",
         "name"     : "Phrpos.par1",
         "tooltip"  : "Harmonic position parameter",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -1913,6 +1976,7 @@
         "shortname": "p2",
         "name"     : "Phrpos.par2",
         "tooltip"  : "Harmonic position parameter",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -1921,6 +1985,7 @@
         "shortname": "force h.",
         "name"     : "Phrpos.par3",
         "tooltip"  : "Harmonic position parameter",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -2052,6 +2117,7 @@
         "shortname": "octaves",
         "name"     : "Pquality.oct",
         "tooltip"  : "Number of octaves to sample (above the first sample",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,7]
     },
@@ -2060,6 +2126,7 @@
         "shortname": "bandwidth",
         "name"     : "Pbandwidth",
         "tooltip"  : "Bandwith Of Harmonics",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,1000]
     },
@@ -2068,6 +2135,7 @@
         "shortname": "phase rnd",
         "name"     : "Prand",
         "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2150,6 +2218,7 @@
         "shortname": "c. freq",
         "name"     : "Padaptiveharmonicsbasefreq",
         "tooltip"  : "Base frequency of adaptive harmonic (30..3000Hz)",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -2158,6 +2227,7 @@
         "shortname": "amount",
         "name"     : "Padaptiveharmonicspower",
         "tooltip"  : "Adaptive Harmonic Strength",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,200]
     },
@@ -2166,6 +2236,7 @@
         "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,100]
     },
@@ -2539,6 +2610,7 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,64]
     },
@@ -2602,6 +2674,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2609,6 +2682,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/magnitude[0,127]",
         "name"     : "magnitude#128",
         "tooltip"  : "Sets harmonic magnitude",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2617,6 +2691,7 @@
         "shortname": "phase rnd",
         "name"     : "Prand",
         "tooltip"  : "Oscillator Phase Randomness: smaller than 0 is \"group\", larger than 0 is for each harmonic",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -2699,6 +2774,7 @@
         "shortname": "c. freq",
         "name"     : "Padaptiveharmonicsbasefreq",
         "tooltip"  : "Base frequency of adaptive harmonic (30..3000Hz)",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,255]
     },
@@ -2707,6 +2783,7 @@
         "shortname": "amount",
         "name"     : "Padaptiveharmonicspower",
         "tooltip"  : "Adaptive Harmonic Strength",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,200]
     },
@@ -2715,6 +2792,7 @@
         "shortname": "power",
         "name"     : "Padaptiveharmonicspar",
         "tooltip"  : "Adaptive Harmonics Postprocessing Power",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,100]
     },
@@ -3088,6 +3166,7 @@
         "shortname": "shift",
         "name"     : "Pharmonicshift",
         "tooltip"  : "Amount of shift on harmonics",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,64]
     },
@@ -3151,6 +3230,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -3158,6 +3238,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/magnitude[0,127]",
         "name"     : "magnitude#128",
         "tooltip"  : "Sets harmonic magnitude",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -3166,6 +3247,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -3265,6 +3347,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -3272,6 +3355,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -3280,6 +3364,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -3379,6 +3464,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -3386,6 +3472,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -3394,6 +3481,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -3493,6 +3581,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -3500,6 +3589,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -4085,50 +4175,60 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pgain",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -4169,6 +4269,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -4233,6 +4334,38 @@
         "shortname": "f.q",
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -4435,6 +4568,7 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,16383]
     },
@@ -4636,6 +4770,7 @@
         "shortname": "fine",
         "name"     : "PFMDetune",
         "tooltip"  : "Modulator Fine Detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,16383]
     },
@@ -4698,6 +4833,7 @@
         "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-8,7]
     },
@@ -4706,6 +4842,7 @@
         "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,63]
     },
@@ -4714,6 +4851,7 @@
         "shortname": "octave",
         "name"     : "FMoctave",
         "tooltip"  : "Octave note offset for modulator",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-8,7]
     },
@@ -4722,6 +4860,7 @@
         "shortname": "coarse",
         "name"     : "FMcoarsedetune",
         "tooltip"  : "Coarse note detune for modulator",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,63]
     },
@@ -4774,6 +4913,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -4873,6 +5013,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -4880,6 +5021,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -4888,6 +5030,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -4987,6 +5130,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -4994,6 +5138,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -5002,6 +5147,7 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [0.0,1.0]
     },
@@ -5101,6 +5247,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/delay",
         "name"     : "delay",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0,4000]
     },
@@ -5108,6 +5255,7 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/period",
         "name"     : "period",
         "tooltip"  : "",
+        "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.10,1500.0]
     },
@@ -5487,50 +5635,60 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pgain",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -5571,6 +5729,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -5639,6 +5798,38 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PStereo",
         "shortname": "stereo",
         "name"     : "PStereo",
@@ -5650,6 +5841,7 @@
         "shortname": "fine",
         "name"     : "PDetune",
         "tooltip"  : "Fine Detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,16383]
     },
@@ -5784,6 +5976,7 @@
         "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Octave note offset",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-8,7]
     },
@@ -5792,6 +5985,7 @@
         "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Coarse note detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,63]
     },
@@ -5831,6 +6025,7 @@
         "shortname": "detune",
         "name"     : "PDetune",
         "tooltip"  : "Detune in detune type units",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,16383]
     },
@@ -6545,50 +6740,60 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pgain",
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -6629,6 +6834,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -6697,6 +6903,38 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pstart",
         "shortname": "initial",
         "name"     : "Pstart",
@@ -6722,6 +6960,7 @@
         "shortname": "octave",
         "name"     : "octave",
         "tooltip"  : "Note octave shift",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-8,7]
     },
@@ -6730,6 +6969,7 @@
         "shortname": "coarse",
         "name"     : "coarsedetune",
         "tooltip"  : "Note coarse detune",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [-64,63]
     },
@@ -6875,50 +7115,60 @@
         ]
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pgain",
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -6959,6 +7209,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -7027,10 +7278,43 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/Pvolume",
         "shortname": "amt",
         "name"     : "Pvolume",
         "tooltip"  : "amount of effect",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7039,6 +7323,7 @@
         "shortname": "pan",
         "name"     : "Ppanning",
         "tooltip"  : "panning",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7046,6 +7331,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/parameter[0,127]",
         "name"     : "parameter#128",
         "tooltip"  : "Parameter Accessor",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -7180,6 +7466,7 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,100]
     },
@@ -7817,6 +8104,7 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -8533,50 +8821,60 @@
         ]
     },
     {
-        "path"     : "/sysefx[0,3]/filterpars/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/sysefx[0,3]/filterpars/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/sysefx[0,3]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/sysefx[0,3]/filterpars/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/sysefx[0,3]/filterpars/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/sysefx[0,3]/filterpars/Pgain",
+        "path"     : "/sysefx[0,3]/filterpars/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -8617,6 +8915,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -8685,10 +8984,43 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/sysefx[0,3]/filterpars/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/sysefx[0,3]/Pvolume",
         "shortname": "amt",
         "name"     : "Pvolume",
         "tooltip"  : "amount of effect",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8697,6 +9029,7 @@
         "shortname": "pan",
         "name"     : "Ppanning",
         "tooltip"  : "panning",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8704,6 +9037,7 @@
         "path"     : "/sysefx[0,3]/parameter[0,127]",
         "name"     : "parameter#128",
         "tooltip"  : "Parameter Accessor",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -8838,6 +9172,7 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,100]
     },
@@ -9475,6 +9810,7 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -9742,50 +10078,60 @@
         ]
     },
     {
-        "path"     : "/insefx[0,7]/filterpars/Pfreq",
-        "shortname": "cutoff",
-        "name"     : "Pfreq",
-        "tooltip"  : "Center Freq",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
-        "path"     : "/insefx[0,7]/filterpars/Pq",
-        "shortname": "q",
-        "name"     : "Pq",
-        "tooltip"  : "Quality Factor (resonance/bandwidth)",
-        "type"     : "i",
-        "range"    : [0,127]
-    },
-    {
         "path"     : "/insefx[0,7]/filterpars/Pstages",
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "Filter Stages",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,5]
     },
     {
-        "path"     : "/insefx[0,7]/filterpars/Pfreqtrack",
-        "shortname": "f.track",
-        "name"     : "Pfreqtrack",
-        "tooltip"  : "Frequency Tracking amount",
-        "type"     : "i",
-        "range"    : [0,127]
+        "path"     : "/insefx[0,7]/filterpars/baseq",
+        "shortname": "q",
+        "name"     : "baseq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "units"    : "none",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [0.1,1000]
     },
     {
-        "path"     : "/insefx[0,7]/filterpars/Pgain",
+        "path"     : "/insefx[0,7]/filterpars/basefreq",
+        "shortname": "cutoff",
+        "name"     : "basefreq",
+        "tooltip"  : "Base cutoff frequency",
+        "units"    : "Hz",
+        "scale"    : "logarithmic",
+        "type"     : "f",
+        "range"    : [31.25,32000]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/freqtracking",
+        "shortname": "f.track",
+        "name"     : "freqtracking",
+        "tooltip"  : "Frequency Tracking amount",
+        "units"    : "%",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-100,100]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/gain",
         "shortname": "gain",
-        "name"     : "Pgain",
+        "name"     : "gain",
         "tooltip"  : "Output Gain",
-        "type"     : "i",
-        "range"    : [0,127]
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-30,30]
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pnumformants",
         "shortname": "formants",
         "name"     : "Pnumformants",
         "tooltip"  : "Number of formants to be used",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -9826,6 +10172,7 @@
         "shortname": "seq.size",
         "name"     : "Psequencesize",
         "tooltip"  : "Length of vowel sequence",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,8]
     },
@@ -9894,10 +10241,43 @@
         "range"    : [0,127]
     },
     {
+        "path"     : "/insefx[0,7]/filterpars/Pfreq",
+        "shortname": "cutoff",
+        "name"     : "Pfreq",
+        "tooltip"  : "Center Freq",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/Pfreqtrack",
+        "shortname": "f.track",
+        "name"     : "Pfreqtrack",
+        "tooltip"  : "Frequency Tracking amount",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/Pgain",
+        "shortname": "gain",
+        "name"     : "Pgain",
+        "tooltip"  : "Output Gain",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/Pq",
+        "shortname": "q",
+        "name"     : "Pq",
+        "tooltip"  : "Quality Factor (resonance/bandwidth)",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
         "path"     : "/insefx[0,7]/Pvolume",
         "shortname": "amt",
         "name"     : "Pvolume",
         "tooltip"  : "amount of effect",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -9906,6 +10286,7 @@
         "shortname": "pan",
         "name"     : "Ppanning",
         "tooltip"  : "panning",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -9913,6 +10294,7 @@
         "path"     : "/insefx[0,7]/parameter[0,127]",
         "name"     : "parameter#128",
         "tooltip"  : "Parameter Accessor",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -10047,6 +10429,7 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,100]
     },
@@ -10684,6 +11067,7 @@
         "shortname": "stages",
         "name"     : "Pstages",
         "tooltip"  : "",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [1,12]
     },
@@ -11269,6 +11653,7 @@
         "shortname": "key shift",
         "name"     : "Pkeyshift",
         "tooltip"  : "Global Key Shift",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -11277,6 +11662,7 @@
         "shortname": "volume",
         "name"     : "Pvolume",
         "tooltip"  : "Master Volume",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
@@ -11285,6 +11671,7 @@
         "shortname": "volume",
         "name"     : "volume",
         "tooltip"  : "Master Volume",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127]
     },
