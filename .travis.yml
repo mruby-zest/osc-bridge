@@ -2,6 +2,11 @@ language: c
 
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - libuv1-dev
+
 script:
-    - make
-    - ./mock-test
+  - make
+  - ./mock-test

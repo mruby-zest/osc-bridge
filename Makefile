@@ -3,7 +3,6 @@ CFLAGS_ = -std=gnu99 -Wall -Wextra -I .
 
 all: mock-test remote-test lib
 
-
 mock-test: $(SRC) test/mock-test.c
 	$(CC) $(CFLAGS_) -o mock-test $(SRC) test/mock-test.c -lrtosc -luv -g -O0
 
