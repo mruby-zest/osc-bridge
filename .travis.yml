@@ -12,6 +12,7 @@ before_script:
     - CFLAGS=-fPIC ./configure --prefix=/tmp/
     - CFLAGS=-fPIC make
     - make install
+    - cd ../..
 script:
   - CFLAGS="-I/tmp/include/ -L/tmp/lib/" make
   - ./mock-test
