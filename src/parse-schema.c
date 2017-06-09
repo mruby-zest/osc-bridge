@@ -6,9 +6,14 @@
 #include <assert.h>
 #include <stdio.h>
 
+//Disable debug prints
 #define printf(...) do {} while(0)
 #define putchar(x) (void)(x)
 
+//Shadow string duplication due to windows build issues
+#ifdef  strndup
+#undef  strndup
+#endif
 #define strndup(dat, len) strndup_custom(dat,len)
 
 static char *strndup_custom(const char *data, int len)
