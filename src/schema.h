@@ -19,6 +19,7 @@ typedef struct {
     const char *short_name;
     const char *units;
     const char *documentation;
+    const char *scale;
     float value_min;
     float value_max;
 } schema_handle_t;

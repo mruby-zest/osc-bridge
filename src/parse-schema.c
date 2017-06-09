@@ -161,6 +161,10 @@ void parse_schema(const char *json, schema_t *sch)
                     handle->name = strndup(v.str, v.len);
                 else if(mm_json_cmp(&pair2.name, "shortname") == 0)
                     handle->short_name = strndup(v.str, v.len);
+                else if(mm_json_cmp(&pair2.name, "units") == 0)
+                    handle->units = strndup(v.str, v.len);
+                else if(mm_json_cmp(&pair2.name, "scale") == 0)
+                    handle->scale = strndup(v.str, v.len);
                 else if(mm_json_cmp(&pair2.name, "tooltip") == 0)
                     handle->documentation = strndup(v.str, v.len);
             } else if(pair2.value.type == MM_JSON_ARRAY &&
