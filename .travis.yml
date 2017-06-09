@@ -14,5 +14,7 @@ before_script:
     - make install
     - cd ../..
 script:
-  - CFLAGS="-I/tmp/include/ -L/tmp/lib/" make
+  - export CFLAGS="-I/tmp/include/ -L/tmp/lib/"
+  - export LD_LIBRARY_PATH="/tmp/lib"
+  - make
   - ./mock-test
