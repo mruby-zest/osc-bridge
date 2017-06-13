@@ -11,7 +11,7 @@ remote-test: $(SRC) test/basic-remote.c
 
 lib: $(SRC)
 	$(CC) $(CFLAGS) $(CFLAGS_) -O3 -g -fPIC -c $(SRC)
-	$(AR) rcs libosc-bridge.a bridge.o cache.o parse-schema.o schema.o
+	$(AR) rcs libosc-bridge.a bridge.o cache.o parse-schema.o schema.o rtosc.o
 
 clean:
 	rm libosc-bridge.a bridge.o cache.o parse-schema.o schema.o remote-test mock-test
