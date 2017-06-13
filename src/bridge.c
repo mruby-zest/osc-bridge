@@ -864,13 +864,14 @@ void br_tick(bridge_t *br)
             int   usable = br->cache[i].usable;
             double uptim = br->cache[i].request_time;
             int   rq     = br->cache[i].requests;
+            (void) path;
             if(usable && (pend || !valid)) {
                 //printf("cache status = <%s, %d, %d, %f, %d>\n", path, pend, valid, uptim, rq);
                 if(uptim < now - 300e-3) {
                     if(rq < 10)
                         cache_update(br, &br->cache[i]);
-                    else if(br->cache[i].requests++ == 10)
-                        printf("[ERROR] Invalid parameter cannot be accessed at <%s>\n", path);
+                    //else if(br->cache[i].requests++ == 10)
+                    //    printf("[ERROR] Invalid parameter cannot be accessed at <%s>\n", path);
                 }
             }
         }
