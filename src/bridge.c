@@ -343,7 +343,9 @@ bridge_t *br_create(uri_t uri)
     uv_udp_init(br->loop, &br->socket);
     for(int offset=0; offset < 1000; ++offset) {
         struct sockaddr_in recv_addr;
-        uv_ip4_addr("127.0.0.1", 1338+offset, &recv_addr);
+        recv_addr.sin_family = AF_INET;
+        recv_addr.sin_port = htons(1338+offset);
+        recv_addr.sin_addr.s_addr = INADDR_ANY;
         if(!uv_udp_bind(&br->socket, (const struct sockaddr *)&recv_addr, 0))
             break;
     }
