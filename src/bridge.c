@@ -48,6 +48,7 @@ static void cache_update(bridge_t *br, param_cache_t *ch)
 
 static void cache_push(bridge_t *br, uri_t uri)
 {
+    assert(uri);
     br->cache_len += 1;
     br->cache = realloc(br->cache, br->cache_len*sizeof(param_cache_t));
     param_cache_t *ch = br->cache + (br->cache_len - 1);
