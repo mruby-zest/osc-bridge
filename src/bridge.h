@@ -58,6 +58,8 @@ void br_destroy_schema(schema_t);
  */
 void br_randomize(bridge_t *, uri_t);
 
+void br_default(bridge_t *, schema_t, uri_t);
+
 //Value setters
 void br_set_array(bridge_t *, uri_t, char*, rtosc_arg_t*);
 void br_set_value_bool(bridge_t *, uri_t, int);

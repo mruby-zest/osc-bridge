@@ -65,6 +65,7 @@ void br_destroy_schema(schema_t sch)
         free((void*)sch.handles[i].name);
         free((void*)sch.handles[i].short_name);
         free((void*)sch.handles[i].pattern);
+        free((void*)sch.handles[i].default_);
         free(sch.handles[i].opts);
     }
     free(sch.handles);

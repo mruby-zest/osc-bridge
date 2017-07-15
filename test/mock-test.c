@@ -198,6 +198,11 @@ int main()
     assert_int_eq(32, v2, "Callback #2 was applied", __LINE__);
     assert_true(v3, "Callback #3 was applied", __LINE__);
 
+    br_default(bridge, schema, "/part0/Pvolume");
+
+    assert_int_eq(96, v1, "Default #1 was applied", __LINE__);
+    assert_int_eq(96, v2, "Default #2 was applied", __LINE__);
+
     printf("#bridge receive...\n");
     assert_int_eq(2, bridge->cache_len,
             "Verify number of cache fields", __LINE__);

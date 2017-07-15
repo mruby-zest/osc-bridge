@@ -33,7 +33,7 @@ void print_string(const char *str, unsigned len)
 
 opt_t *parse_options(const char *str, int len)
 {
-    //printf("parse options...\n");
+    printf("parse options...\n");
     opt_t *o = calloc(1, sizeof(opt_t));
     struct mm_json_iter array = mm_json_begin(str, len);
     struct mm_json_token tok;
@@ -167,6 +167,18 @@ void parse_schema(const char *json, schema_t *sch)
                     handle->scale = strndup(v.str, v.len);
                 else if(mm_json_cmp(&pair2.name, "tooltip") == 0)
                     handle->documentation = strndup(v.str, v.len);
+                else if(mm_json_cmp(&pair2.name, "default") == 0)
+                    handle->default_ = strndup(v.str, v.len);
+                else if(mm_json_cmp(&pair2.name, "type") == 0) {
+                    if(v.str[0] == 'i')
+                        handle->type = 'i';
+                    else if(v.str[0] == 'f')
+                        handle->type = 'f';
+                    else if(v.str[0] == 'T')
+                        handle->type = 'T';
+                    else
+                        handle->type = 0;
+                }
             } else if(pair2.value.type == MM_JSON_ARRAY &&
                     mm_json_cmp(&pair2.name, "options") == 0) {
                 handle->opts = parse_options(pair2.value.str, pair2.value.len);
