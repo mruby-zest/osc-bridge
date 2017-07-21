@@ -8933,7 +8933,9 @@
         "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [-6400,6400],
         "default"  : "200"
 
     },
@@ -12466,7 +12468,9 @@
         "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [-6400,6400],
         "default"  : "200"
 
     },
