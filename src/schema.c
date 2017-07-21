@@ -81,7 +81,8 @@ schema_handle_t sm_get(schema_t sch, uri_t u)
     for(int i=0; i<sch.elements; ++i)
         if(match_path(u, sch.handles[i].pattern))
             return sch.handles[i];
-    printf("[WARNING:osc-bridge] Invalid Handle \"%s\"...\n", u);
+    if(!(strstr(u, "VoicePar") && strstr(u, "Enabled")))
+        printf("[WARNING:osc-bridge] Invalid Handle \"%s\"...\n", u);
     return invalid;
 }
 str_t sm_get_name(schema_handle_t h)
