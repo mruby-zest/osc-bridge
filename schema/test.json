@@ -1998,7 +1998,7 @@
         },
         {
             "id"     : 2,
-            "value"  : "Quater"
+            "value"  : "Quarter"
         },
         {
             "id"     : 3,
@@ -12831,7 +12831,9 @@
         "units"    : "percent",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-50,50]
+        "range"    : [-50,50],
+        "default"  : "0"
+
     },
     {
         "path"     : "/automate/slot[0,15]/param[0,3]/mapping/gain",
@@ -12841,7 +12843,9 @@
         "units"    : "percent",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-200,200]
+        "range"    : [-200,200],
+        "default"  : "100"
+
     },
     {
         "path"     : "/config/cfg.SampleRate",
