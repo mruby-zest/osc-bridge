@@ -344,10 +344,11 @@ bridge_t *br_create(uri_t uri)
     uv_loop_init(br->loop);
 
     uv_udp_init(br->loop, &br->socket);
+    int no_collide = rand()%1000;
     for(int offset=0; offset < 1000; ++offset) {
         struct sockaddr_in recv_addr;
         recv_addr.sin_family = AF_INET;
-        recv_addr.sin_port = htons(1338+offset);
+        recv_addr.sin_port = htons(1338+(offset+no_collide)%1000);
         recv_addr.sin_addr.s_addr = INADDR_ANY;
         if(!uv_udp_bind(&br->socket, (const struct sockaddr *)&recv_addr, 0))
             break;
