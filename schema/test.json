@@ -21,7 +21,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pstartphase",
@@ -29,7 +31,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/PLFOtype",
@@ -37,6 +41,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -74,7 +80,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pfreqrand",
@@ -92,14 +100,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pstretch",
@@ -126,7 +138,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pstartphase",
@@ -134,7 +148,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/PLFOtype",
@@ -142,6 +158,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -179,7 +197,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pfreqrand",
@@ -197,14 +217,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pstretch",
@@ -231,7 +255,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pstartphase",
@@ -239,7 +265,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/PLFOtype",
@@ -247,6 +275,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -284,7 +314,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pfreqrand",
@@ -302,14 +334,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pstretch",
@@ -334,7 +370,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Penvdt[0,39]",
@@ -354,14 +392,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Plinearenvelope",
@@ -378,7 +420,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PA_val",
@@ -426,7 +470,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PR_val",
@@ -451,7 +497,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Penvdt[0,39]",
@@ -471,14 +519,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Plinearenvelope",
@@ -495,7 +547,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PA_val",
@@ -543,7 +597,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PR_val",
@@ -568,7 +624,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Penvdt[0,39]",
@@ -588,14 +646,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Plinearenvelope",
@@ -612,7 +674,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PA_val",
@@ -660,7 +724,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PR_val",
@@ -678,6 +744,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -699,6 +767,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -745,7 +815,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/baseq",
@@ -775,7 +847,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/gain",
@@ -785,7 +859,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pnumformants",
@@ -794,7 +870,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pformantslowness",
@@ -802,7 +880,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowelclearness",
@@ -810,7 +890,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pcenterfreq",
@@ -818,7 +900,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Poctavesfreq",
@@ -826,7 +910,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencesize",
@@ -835,7 +921,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencestretch",
@@ -843,14 +931,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/type-svf",
@@ -891,7 +983,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
@@ -899,7 +993,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/PStereo",
@@ -1709,12 +1805,21 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/ADvsPAD",
+        "shortname": "If it is used by PADSynth",
+        "name"     : "ADvsPAD",
+        "tooltip"  : "If it is used by PADSynth (and not ADSynth)",
+        "type"     : "t"
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/oscilgen/magnitude[0,127]",
@@ -1722,7 +1827,9 @@
         "tooltip"  : "Sets harmonic magnitude",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[127 64 64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Penabled",
@@ -1746,7 +1853,9 @@
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/Prespoints[0,255]",
         "name"     : "Prespoints#256",
         "tooltip"  : "Resonance data points",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/resonance/PmaxdB",
@@ -2839,12 +2948,21 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/ADvsPAD",
+        "shortname": "If it is used by PADSynth",
+        "name"     : "ADvsPAD",
+        "tooltip"  : "If it is used by PADSynth (and not ADSynth)",
+        "type"     : "t"
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/magnitude[0,127]",
@@ -2852,7 +2970,9 @@
         "tooltip"  : "Sets harmonic magnitude",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[127 64 64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/Prand",
@@ -3449,12 +3569,21 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/ADvsPAD",
+        "shortname": "If it is used by PADSynth",
+        "name"     : "ADvsPAD",
+        "tooltip"  : "If it is used by PADSynth (and not ADSynth)",
+        "type"     : "t"
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/phase[0,127]",
         "name"     : "phase#128",
         "tooltip"  : "Sets harmonic phase",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMSmp/magnitude[0,127]",
@@ -3462,7 +3591,9 @@
         "tooltip"  : "Sets harmonic magnitude",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "[127 64 64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pfreq",
@@ -3479,7 +3610,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pstartphase",
@@ -3487,7 +3620,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/PLFOtype",
@@ -3495,6 +3630,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -3532,7 +3669,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pfreqrand",
@@ -3550,14 +3689,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pstretch",
@@ -3584,7 +3727,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pstartphase",
@@ -3592,7 +3737,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/PLFOtype",
@@ -3600,6 +3747,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -3637,7 +3786,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pfreqrand",
@@ -3655,14 +3806,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pstretch",
@@ -3689,7 +3844,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pstartphase",
@@ -3697,7 +3854,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/PLFOtype",
@@ -3705,6 +3864,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -3742,7 +3903,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pfreqrand",
@@ -3760,14 +3923,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pstretch",
@@ -3792,7 +3959,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Penvdt[0,39]",
@@ -3812,14 +3981,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Plinearenvelope",
@@ -3836,7 +4009,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PA_val",
@@ -3884,7 +4059,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PR_val",
@@ -3909,7 +4086,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Penvdt[0,39]",
@@ -3929,14 +4108,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Plinearenvelope",
@@ -3953,7 +4136,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PA_val",
@@ -4001,7 +4186,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PR_val",
@@ -4026,7 +4213,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Penvdt[0,39]",
@@ -4046,14 +4235,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Plinearenvelope",
@@ -4070,7 +4263,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PA_val",
@@ -4118,7 +4313,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PR_val",
@@ -4143,7 +4340,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Penvdt[0,39]",
@@ -4163,14 +4362,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Plinearenvelope",
@@ -4187,7 +4390,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PA_val",
@@ -4235,7 +4440,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PR_val",
@@ -4260,7 +4467,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Penvdt[0,39]",
@@ -4280,14 +4489,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Plinearenvelope",
@@ -4304,7 +4517,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PA_val",
@@ -4352,7 +4567,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PR_val",
@@ -4370,6 +4587,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -4391,6 +4610,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -4437,7 +4658,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/baseq",
@@ -4467,7 +4690,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/gain",
@@ -4477,7 +4702,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pnumformants",
@@ -4486,7 +4713,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pformantslowness",
@@ -4494,7 +4723,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowelclearness",
@@ -4502,7 +4733,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pcenterfreq",
@@ -4510,7 +4743,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Poctavesfreq",
@@ -4518,7 +4753,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencesize",
@@ -4527,7 +4764,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencestretch",
@@ -4535,14 +4774,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/type-svf",
@@ -4583,7 +4826,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/Pvowels[0,5]/Pformants[0,11]/q",
@@ -4591,7 +4836,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Unison_size",
@@ -4726,7 +4973,9 @@
         "shortname": "enable",
         "name"     : "Presonance",
         "tooltip"  : "Resonance Enable",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "true"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pextoscil",
@@ -4734,7 +4983,9 @@
         "name"     : "Pextoscil",
         "tooltip"  : "External Oscillator Selection",
         "type"     : "i",
-        "range"    : [-1,16]
+        "range"    : [-1,16],
+        "default"  : "-1"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PextFMoscil",
@@ -4742,7 +4993,9 @@
         "name"     : "PextFMoscil",
         "tooltip"  : "External FM Oscillator Selection",
         "type"     : "i",
-        "range"    : [-1,16]
+        "range"    : [-1,16],
+        "default"  : "-1"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Poscilphase",
@@ -4750,7 +5003,9 @@
         "name"     : "Poscilphase",
         "tooltip"  : "Oscillator Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMoscilphase",
@@ -4758,21 +5013,27 @@
         "name"     : "PFMoscilphase",
         "tooltip"  : "FM Oscillator Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pfilterbypass",
         "shortname": "bypass",
         "name"     : "Pfilterbypass",
         "tooltip"  : "Filter Bypass",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Pfixedfreq",
         "shortname": "fixed",
         "name"     : "Pfixedfreq",
         "tooltip"  : "If frequency is fixed",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PfixedfreqET",
@@ -4780,7 +5041,9 @@
         "name"     : "PfixedfreqET",
         "tooltip"  : "Equal Temperament Parameter",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PBendAdjust",
@@ -4788,7 +5051,9 @@
         "name"     : "PBendAdjust",
         "tooltip"  : "Pitch bend adjustment",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "88"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/POffsetHz",
@@ -4796,7 +5061,9 @@
         "name"     : "POffsetHz",
         "tooltip"  : "Voice constant offset",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PDetune",
@@ -4805,14 +5072,18 @@
         "tooltip"  : "Fine Detune",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,16383]
+        "range"    : [0,16383],
+        "default"  : "8192"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PCoarseDetune",
         "shortname": "coarse",
         "name"     : "PCoarseDetune",
         "tooltip"  : "Coarse Detune",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PDetuneType",
@@ -4821,6 +5092,8 @@
         "tooltip"  : "Magnitude of Detune",
         "type"     : "i",
         "range"    : [0,127],
+        "default"  : "L35cents"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -4845,14 +5118,18 @@
         "shortname": "enable",
         "name"     : "PFreqEnvelopeEnabled",
         "tooltip"  : "Frequency Envelope Enable",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFreqLfoEnabled",
         "shortname": "enable",
         "name"     : "PFreqLfoEnabled",
         "tooltip"  : "Frequency LFO Enable",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PPanning",
@@ -4860,7 +5137,9 @@
         "name"     : "PPanning",
         "tooltip"  : "Panning",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PVolume",
@@ -5001,13 +5280,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMVolume",
-        "shortname": "vol.",
-        "name"     : "PFMVolume",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMvolume",
+        "shortname": ".vol",
+        "name"     : "FMvolume",
         "tooltip"  : "Modulator Magnitude",
-        "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "90"
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,100.0],
+        "default"  : "70.0"
 
     },
     {
@@ -5163,7 +5443,9 @@
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Prespoints[0,255]",
         "name"     : "Prespoints#256",
         "tooltip"  : "Resonance data points",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/PmaxdB",
@@ -5210,7 +5492,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pstartphase",
@@ -5218,7 +5502,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/PLFOtype",
@@ -5226,6 +5512,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -5263,7 +5551,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pfreqrand",
@@ -5281,14 +5571,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pstretch",
@@ -5315,7 +5609,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pstartphase",
@@ -5323,7 +5619,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/PLFOtype",
@@ -5331,6 +5629,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -5368,7 +5668,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pfreqrand",
@@ -5386,14 +5688,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pstretch",
@@ -5420,7 +5726,9 @@
         "name"     : "Pintensity",
         "tooltip"  : "Intensity of LFO",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pstartphase",
@@ -5428,7 +5736,9 @@
         "name"     : "Pstartphase",
         "tooltip"  : "Starting Phase",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/PLFOtype",
@@ -5436,6 +5746,8 @@
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
         "type"     : "i",
+        "default"  : "sine"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -5473,7 +5785,9 @@
         "name"     : "Prandomness",
         "tooltip"  : "Amplitude Randomness (calculated uniformly at each cycle)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pfreqrand",
@@ -5491,14 +5805,18 @@
         "name"     : "Pdelay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pcontinous",
         "shortname": "c",
         "name"     : "Pcontinous",
         "tooltip"  : "Enable for global operation",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pstretch",
@@ -5523,7 +5841,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Penvdt[0,39]",
@@ -5543,14 +5863,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Plinearenvelope",
@@ -5567,7 +5891,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PA_val",
@@ -5615,7 +5941,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PR_val",
@@ -5640,7 +5968,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Penvdt[0,39]",
@@ -5660,14 +5990,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Plinearenvelope",
@@ -5684,7 +6018,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PA_val",
@@ -5732,7 +6068,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PR_val",
@@ -5757,7 +6095,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Penvdt[0,39]",
@@ -5777,14 +6117,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Plinearenvelope",
@@ -5801,7 +6145,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PA_val",
@@ -5849,7 +6195,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PR_val",
@@ -5867,6 +6215,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -5888,6 +6238,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -5934,7 +6286,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/baseq",
@@ -5964,7 +6318,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/gain",
@@ -5974,7 +6330,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pnumformants",
@@ -5983,7 +6341,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pformantslowness",
@@ -5991,7 +6351,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowelclearness",
@@ -5999,7 +6361,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pcenterfreq",
@@ -6007,7 +6371,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Poctavesfreq",
@@ -6015,7 +6381,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencesize",
@@ -6024,7 +6392,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencestretch",
@@ -6032,14 +6402,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/type-svf",
@@ -6080,7 +6454,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
@@ -6088,7 +6464,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PStereo",
@@ -6179,9 +6557,9 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PAmpVelocityScaleFunction",
-        "shortname": "scale",
+        "shortname": "sense",
         "name"     : "PAmpVelocityScaleFunction",
-        "tooltip"  : "Volume Velocity Control",
+        "tooltip"  : "Volume velocity sense",
         "type"     : "i",
         "range"    : [0,127],
         "default"  : "64"
@@ -6582,13 +6960,17 @@
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phmag[0,63]",
         "name"     : "Phmag#64",
         "tooltip"  : "Harmonic magnitudes",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[127 0 0 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Phrelbw[0,63]",
         "name"     : "Phrelbw#64",
         "tooltip"  : "Relative bandwidth",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[64 ...]"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pbwscale",
@@ -6613,7 +6995,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Penvdt[0,39]",
@@ -6633,14 +7017,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Plinearenvelope",
@@ -6657,7 +7045,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PA_val",
@@ -6705,7 +7095,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PR_val",
@@ -6730,7 +7122,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Penvdt[0,39]",
@@ -6750,14 +7144,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Plinearenvelope",
@@ -6774,7 +7172,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PA_val",
@@ -6822,7 +7222,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PR_val",
@@ -6847,7 +7249,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Penvdt[0,39]",
@@ -6867,14 +7271,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Plinearenvelope",
@@ -6891,7 +7299,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PA_val",
@@ -6939,7 +7349,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PR_val",
@@ -6964,7 +7376,9 @@
         "name"     : "Penvsustain",
         "tooltip"  : "Location of the sustain point",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "2"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Penvdt[0,39]",
@@ -6984,14 +7398,18 @@
         "name"     : "Penvstretch",
         "tooltip"  : "Stretch with respect to frequency",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Pforcedrelease",
         "shortname": "frcr",
         "name"     : "Pforcedrelease",
         "tooltip"  : "Force Envelope to fully evaluate",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Plinearenvelope",
@@ -7008,7 +7426,9 @@
         "name"     : "PA_dt",
         "tooltip"  : "Attack Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PA_val",
@@ -7056,7 +7476,9 @@
         "name"     : "PR_dt",
         "tooltip"  : "Release Time",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "60"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PR_val",
@@ -7074,6 +7496,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -7095,6 +7519,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -7141,7 +7567,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/baseq",
@@ -7171,7 +7599,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/gain",
@@ -7181,7 +7611,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pnumformants",
@@ -7190,7 +7622,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pformantslowness",
@@ -7198,7 +7632,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowelclearness",
@@ -7206,7 +7642,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pcenterfreq",
@@ -7214,7 +7652,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Poctavesfreq",
@@ -7222,7 +7662,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencesize",
@@ -7231,7 +7673,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencestretch",
@@ -7239,14 +7683,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/type-svf",
@@ -7287,7 +7735,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/q",
@@ -7295,7 +7745,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/subpars/Pstart",
@@ -7371,7 +7823,7 @@
     {
         "path"     : "/part[0,15]/kit[0,15]/Padenabled",
         "name"     : "Padenabled",
-        "tooltip"  : ":default false",
+        "tooltip"  : "ADsynth enable",
         "type"     : "t"
     },
     {
@@ -7431,6 +7883,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -7452,6 +7906,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -7498,7 +7954,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/baseq",
@@ -7528,7 +7986,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/gain",
@@ -7538,7 +7998,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pnumformants",
@@ -7547,7 +8009,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pformantslowness",
@@ -7555,7 +8019,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowelclearness",
@@ -7563,7 +8029,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pcenterfreq",
@@ -7571,7 +8039,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Poctavesfreq",
@@ -7579,7 +8049,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencesize",
@@ -7588,7 +8060,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencestretch",
@@ -7596,14 +8070,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/type-svf",
@@ -7644,7 +8122,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
@@ -7652,7 +8132,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Pvolume",
@@ -7765,7 +8247,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Ppanning",
@@ -7914,7 +8398,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Ppanning",
@@ -7945,7 +8431,7 @@
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/PLFOtype",
         "shortname": "shape",
         "name"     : "PLFOtype",
-        "tooltip"  : ":default 0",
+        "tooltip"  : "LFO Shape",
         "type"     : "i",
         "options"  : [
         {
@@ -8052,7 +8538,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Ppanning",
@@ -8077,7 +8565,9 @@
         "shortname": "drive",
         "name"     : "Pdrive",
         "tooltip"  : "Input amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Plevel",
@@ -8201,7 +8691,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "110"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Ppanning",
@@ -8339,7 +8831,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "67"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Echo/Ppanning",
@@ -8355,7 +8849,9 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Echo/Plrdelay",
@@ -8533,7 +9029,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Ppanning",
@@ -8593,7 +9091,9 @@
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFP depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pfb",
@@ -8750,7 +9250,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "90"
+
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Reverb/Ppanning",
@@ -8766,7 +9268,9 @@
         "shortname": "time",
         "name"     : "Ptime",
         "tooltip"  : "Length of Reverb",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Reverb/Pidelay",
@@ -9350,7 +9854,7 @@
         "name"     : "Pefxroute#3",
         "tooltip"  : "Effect Routing",
         "type"     : "i",
-        "default"  : "\"Next Effect\"S"
+        "default"  : "[\"Next Effect\"S...]"
 ,
         "options"  : [
         {
@@ -9372,7 +9876,7 @@
         "name"     : "Pefxbypass#3",
         "tooltip"  : "If an effect is bypassed",
         "type"     : "t",
-        "default"  : "false"
+        "default"  : "[false...]"
 
     },
     {
@@ -9401,6 +9905,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -9422,6 +9928,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -9468,7 +9976,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/baseq",
@@ -9498,7 +10008,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/gain",
@@ -9508,7 +10020,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pnumformants",
@@ -9517,7 +10031,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pformantslowness",
@@ -9525,7 +10041,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pvowelclearness",
@@ -9533,7 +10051,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pcenterfreq",
@@ -9541,7 +10061,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Poctavesfreq",
@@ -9549,7 +10071,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencesize",
@@ -9558,7 +10082,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencestretch",
@@ -9566,14 +10092,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/type-svf",
@@ -9614,7 +10144,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/sysefx[0,3]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
@@ -9622,7 +10154,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/Pvolume",
@@ -9735,7 +10269,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Ppanning",
@@ -9884,7 +10420,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Ppanning",
@@ -9915,7 +10453,7 @@
         "path"     : "/sysefx[0,3]/Chorus/PLFOtype",
         "shortname": "shape",
         "name"     : "PLFOtype",
-        "tooltip"  : ":default 0",
+        "tooltip"  : "LFO Shape",
         "type"     : "i",
         "options"  : [
         {
@@ -10022,7 +10560,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/sysefx[0,3]/Distorsion/Ppanning",
@@ -10047,7 +10587,9 @@
         "shortname": "drive",
         "name"     : "Pdrive",
         "tooltip"  : "Input amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Distorsion/Plevel",
@@ -10171,7 +10713,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "110"
+
     },
     {
         "path"     : "/sysefx[0,3]/DynamicFilter/Ppanning",
@@ -10309,7 +10853,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "67"
+
     },
     {
         "path"     : "/sysefx[0,3]/Echo/Ppanning",
@@ -10325,7 +10871,9 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Echo/Plrdelay",
@@ -10503,7 +11051,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Ppanning",
@@ -10563,7 +11113,9 @@
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFP depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pfb",
@@ -10720,7 +11272,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "90"
+
     },
     {
         "path"     : "/sysefx[0,3]/Reverb/Ppanning",
@@ -10736,7 +11290,9 @@
         "shortname": "time",
         "name"     : "Ptime",
         "tooltip"  : "Length of Reverb",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Reverb/Pidelay",
@@ -10828,6 +11384,8 @@
         "name"     : "Pcategory",
         "tooltip"  : "Class of filter",
         "type"     : "i",
+        "default"  : "analog"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -10849,6 +11407,8 @@
         "name"     : "Ptype",
         "tooltip"  : "Filter Type",
         "type"     : "i",
+        "default"  : "LP2"
+,
         "options"  : [
         {
             "id"     : 0,
@@ -10895,7 +11455,9 @@
         "tooltip"  : "Filter Stages",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,5]
+        "range"    : [0,5],
+        "default"  : "0"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/baseq",
@@ -10925,7 +11487,9 @@
         "units"    : "%",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-100,100]
+        "range"    : [-100,100],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/gain",
@@ -10935,7 +11499,9 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-30,30]
+        "range"    : [-30,30],
+        "default"  : "0.0f"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pnumformants",
@@ -10944,7 +11510,9 @@
         "tooltip"  : "Number of formants to be used",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [1,12],
+        "default"  : "3"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pformantslowness",
@@ -10952,7 +11520,9 @@
         "name"     : "Pformantslowness",
         "tooltip"  : "Rate that formants change",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pvowelclearness",
@@ -10960,7 +11530,9 @@
         "name"     : "Pvowelclearness",
         "tooltip"  : "How much each vowel is smudged with the next in sequence. A high clarity will avoid smudging.",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pcenterfreq",
@@ -10968,7 +11540,9 @@
         "name"     : "Pcenterfreq",
         "tooltip"  : "Center Freq (formant)",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Poctavesfreq",
@@ -10976,7 +11550,9 @@
         "name"     : "Poctavesfreq",
         "tooltip"  : "Number of octaves for formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencesize",
@@ -10985,7 +11561,9 @@
         "tooltip"  : "Length of vowel sequence",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,8]
+        "range"    : [0,8],
+        "default"  : "3"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencestretch",
@@ -10993,14 +11571,18 @@
         "name"     : "Psequencestretch",
         "tooltip"  : "How modulators stretch the sequence",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "40"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Psequencereversed",
         "shortname": "reverse",
         "name"     : "Psequencereversed",
         "tooltip"  : "If the modulator input is inverted",
-        "type"     : "t"
+        "type"     : "t",
+        "default"  : "false"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/type-svf",
@@ -11041,7 +11623,9 @@
         "name"     : "amp",
         "tooltip"  : "Strength of formant",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/insefx[0,7]/filterpars/Pvowels[0,5]/Pformants[0,11]/q",
@@ -11049,7 +11633,9 @@
         "name"     : "q",
         "tooltip"  : "The formant's quality factor, also known as resonance bandwidth or Q for short",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/Pvolume",
@@ -11162,7 +11748,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Ppanning",
@@ -11311,7 +11899,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Ppanning",
@@ -11342,7 +11932,7 @@
         "path"     : "/insefx[0,7]/Chorus/PLFOtype",
         "shortname": "shape",
         "name"     : "PLFOtype",
-        "tooltip"  : ":default 0",
+        "tooltip"  : "LFO Shape",
         "type"     : "i",
         "options"  : [
         {
@@ -11449,7 +12039,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "127"
+
     },
     {
         "path"     : "/insefx[0,7]/Distorsion/Ppanning",
@@ -11474,7 +12066,9 @@
         "shortname": "drive",
         "name"     : "Pdrive",
         "tooltip"  : "Input amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Distorsion/Plevel",
@@ -11598,7 +12192,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "110"
+
     },
     {
         "path"     : "/insefx[0,7]/DynamicFilter/Ppanning",
@@ -11736,7 +12332,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "67"
+
     },
     {
         "path"     : "/insefx[0,7]/Echo/Ppanning",
@@ -11752,7 +12350,9 @@
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Length of Echo",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Echo/Plrdelay",
@@ -11930,7 +12530,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "64"
+
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Ppanning",
@@ -11990,7 +12592,9 @@
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFP depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pfb",
@@ -12147,7 +12751,9 @@
         "tooltip"  : "amount of effect",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127]
+        "range"    : [0,127],
+        "default"  : "90"
+
     },
     {
         "path"     : "/insefx[0,7]/Reverb/Ppanning",
@@ -12163,7 +12769,9 @@
         "shortname": "time",
         "name"     : "Ptime",
         "tooltip"  : "Length of Reverb",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Reverb/Pidelay",
@@ -12357,7 +12965,9 @@
         "path"     : "/microtonal/Pmapping[0,127]",
         "name"     : "Pmapping#128",
         "tooltip"  : "Mapping of keys",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[0 1 ...]"
+
     },
     {
         "path"     : "/microtonal/Pglobalfinedetune",
@@ -12636,7 +13246,7 @@
         "name"     : "Pinsparts#8",
         "tooltip"  : "Part to insert part onto",
         "type"     : "i",
-        "default"  : "Off"
+        "default"  : "[Off ...]"
 ,
         "options"  : [
         {
@@ -12742,21 +13352,23 @@
         "tooltip"  : "Master Volume",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "80"
-
+        "range"    : [0,127]
     },
     {
         "path"     : "/Psysefxvol[0,3]/part[0,15]",
         "name"     : "part#16",
         "tooltip"  : "gain on part to sysefx routing",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[0...]"
+
     },
     {
         "path"     : "/sysefxfrom[0,3]/to[0,3]",
         "name"     : "to#4",
         "tooltip"  : "sysefx to sysefx routing gain",
-        "type"     : "i"
+        "type"     : "i",
+        "default"  : "[0...]"
+
     },
     {
         "path"     : "/automate/active-slot",
