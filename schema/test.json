@@ -5250,7 +5250,7 @@
         },
         {
             "id"     : 1,
-            "value"  : "morph"
+            "value"  : "mix"
         },
         {
             "id"     : 2,
@@ -5281,7 +5281,7 @@
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMvolume",
-        "shortname": ".vol",
+        "shortname": "vol.",
         "name"     : "FMvolume",
         "tooltip"  : "Modulator Magnitude",
         "scale"    : "linear",
@@ -12900,7 +12900,9 @@
         "shortname": "ref freq",
         "name"     : "PAfreq",
         "tooltip"  : "Frequency of the 'A' note",
+        "scale"    : "logarithmic",
         "type"     : "f",
+        "range"    : [1.0,20000.0],
         "default"  : "440.0f"
 
     },
