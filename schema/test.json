@@ -2351,7 +2351,9 @@
         "tooltip"  : "Bandwith Of Harmonics",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [0,1000]
+        "range"    : [0,1000],
+        "default"  : "500"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/OscilSmp/Prand",
@@ -9427,7 +9429,7 @@
     {
         "path"     : "/part[0,15]/ctl/pitchwheel.is_split",
         "name"     : "pitchwheel.is_split",
-        "tooltip"  : "If PitchWheel Has unified bendrange or not",
+        "tooltip"  : "If PitchWheel has unified bendrange or not",
         "type"     : "t",
         "default"  : "false"
 
@@ -9437,6 +9439,7 @@
         "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
+        "units"    : "% of semitone",
         "scale"    : "linear",
         "type"     : "i",
         "range"    : [-6400,6400],
@@ -13070,7 +13073,7 @@
     {
         "path"     : "/ctl/pitchwheel.is_split",
         "name"     : "pitchwheel.is_split",
-        "tooltip"  : "If PitchWheel Has unified bendrange or not",
+        "tooltip"  : "If PitchWheel has unified bendrange or not",
         "type"     : "t",
         "default"  : "false"
 
@@ -13080,6 +13083,7 @@
         "shortname": "pch.d",
         "name"     : "pitchwheel.bendrange",
         "tooltip"  : "Range of MIDI Pitch Wheel",
+        "units"    : "% of semitone",
         "scale"    : "linear",
         "type"     : "i",
         "range"    : [-6400,6400],
