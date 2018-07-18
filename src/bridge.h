@@ -101,6 +101,20 @@ void br_damage(bridge_t *, uri_t);
 void br_refresh(bridge_t *, uri_t);
 
 /**
+ * Rate limited refresh of given uri
+ *
+ * Note: this is different than br_refresh in the case that:
+ *
+ * 1. br_refresh(a)
+ * 2. send osc message which alters 'a', but does not broadcast the change
+ * 3. br_refresh(a)
+ *
+ * Will not send a request with step 3 while force_refresh will 'eventually'
+ * send an update for 'a' after a timeout
+ */
+void br_force_refresh(bridge_t *, uri_t);
+
+/**
  * Start a state watch on remote host via '/watch/add' port
  */
 void br_watch(bridge_t *, uri_t);

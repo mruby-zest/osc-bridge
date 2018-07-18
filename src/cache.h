@@ -31,6 +31,7 @@ typedef struct {
     char  valid:1;
     char  pending:1;
     char  usable:1;
+    char  force_refresh:1;
 
     //Type of OSC value stored in cache
     //In the case of multiple values, type is 'v'

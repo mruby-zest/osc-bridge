@@ -32,6 +32,7 @@ static void cache_update(bridge_t *br, param_cache_t *ch)
     ch->type    = 0;
     ch->usable  = 1;
     ch->pending = 1;
+    ch->force_refresh = 0;
     ch->request_time = now;
     ch->requests++;
     memset(&ch->val, 0, sizeof(ch->val));
@@ -766,6 +767,24 @@ void br_refresh(bridge_t *br, uri_t uri)
     }
 }
 
+void br_force_refresh(bridge_t *br, uri_t uri)
+{
+    param_cache_t *cline = cache_get(br, uri);
+
+    uv_update_time(br->loop);
+    double now = 1e-3*uv_now(br->loop);
+
+    if(cline->request_time < now) {
+        cline->request_time = now;
+        osc_request(br, uri);
+        cline->force_refresh = 0;
+    } else {
+        cline->request_time = now;
+        cline->force_refresh = 1;
+        //printf("skipping refresh for %s at dt = %f\n", uri, cline->request_time-now);
+    }
+}
+
 void br_watch(bridge_t *br, const char *uri)
 {
     char *buffer = (char*)malloc(4096);
@@ -879,6 +898,7 @@ void br_tick(bridge_t *br)
             int   pend   = br->cache[i].pending;
             int   valid  = br->cache[i].valid;
             int   usable = br->cache[i].usable;
+            int   fref   = br->cache[i].force_refresh;
             double uptim = br->cache[i].request_time;
             int   rq     = br->cache[i].requests;
             (void) path;
@@ -890,7 +910,10 @@ void br_tick(bridge_t *br)
                     //else if(br->cache[i].requests++ == 10)
                     //    printf("[ERROR] Invalid parameter cannot be accessed at <%s>\n", path);
                 }
-            }
+            } else if(usable && fref)
+                if(uptim < now - 50e-3)
+                    cache_update(br, &br->cache[i]);
+
         }
     }
 
