@@ -5282,9 +5282,9 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PFMvolume",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMvolume",
         "shortname": "vol.",
-        "name"     : "PFMvolume",
+        "name"     : "FMvolume",
         "tooltip"  : "Modulator Magnitude",
         "scale"    : "linear",
         "type"     : "f",
