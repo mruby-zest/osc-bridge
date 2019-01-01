@@ -14,4 +14,4 @@ lib: $(SRC)
 	$(AR) rcs libosc-bridge.a bridge.o cache.o parse-schema.o schema.o rtosc.o
 
 clean:
-	rm -f libosc-bridge.a bridge.o cache.o parse-schema.o schema.o remote-test mock-test
+	rm -f libosc-bridge.a bridge.o cache.o parse-schema.o schema.o rtosc.o remote-test mock-test
