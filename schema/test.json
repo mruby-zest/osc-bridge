@@ -1105,7 +1105,7 @@
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
         "range"    : [0,127],
-        "default"  : "64"
+        "default"  : "0"
 
     },
     {
@@ -5427,7 +5427,9 @@
         "tooltip"  : "Coarse note detune",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [-64,63]
+        "range"    : [-64,63],
+        "default"  : "0"
+
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMoctave",
@@ -6584,13 +6586,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/PVolume",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Volume",
         "shortname": "vol",
-        "name"     : "PVolume",
+        "name"     : "Volume",
         "tooltip"  : "volume control",
-        "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "90"
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-60.0,20.0],
+        "default"  : "-3.75"
 
     },
     {
@@ -6659,7 +6662,7 @@
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
         "range"    : [0,127],
-        "default"  : "64"
+        "default"  : "0"
 
     },
     {
@@ -6818,7 +6821,7 @@
         "tooltip"  : "Filter Velocity Magnitude",
         "type"     : "i",
         "range"    : [0,127],
-        "default"  : "64"
+        "default"  : "0"
 
     },
     {
