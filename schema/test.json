@@ -7,13 +7,14 @@
         "type"     : "s"
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pintensity",
@@ -128,13 +129,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pintensity",
@@ -249,13 +251,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pintensity",
@@ -3610,13 +3613,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pintensity",
@@ -3731,13 +3735,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pintensity",
@@ -3852,13 +3857,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pintensity",
@@ -5506,13 +5512,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pintensity",
@@ -5627,13 +5634,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pintensity",
@@ -5748,13 +5756,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pfreq",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/freq",
         "shortname": "freq",
-        "name"     : "Pfreq",
-        "tooltip"  : "frequency of LFO\nlfo frequency = (2^(10*Pfreq)-1)/12 * stretch\ntrue frequency is [0,85.33] Hz",
-        "scale"    : "linear",
+        "name"     : "freq",
+        "tooltip"  : "frequency of LFO\nlfo frequency = Pfreq * stretch\ntrue frequency is [0,85.25] Hz",
+        "units"    : "HZ",
+        "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.0,1.0]
+        "range"    : [0.078,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pintensity",
@@ -6590,10 +6599,11 @@
         "shortname": "vol",
         "name"     : "Volume",
         "tooltip"  : "volume control",
+        "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-60.0,20.0],
-        "default"  : "-3.75"
+        "range"    : [-60.0f,20.0f],
+        "default"  : "-3.75f"
 
     },
     {
