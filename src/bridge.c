@@ -613,7 +613,7 @@ void br_default(bridge_t *br, schema_t s, uri_t uri)
     if(handle.type == 'i' && handle.default_)
         br_set_value_int(br, uri, atoi(handle.default_));
     else if(handle.type == 'f' && handle.default_)
-        br_set_value_int(br, uri, atof(handle.default_));
+        br_set_value_float(br, uri, atof(handle.default_));
 }
 
 void br_set_array(bridge_t *br, uri_t uri, char *type, rtosc_arg_t*args)
