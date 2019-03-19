@@ -14,7 +14,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pintensity",
@@ -136,7 +136,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pintensity",
@@ -258,7 +258,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pintensity",
@@ -3620,7 +3620,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pintensity",
@@ -3742,7 +3742,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pintensity",
@@ -3864,7 +3864,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pintensity",
@@ -5184,6 +5184,18 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/volume",
+        "shortname": "volume",
+        "name"     : "volume",
+        "tooltip"  : "Part Volume",
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-60.0f,0.0f],
+        "default"  : "-12.75"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PVolumeminus",
         "shortname": "inv.",
         "name"     : "PVolumeminus",
@@ -5519,7 +5531,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pintensity",
@@ -5641,7 +5653,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pintensity",
@@ -5763,7 +5775,7 @@
         "units"    : "HZ",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.078,85.25]
+        "range"    : [0.0775679,85.25]
     },
     {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pintensity",
@@ -13406,8 +13418,10 @@
         "name"     : "volume",
         "tooltip"  : "Master Volume",
         "scale"    : "linear",
-        "type"     : "i",
-        "range"    : [0,127]
+        "type"     : "f",
+        "range"    : [-40.0f,12.917f],
+        "default"  : "-6.667f"
+
     },
     {
         "path"     : "/Psysefxvol[0,3]/part[0,15]",
