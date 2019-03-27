@@ -5174,16 +5174,6 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PVolume",
-        "shortname": "vol.",
-        "name"     : "PVolume",
-        "tooltip"  : "Volume",
-        "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "100"
-
-    },
-    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/volume",
         "shortname": "volume",
         "name"     : "volume",
@@ -6753,13 +6743,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/subpars/PAmpVelocityScaleFunction",
+        "path"     : "/part[0,15]/kit[0,15]/subpars/AmpVelocityScaleFunction",
         "shortname": "sense",
-        "name"     : "PAmpVelocityScaleFunction",
+        "name"     : "AmpVelocityScaleFunction",
         "tooltip"  : "Amplitude Velocity Sensing function",
-        "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "90"
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,100.0],
+        "default"  : "70.86"
 
     },
     {
@@ -13418,9 +13409,19 @@
         "name"     : "volume",
         "tooltip"  : "Master Volume",
         "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
+    },
+    {
+        "path"     : "/Volume",
+        "shortname": "volume",
+        "name"     : "Volume",
+        "tooltip"  : "Master Volume",
+        "units"    : "dB",
+        "scale"    : "linear",
         "type"     : "f",
         "range"    : [-40.0f,12.917f],
-        "default"  : "-6.667f"
+        "default"  : "-6.66667f"
 
     },
     {
