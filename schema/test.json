@@ -9665,10 +9665,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/Volume",
+        "shortname": "Vol",
+        "name"     : "Volume",
+        "tooltip"  : "Part Volume",
+        "units"    : "dB",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [-40.0,13.3333],
+        "default"  : "0.0"
+
+    },
+    {
         "path"     : "/part[0,15]/Pvolume",
         "shortname": "Vol",
         "name"     : "Pvolume",
         "tooltip"  : "Part Volume",
+        "scale"    : "linear",
         "type"     : "i",
         "range"    : [0,127],
         "default"  : "96"
@@ -13420,7 +13433,7 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-40.0f,12.917f],
+        "range"    : [-40.0f,13.3333f],
         "default"  : "-6.66667f"
 
     },
