@@ -100,12 +100,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -222,12 +224,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -344,12 +348,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -3706,12 +3712,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -3828,12 +3836,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -3950,12 +3960,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -5607,12 +5619,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -5729,12 +5743,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
@@ -5851,12 +5867,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pdelay",
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/delay",
         "shortname": "delay",
-        "name"     : "Pdelay",
+        "name"     : "delay",
         "tooltip"  : "Delay before LFO start\n0..4 second delay",
-        "type"     : "i",
-        "range"    : [0,127],
+        "units"    : "Sec",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0,4.0],
         "default"  : "0"
 
     },
