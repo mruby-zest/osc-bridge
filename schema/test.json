@@ -1032,13 +1032,14 @@
 
     },
     {
-        "path"     : "/part[0,15]/kit[0,15]/padpars/PVolume",
+        "path"     : "/part[0,15]/kit[0,15]/padpars/Volume",
         "shortname": "vol",
-        "name"     : "PVolume",
+        "name"     : "Volume",
         "tooltip"  : "Synth Volume",
-        "type"     : "i",
-        "range"    : [0,127],
-        "default"  : "90"
+	"scale"	   : "linear",
+        "type"     : "f",
+        "range"    : [-60.0,0],
+        "default"  : "-3.75"
 
     },
     {
