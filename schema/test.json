@@ -6622,8 +6622,8 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-60.0f,20.0f],
-        "default"  : "-3.75f"
+        "range"    : [-47.9588f,32.0412f],
+        "default"  : "8.29f"
 
     },
     {
