@@ -779,6 +779,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -987,6 +991,19 @@
         {
             "id"     : 3,
             "value"  : "notch"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/GlobalFilter/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
         }
         ]
     },
@@ -4645,6 +4662,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -4853,6 +4874,19 @@
         {
             "id"     : 3,
             "value"  : "notch"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/VoiceFilter/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
         }
         ]
     },
@@ -6298,6 +6332,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -6510,6 +6548,19 @@
         ]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
+        }
+        ]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/freq",
         "shortname": "f.freq",
         "name"     : "freq",
@@ -6622,8 +6673,8 @@
         "units"    : "dB",
         "scale"    : "linear",
         "type"     : "f",
-        "range"    : [-60.0f,20.0f],
-        "default"  : "-3.75f"
+        "range"    : [-47.9588f,32.0412f],
+        "default"  : "8.29f"
 
     },
     {
@@ -7584,6 +7635,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -7796,6 +7851,19 @@
         ]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
+        }
+        ]
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilter/Pvowels[0,5]/Pformants[0,11]/freq",
         "shortname": "f.freq",
         "name"     : "freq",
@@ -7971,6 +8039,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -8179,6 +8251,19 @@
         {
             "id"     : 3,
             "value"  : "notch"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/filterpars/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
         }
         ]
     },
@@ -10007,6 +10092,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -10215,6 +10304,19 @@
         {
             "id"     : 3,
             "value"  : "notch"
+        }
+        ]
+    },
+    {
+        "path"     : "/sysefx[0,3]/filterpars/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
         }
         ]
     },
@@ -11486,6 +11588,10 @@
         {
             "id"     : 2,
             "value"  : "st.var."
+        },
+        {
+            "id"     : 3,
+            "value"  : "moog"
         }
         ]
     },
@@ -11694,6 +11800,19 @@
         {
             "id"     : 3,
             "value"  : "notch"
+        }
+        ]
+    },
+    {
+        "path"     : "/insefx[0,7]/filterpars/type-moog",
+        "shortname": "type",
+        "name"     : "type-moog",
+        "tooltip"  : "Filter Type",
+        "type"     : "i",
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "low"
         }
         ]
     },
@@ -13500,6 +13619,14 @@
         "path"     : "/automate/slot[0,15]/midi-cc",
         "name"     : "midi-cc",
         "tooltip"  : "Access assigned midi CC slot",
+        "type"     : "i",
+        "default"  : "-1"
+
+    },
+    {
+        "path"     : "/automate/slot[0,15]/midi-nrpn",
+        "name"     : "midi-nrpn",
+        "tooltip"  : "Access assigned midi NRPN slot",
         "type"     : "i",
         "default"  : "-1"
 
