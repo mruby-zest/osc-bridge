@@ -1612,6 +1612,18 @@
         {
             "id"     : 14,
             "value"  : "sigmoid"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 17,
+            "value"  : "Square"
         }
         ]
     },
@@ -2757,6 +2769,18 @@
         {
             "id"     : 14,
             "value"  : "sigmoid"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 17,
+            "value"  : "Square"
         }
         ]
     },
@@ -3378,6 +3402,18 @@
         {
             "id"     : 14,
             "value"  : "sigmoid"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 17,
+            "value"  : "Square"
         }
         ]
     },
@@ -5202,6 +5238,15 @@
         "shortname": "inv.",
         "name"     : "PVolumeminus",
         "tooltip"  : "Signal Inverter",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/PAAEnabled",
+        "shortname": "enable",
+        "name"     : "PAAEnabled",
+        "tooltip"  : "AntiAliasing Enable",
         "type"     : "t",
         "default"  : "false"
 
@@ -8711,7 +8756,19 @@
         },
         {
             "id"     : 13,
-            "value"  : "sigmoid"
+            "value"  : "Sigmoid"
+        },
+        {
+            "id"     : 14,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Square"
         }
         ]
     },
@@ -8756,6 +8813,28 @@
         "tooltip"  : "Filtering before/after non-linearity",
         "type"     : "t",
         "default"  : "false"
+
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Pfuncpar",
+        "shortname": "shape",
+        "name"     : "Pfuncpar",
+        "tooltip"  : "Shape of the wave shaping function",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "32"
+
+    },
+    {
+        "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Poffset",
+        "shortname": "offset",
+        "name"     : "Poffset",
+        "tooltip"  : "Input DC Offset",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "64"
 
     },
     {
@@ -10747,7 +10826,19 @@
         },
         {
             "id"     : 13,
-            "value"  : "sigmoid"
+            "value"  : "Sigmoid"
+        },
+        {
+            "id"     : 14,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Square"
         }
         ]
     },
@@ -10792,6 +10883,28 @@
         "tooltip"  : "Filtering before/after non-linearity",
         "type"     : "t",
         "default"  : "false"
+
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Pfuncpar",
+        "shortname": "shape",
+        "name"     : "Pfuncpar",
+        "tooltip"  : "Shape of the wave shaping function",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "32"
+
+    },
+    {
+        "path"     : "/sysefx[0,3]/Distorsion/Poffset",
+        "shortname": "offset",
+        "name"     : "Poffset",
+        "tooltip"  : "Input DC Offset",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "64"
 
     },
     {
@@ -12226,7 +12339,19 @@
         },
         {
             "id"     : 13,
-            "value"  : "sigmoid"
+            "value"  : "Sigmoid"
+        },
+        {
+            "id"     : 14,
+            "value"  : "Tanh"
+        },
+        {
+            "id"     : 15,
+            "value"  : "Cubic"
+        },
+        {
+            "id"     : 16,
+            "value"  : "Square"
         }
         ]
     },
@@ -12271,6 +12396,28 @@
         "tooltip"  : "Filtering before/after non-linearity",
         "type"     : "t",
         "default"  : "false"
+
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Pfuncpar",
+        "shortname": "shape",
+        "name"     : "Pfuncpar",
+        "tooltip"  : "Shape of the wave shaping function",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "32"
+
+    },
+    {
+        "path"     : "/insefx[0,7]/Distorsion/Poffset",
+        "shortname": "offset",
+        "name"     : "Poffset",
+        "tooltip"  : "Input DC Offset",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "64"
 
     },
     {
@@ -13500,6 +13647,14 @@
         "path"     : "/automate/slot[0,15]/midi-cc",
         "name"     : "midi-cc",
         "tooltip"  : "Access assigned midi CC slot",
+        "type"     : "i",
+        "default"  : "-1"
+
+    },
+    {
+        "path"     : "/automate/slot[0,15]/midi-nrpn",
+        "name"     : "midi-nrpn",
+        "tooltip"  : "Access assigned midi NRPN slot",
         "type"     : "i",
         "default"  : "-1"
 
