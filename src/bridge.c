@@ -448,7 +448,8 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     size_t len = ftell(f);
     rewind(f);
     char *json = (char*)calloc(1, len+1);
-    fread(json, 1, len, f);
+    size_t len_read = fread(json, 1, len, f);
+    if (len_read != len) {fputs ("Reading error",stderr); exit (3);}
     fclose(f);
 
     printf("[debug] parsing json file\n");
@@ -457,7 +458,7 @@ schema_t br_get_schema(bridge_t *br, uri_t uri)
     sch.json = json;
 
 
-	return sch;
+    return sch;
 }
 
 /*****************************************************************************

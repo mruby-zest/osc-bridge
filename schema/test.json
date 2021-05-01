@@ -37,11 +37,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -121,6 +133,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -161,11 +285,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -245,6 +381,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -285,11 +533,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -369,6 +629,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -436,6 +808,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FreqEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -452,7 +833,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -482,7 +863,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -521,8 +902,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -593,6 +974,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/AmpEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -609,7 +999,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -639,7 +1029,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -678,8 +1068,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -750,6 +1140,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/padpars/FilterEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -766,7 +1165,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -796,7 +1195,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -835,8 +1234,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -1546,6 +1945,10 @@
         {
             "id"     : 15,
             "value"  : "circle"
+        },
+        {
+            "id"     : 16,
+            "value"  : "powersinus"
         },
         {
             "id"     : 127,
@@ -2705,6 +3108,10 @@
             "value"  : "circle"
         },
         {
+            "id"     : 16,
+            "value"  : "powersinus"
+        },
+        {
             "id"     : 127,
             "value"  : "use-as-base waveform"
         }
@@ -3338,6 +3745,10 @@
             "value"  : "circle"
         },
         {
+            "id"     : 16,
+            "value"  : "powersinus"
+        },
+        {
             "id"     : 127,
             "value"  : "use-as-base waveform"
         }
@@ -3775,11 +4186,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -3859,6 +4282,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -3899,11 +4434,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -3983,6 +4530,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -4023,11 +4682,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -4107,6 +4778,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -4174,6 +4957,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FreqEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -4190,7 +4982,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -4220,7 +5012,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -4259,8 +5051,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -4331,6 +5123,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/AmpEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -4347,7 +5148,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -4377,7 +5178,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -4416,8 +5217,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -4488,6 +5289,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FilterEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -4504,7 +5314,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -4534,7 +5344,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -4573,8 +5383,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -4645,6 +5455,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMFreqEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -4661,7 +5480,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -4691,7 +5510,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -4730,8 +5549,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -4802,6 +5621,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/FMAmpEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -4818,7 +5646,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -4848,7 +5676,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -4887,8 +5715,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -5256,7 +6084,9 @@
         "shortname": "type",
         "name"     : "Type",
         "tooltip"  : "Type of Sound",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "Sound"
 ,
         "options"  : [
@@ -5571,7 +6401,9 @@
         "shortname": "mode",
         "name"     : "PFMEnabled",
         "tooltip"  : "Modulator mode",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "none"
 ,
         "options"  : [
@@ -5755,6 +6587,15 @@
         "range"    : [-64,63]
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/VoicePar[0,7]/Enabled",
+        "shortname": "enable",
+        "name"     : "VoicePar#8/Enabled",
+        "tooltip"  : "Voice Enable",
+        "type"     : "t",
+        "default"  : "[true false false ...]"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/Reson/Penabled",
         "shortname": "enable",
         "name"     : "Penabled",
@@ -5841,11 +6682,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -5925,6 +6778,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -5965,11 +6930,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -6049,6 +7026,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -6089,11 +7178,23 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pcutoff",
+        "shortname": "lp",
+        "name"     : "Pcutoff",
+        "tooltip"  : "RND/SQR lp-filter freq",
+        "type"     : "i",
+        "range"    : [0,127],
+        "default"  : "127"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/PLFOtype",
         "shortname": "type",
         "name"     : "PLFOtype",
         "tooltip"  : "Shape of LFO",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "sine"
 ,
         "options"  : [
@@ -6173,6 +7274,118 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/ratiofixed",
+        "shortname": "rat",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/speedratio",
+        "shortname": "r",
+        "name"     : "speedratio",
+        "tooltip"  : "ratio for BPM sync",
+        "scale"    : "linear",
+        "type"     : "f",
+        "range"    : [0.0f,8.0f],
+        "default"  : "0.0f"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterLfo/Pstretch",
         "shortname": "str",
         "name"     : "Pstretch",
@@ -6240,6 +7453,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FreqEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -6256,7 +7478,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -6286,7 +7508,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -6325,8 +7547,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -6397,6 +7619,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/AmpEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -6413,7 +7644,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -6443,7 +7674,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -6482,8 +7713,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -6554,6 +7785,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/adpars/GlobalPar/FilterEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -6570,7 +7810,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -6600,7 +7840,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -6639,8 +7879,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -7500,6 +8740,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/AmpEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -7516,7 +8765,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -7546,7 +8795,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -7585,8 +8834,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -7657,6 +8906,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/FreqEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -7673,7 +8931,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -7703,7 +8961,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -7742,8 +9000,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -7814,6 +9072,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/BandWidthEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -7830,7 +9097,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -7860,7 +9127,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -7899,8 +9166,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -7971,6 +9238,15 @@
 
     },
     {
+        "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/Prepeating",
+        "shortname": "repeat",
+        "name"     : "Prepeating",
+        "tooltip"  : "Repeat the Envelope",
+        "type"     : "t",
+        "default"  : "false"
+
+    },
+    {
         "path"     : "/part[0,15]/kit[0,15]/subpars/GlobalFilterEnvelope/PA_dt",
         "shortname": "a.dt",
         "name"     : "PA_dt",
@@ -7987,7 +9263,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00"
+        "default"  : "0.0f"
 
     },
     {
@@ -8017,7 +9293,7 @@
         "scale"    : "logarithmic",
         "type"     : "f",
         "range"    : [0.0f,41.0f],
-        "default"  : "0.00925031"
+        "default"  : "0.009f"
 
     },
     {
@@ -8056,8 +9332,8 @@
         "tooltip"  : "Release Time",
         "scale"    : "logarithmic",
         "type"     : "f",
-        "range"    : [0.01f,41.0f],
-        "default"  : "0.498893"
+        "range"    : [0.009f,41.0f],
+        "default"  : "0.499f"
 
     },
     {
@@ -8751,6 +10027,106 @@
 
     },
     {
+        "path"     : "/part[0,15]/partefx[0,2]/ratiofixed",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM based delay",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
         "path"     : "/part[0,15]/partefx[0,2]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
@@ -8845,14 +10221,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -8878,21 +10258,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "105"
 
     },
@@ -8903,14 +10289,16 @@
         "tooltip"  : "Delay",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,100]
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Alienwah/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -8919,7 +10307,9 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "Phase",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -8996,14 +10386,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9029,35 +10423,45 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Chorus/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9136,7 +10540,9 @@
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "35"
 
     },
@@ -9154,14 +10560,18 @@
         "shortname": "output",
         "name"     : "Plevel",
         "tooltip"  : "Output amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Distorsion/Ptype",
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "options"  : [
         {
             "id"     : 0,
@@ -9247,7 +10657,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -9256,7 +10668,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9323,14 +10737,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9358,21 +10776,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/DynamicFilter/Pampsns",
         "shortname": "sense",
         "name"     : "Pampsns",
         "tooltip"  : "how the filter varies according to the input amplitude",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9381,7 +10805,9 @@
         "shortname": "sns.inv",
         "name"     : "Pampsnsinv",
         "tooltip"  : "Sense Inversion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9390,7 +10816,9 @@
         "shortname": "smooth",
         "name"     : "Pampsmooth",
         "tooltip"  : "how smooth the input amplitude changes the filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "60"
 
     },
@@ -9472,7 +10900,9 @@
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -9481,7 +10911,9 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "30"
 
     },
@@ -9490,14 +10922,18 @@
         "shortname": "feedback",
         "name"     : "Pfb",
         "tooltip"  : "Echo Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
         "tooltip"  : "Dampen High Frequencies",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/EQ/filter[0,7]/Ptype",
@@ -9661,14 +11097,18 @@
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
         "tooltip"  : "LFO frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
         "tooltip"  : "LFO randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9696,7 +11136,9 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "Left/right channel phase shift",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -9714,7 +11156,9 @@
         "shortname": "fb",
         "name"     : "Pfb",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Pstages",
@@ -9723,7 +11167,7 @@
         "tooltip"  : "",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Phaser/Plrcross",
@@ -9784,7 +11228,9 @@
         "shortname": "distort",
         "name"     : "Pdistortion",
         "tooltip"  : "Distortion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9891,14 +11337,18 @@
         "shortname": "i.time",
         "name"     : "Pidelay",
         "tooltip"  : "Delay for first impulse",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/part[0,15]/partefx[0,2]/Reverb/Pidelayfb",
         "shortname": "i.fb",
         "name"     : "Pidelayfb",
         "tooltip"  : "Feedback for first impulse",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9907,7 +11357,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -9916,7 +11368,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9925,7 +11379,9 @@
         "shortname": "damp",
         "name"     : "Plohidamp",
         "tooltip"  : ":default 0",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -9957,7 +11413,9 @@
         "shortname": "size",
         "name"     : "Proomsize",
         "tooltip"  : "Room Size",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -9966,7 +11424,9 @@
         "shortname": "bw",
         "name"     : "Pbandwidth",
         "tooltip"  : "Bandwidth",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "20"
 
     },
@@ -10821,6 +12281,106 @@
 
     },
     {
+        "path"     : "/sysefx[0,3]/ratiofixed",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM based delay",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
         "path"     : "/sysefx[0,3]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
@@ -10915,14 +12475,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -10948,21 +12512,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "105"
 
     },
@@ -10973,14 +12543,16 @@
         "tooltip"  : "Delay",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,100]
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Alienwah/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -10989,7 +12561,9 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "Phase",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -11066,14 +12640,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11099,35 +12677,45 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Chorus/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11206,7 +12794,9 @@
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "35"
 
     },
@@ -11224,14 +12814,18 @@
         "shortname": "output",
         "name"     : "Plevel",
         "tooltip"  : "Output amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Distorsion/Ptype",
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "options"  : [
         {
             "id"     : 0,
@@ -11317,7 +12911,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -11326,7 +12922,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11393,14 +12991,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/DynamicFilter/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11428,21 +13030,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/DynamicFilter/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/DynamicFilter/Pampsns",
         "shortname": "sense",
         "name"     : "Pampsns",
         "tooltip"  : "how the filter varies according to the input amplitude",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11451,7 +13059,9 @@
         "shortname": "sns.inv",
         "name"     : "Pampsnsinv",
         "tooltip"  : "Sense Inversion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11460,7 +13070,9 @@
         "shortname": "smooth",
         "name"     : "Pampsmooth",
         "tooltip"  : "how smooth the input amplitude changes the filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "60"
 
     },
@@ -11542,7 +13154,9 @@
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -11551,7 +13165,9 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "30"
 
     },
@@ -11560,14 +13176,18 @@
         "shortname": "feedback",
         "name"     : "Pfb",
         "tooltip"  : "Echo Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
         "tooltip"  : "Dampen High Frequencies",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/EQ/filter[0,7]/Ptype",
@@ -11731,14 +13351,18 @@
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
         "tooltip"  : "LFO frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
         "tooltip"  : "LFO randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11766,7 +13390,9 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "Left/right channel phase shift",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -11784,7 +13410,9 @@
         "shortname": "fb",
         "name"     : "Pfb",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Pstages",
@@ -11793,7 +13421,7 @@
         "tooltip"  : "",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Phaser/Plrcross",
@@ -11854,7 +13482,9 @@
         "shortname": "distort",
         "name"     : "Pdistortion",
         "tooltip"  : "Distortion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11961,14 +13591,18 @@
         "shortname": "i.time",
         "name"     : "Pidelay",
         "tooltip"  : "Delay for first impulse",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/sysefx[0,3]/Reverb/Pidelayfb",
         "shortname": "i.fb",
         "name"     : "Pidelayfb",
         "tooltip"  : "Feedback for first impulse",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11977,7 +13611,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -11986,7 +13622,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -11995,7 +13633,9 @@
         "shortname": "damp",
         "name"     : "Plohidamp",
         "tooltip"  : ":default 0",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12027,7 +13667,9 @@
         "shortname": "size",
         "name"     : "Proomsize",
         "tooltip"  : "Room Size",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -12036,7 +13678,9 @@
         "shortname": "bw",
         "name"     : "Pbandwidth",
         "tooltip"  : "Bandwidth",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "20"
 
     },
@@ -12334,6 +13978,106 @@
 
     },
     {
+        "path"     : "/insefx[0,7]/ratiofixed",
+        "name"     : "ratiofixed",
+        "tooltip"  : "select fixed ratio for BPM based delay",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,21],
+        "default"  : "off"
+,
+        "options"  : [
+        {
+            "id"     : 0,
+            "value"  : "off"
+        },
+        {
+            "id"     : 1,
+            "value"  : "8/1"
+        },
+        {
+            "id"     : 2,
+            "value"  : "7/1"
+        },
+        {
+            "id"     : 3,
+            "value"  : "6/1"
+        },
+        {
+            "id"     : 4,
+            "value"  : "5/1"
+        },
+        {
+            "id"     : 5,
+            "value"  : "4/1"
+        },
+        {
+            "id"     : 6,
+            "value"  : "3/1"
+        },
+        {
+            "id"     : 7,
+            "value"  : "2/1"
+        },
+        {
+            "id"     : 8,
+            "value"  : "7/4"
+        },
+        {
+            "id"     : 9,
+            "value"  : "3/2"
+        },
+        {
+            "id"     : 10,
+            "value"  : "5/4"
+        },
+        {
+            "id"     : 11,
+            "value"  : "1/1"
+        },
+        {
+            "id"     : 12,
+            "value"  : "7/8"
+        },
+        {
+            "id"     : 13,
+            "value"  : "3/4"
+        },
+        {
+            "id"     : 14,
+            "value"  : "1/2"
+        },
+        {
+            "id"     : 15,
+            "value"  : "1/3"
+        },
+        {
+            "id"     : 16,
+            "value"  : "1/4"
+        },
+        {
+            "id"     : 17,
+            "value"  : "1/5"
+        },
+        {
+            "id"     : 18,
+            "value"  : "1/6"
+        },
+        {
+            "id"     : 19,
+            "value"  : "1/7"
+        },
+        {
+            "id"     : 20,
+            "value"  : "1/8"
+        },
+        {
+            "id"     : 21,
+            "value"  : "any"
+        }
+        ]
+    },
+    {
         "path"     : "/insefx[0,7]/efftype",
         "name"     : "efftype",
         "tooltip"  : "Get Effect Type",
@@ -12428,14 +14172,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12461,21 +14209,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "105"
 
     },
@@ -12486,14 +14240,16 @@
         "tooltip"  : "Delay",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,100]
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Alienwah/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12502,7 +14258,9 @@
         "shortname": "phase",
         "name"     : "Pphase",
         "tooltip"  : "Phase",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -12579,14 +14337,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12612,35 +14374,45 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pdelay",
         "shortname": "delay",
         "name"     : "Pdelay",
         "tooltip"  : "Delay",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Pfeedback",
         "shortname": "fb",
         "name"     : "Pfeedback",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Chorus/Plrcross",
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12719,7 +14491,9 @@
         "shortname": "l/r",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "35"
 
     },
@@ -12737,14 +14511,18 @@
         "shortname": "output",
         "name"     : "Plevel",
         "tooltip"  : "Output amplification",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Distorsion/Ptype",
         "shortname": "type",
         "name"     : "Ptype",
         "tooltip"  : "Distortion Shape",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "options"  : [
         {
             "id"     : 0,
@@ -12830,7 +14608,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -12839,7 +14619,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High Pass Cutoff",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12906,14 +14688,18 @@
         "shortname": "freq",
         "name"     : "Pfreq",
         "tooltip"  : "Effect Frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/DynamicFilter/Pfreqrnd",
         "shortname": "rand",
         "name"     : "Pfreqrnd",
         "tooltip"  : "Frequency Randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12941,21 +14727,27 @@
         "shortname": "stereo",
         "name"     : "PStereo",
         "tooltip"  : "Stereo Mode",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/DynamicFilter/Pdepth",
         "shortname": "depth",
         "name"     : "Pdepth",
         "tooltip"  : "LFO Depth",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/DynamicFilter/Pampsns",
         "shortname": "sense",
         "name"     : "Pampsns",
         "tooltip"  : "how the filter varies according to the input amplitude",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12964,7 +14756,9 @@
         "shortname": "sns.inv",
         "name"     : "Pampsnsinv",
         "tooltip"  : "Sense Inversion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -12973,7 +14767,9 @@
         "shortname": "smooth",
         "name"     : "Pampsmooth",
         "tooltip"  : "how smooth the input amplitude changes the filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "60"
 
     },
@@ -13055,7 +14851,9 @@
         "shortname": "lr delay",
         "name"     : "Plrdelay",
         "tooltip"  : "Difference In Left/Right Delay",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -13064,7 +14862,9 @@
         "shortname": "cross",
         "name"     : "Plrcross",
         "tooltip"  : "Left/Right Crossover",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "30"
 
     },
@@ -13073,14 +14873,18 @@
         "shortname": "feedback",
         "name"     : "Pfb",
         "tooltip"  : "Echo Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Echo/Phidamp",
         "shortname": "damp",
         "name"     : "Phidamp",
         "tooltip"  : "Dampen High Frequencies",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/EQ/filter[0,7]/Ptype",
@@ -13244,14 +15048,18 @@
         "shortname": "freq",
         "name"     : "lfo.Pfreq",
         "tooltip"  : "LFO frequency",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/lfo.Prandomness",
         "shortname": "rnd.",
         "name"     : "lfo.Prandomness",
         "tooltip"  : "LFO randomness",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -13279,7 +15087,9 @@
         "shortname": "stereo",
         "name"     : "lfo.Pstereo",
         "tooltip"  : "Left/right channel phase shift",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -13297,7 +15107,9 @@
         "shortname": "fb",
         "name"     : "Pfb",
         "tooltip"  : "Feedback",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Pstages",
@@ -13306,7 +15118,7 @@
         "tooltip"  : "",
         "scale"    : "linear",
         "type"     : "i",
-        "range"    : [1,12]
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Phaser/Plrcross",
@@ -13367,7 +15179,9 @@
         "shortname": "distort",
         "name"     : "Pdistortion",
         "tooltip"  : "Distortion",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -13474,14 +15288,18 @@
         "shortname": "i.time",
         "name"     : "Pidelay",
         "tooltip"  : "Delay for first impulse",
-        "type"     : "i"
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [0,127]
     },
     {
         "path"     : "/insefx[0,7]/Reverb/Pidelayfb",
         "shortname": "i.fb",
         "name"     : "Pidelayfb",
         "tooltip"  : "Feedback for first impulse",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -13490,7 +15308,9 @@
         "shortname": "lpf",
         "name"     : "Plpf",
         "tooltip"  : "Low pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "127"
 
     },
@@ -13499,7 +15319,9 @@
         "shortname": "hpf",
         "name"     : "Phpf",
         "tooltip"  : "High pass filter",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -13508,7 +15330,9 @@
         "shortname": "damp",
         "name"     : "Plohidamp",
         "tooltip"  : ":default 0",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "0"
 
     },
@@ -13540,7 +15364,9 @@
         "shortname": "size",
         "name"     : "Proomsize",
         "tooltip"  : "Room Size",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "64"
 
     },
@@ -13549,7 +15375,9 @@
         "shortname": "bw",
         "name"     : "Pbandwidth",
         "tooltip"  : "Bandwidth",
+        "scale"    : "linear",
         "type"     : "i",
+        "range"    : [0,127],
         "default"  : "20"
 
     },
@@ -14079,6 +15907,18 @@
         "tooltip"  : "sysefx to sysefx routing gain",
         "type"     : "i",
         "default"  : "[0...]"
+
+    },
+    {
+        "path"     : "/tempo",
+        "shortname": "Tempo",
+        "name"     : "tempo",
+        "tooltip"  : "Tempo / Beats per minute",
+        "units"    : "BPM",
+        "scale"    : "linear",
+        "type"     : "i",
+        "range"    : [40,200],
+        "default"  : "120"
 
     },
     {
